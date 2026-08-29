@@ -1,0 +1,22 @@
+# OS and editor files
+.DS_Store
+*.swp
+*.swo
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+
+# Local scratch files
+.scratch/
+*.log
