@@ -8,7 +8,7 @@
 - 収録先は保管・参照用の場所です。Codexから自動検出させるには、リポジトリルートの`.agents/skills/`から各Skillへリンクします。
 - Claude Codeで利用する場合は、`.claude/skills/`から同じSkillへリンクできます。
 - `engineering`と`productivity`の25個が上流で正式提供されている安定版です。`in-progress`の8個はベータ版、`misc`の4個は非推奨寄りの補助Skillです。
-- AI-Engine-Devの社内SkillとMatt原文Skillには、`tdd`、`research`、`code-review`などの同名Skillがあります。同名Skillは統合されないため、呼び出すSkillとパスを確認してください。
+- AI-Engine-Devの統合SkillとMatt原文Skillには、`tdd`、`research`、`code-review`などの同名Skillがあります。同名Skillは統合されないため、呼び出すSkillとパスを確認してください。
 
 CodexのSkill仕様と探索場所は[OpenAI公式ドキュメント](https://learn.chatgpt.com/docs/build-skills)を根拠にしています。Codexは`.agents/skills`を探索し、Skillフォルダへのシンボリックリンクを利用できます。
 

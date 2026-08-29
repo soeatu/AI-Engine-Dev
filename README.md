@@ -1,6 +1,6 @@
 # AI-Engine-Dev
 
-AIを活用した資料作成とシステム開発を、成果物、再利用部品、検証手段に分けて管理するワークスペースです。
+AIを活用した資料作成とシステム開発を、成果物、再利用部品、検証手段に分けて管理する公開ワークスペースです。個人、チーム、組織を問わず、どのプロジェクトでも再利用できます。
 
 ## はじめに
 
@@ -12,9 +12,9 @@ AIを活用した資料作成とシステム開発を、成果物、再利用部
 
 ## システム開発用Skillの考え方
 
-システム開発用Skillは、Addy Osmaniの`agent-skills`を「開発プロセスの骨格」、Matt Pocockの`skills`を「各工程のSoftware Engineering品質」として統合した社内版です。要求からデリバリーまでを11の工程Skillに整理し、複数モデルで計画を実行する場合は、これらを束ねるオーケストレーションModeを追加で使用します。
+システム開発用Skillは、Addy Osmaniの`agent-skills`を「開発プロセスの骨格」、Matt Pocockの`skills`を「各工程のSoftware Engineering品質」として統合した汎用版です。要求からデリバリーまでを11の工程Skillに整理し、特定の組織、プロジェクト、AI製品に依存しない形で利用できます。複数モデルで計画を実行する場合は、これらを束ねるオーケストレーションModeを追加で使用します。
 
-Matt Pocockの原文Skillは、開発途中・補助用途を含む全37個を[`development/skills/matt-pocock/`](development/skills/matt-pocock/README.md)に別枠で収録しています。社内Skillは標準工程、原文Skillは原文確認、個別利用、差分確認に使用します。利用を始めるときは[セットアップガイド](development/skills/matt-pocock/SETUP.md)と[Skillガイド](development/skills/matt-pocock/SKILL_GUIDE.md)を参照してください。
+Matt Pocockの原文Skillは、開発途中・補助用途を含む全37個を[`development/skills/matt-pocock/`](development/skills/matt-pocock/README.md)に別枠で収録しています。AI-Engine-Dev統合Skillは標準工程、原文Skillは原文確認、個別利用、差分確認に使用します。利用を始めるときは[セットアップガイド](development/skills/matt-pocock/SETUP.md)と[Skillガイド](development/skills/matt-pocock/SKILL_GUIDE.md)を参照してください。
 
 通常の機能開発では、要求分析、仕様化、設計、計画、TDD、実装、デバッグ、コードレビューの中核8 Skillを使います。調査、文書化、デリバリーは、作業内容に応じて追加します。詳しい選び方と成果物は[Skill一覧](development/skills/README.md)を参照してください。
 
