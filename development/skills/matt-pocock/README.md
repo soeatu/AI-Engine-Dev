@@ -24,9 +24,9 @@
 
 ## このワークスペースでの扱い
 
-- `development/skills/` 直下の社内Skillは、AI-Engine-Devの標準工程として使用します。
-- このディレクトリのSkillは上流原文です。原文確認、個別利用、社内Skillとの差分確認に使用します。
-- 同名Skillがある場合は、依頼で明示されたものを優先します。指定がない場合は社内Skillを標準とします。
+- `development/skills/`直下のAI-Engine-Dev統合Skillは、組織やプロジェクトを問わず使える標準工程として使用します。
+- このディレクトリのSkillは上流原文です。原文確認、個別利用、統合Skillとの差分確認に使用します。
+- 同名Skillがある場合は、依頼で明示されたものを優先します。指定がない場合はAI-Engine-Dev統合Skillを標準とします。
 - `in-progress`、`misc`、`deprecated` の位置づけは上流リポジトリに従います。
 
 上流のライセンス全文はこのディレクトリの[LICENSE](LICENSE)に、第三者著作物の一覧は一階層上の[THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)にあります。

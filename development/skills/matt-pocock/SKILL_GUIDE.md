@@ -353,7 +353,7 @@ wayfinder → 意思決定Ticketを解決 → to-spec → to-tickets → impleme
 
 ## 選択時の注意
 
-- AI-Engine-Devの社内Skillを標準工程として使い、Matt原文Skillは明示的な比較・個別利用に使うのが基本です。
+- AI-Engine-Devの統合Skillを標準工程として使い、Matt原文Skillは明示的な比較・個別利用に使うのが基本です。
 - `in-progress`と`misc`は上流の正式プラグインに含まれません。
 - Skillの選択は、Commit、push、Issue作成、PR作成、外部サービス更新の許可を広げません。
 - 同名Skillが複数表示される場合は、Skillのパスが`development/skills/matt-pocock/`を指しているか確認します。
