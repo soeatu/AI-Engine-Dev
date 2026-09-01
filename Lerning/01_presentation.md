@@ -31,6 +31,22 @@
 
 文章の正しさだけでなく、実際に表示して文字切れ、重なり、読みにくさを確認します。数値、固有名詞、日付、出典、リンクも確認します。
 
+## PowerPointハーネスを使う
+
+繰り返し作る資料では、AIが毎回ゼロから見た目を考えるのではなく、品質確認済みの実SlideをTemplate libraryへ取り込み、内容に合う部品を選びます。適合する部品がないSlideだけを共通Design Systemから新規作図します。
+
+```text
+根拠と構成を整理
+  → Templateを選択
+  → clone-and-fill / 新規作図
+  → PPTX生成
+  → 構造検査
+  → 全Slideを画像化
+  → 1枚ずつ目視確認
+```
+
+実行手順は[`presentation/README.md`](../presentation/README.md)、Skillの選び方は[`presentation/skills/README.md`](../presentation/skills/README.md)を参照してください。
+
 ## AIが支援できること
 
 - 読み手に合わせた構成案や見出し案の作成

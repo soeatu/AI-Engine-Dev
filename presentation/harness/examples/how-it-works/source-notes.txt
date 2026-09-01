@@ -1,0 +1,9 @@
+Deck: How the presentation harness works
+Checked: 2026-08-30
+
+[S1]
+Type: local-file
+Source: README.md, src/, and ../skills/build-presentation/SKILL.md
+Supports: The clone-and-fill, custom-slide, PPTX, screenshot, and build-report flow shown on slide 1
+Status: confirmed
+Notes: This is a bundled technical example of the local harness, not an external product claim.

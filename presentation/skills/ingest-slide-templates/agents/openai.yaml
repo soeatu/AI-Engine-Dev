@@ -1,0 +1,3 @@
+interface:
+  display_name: "Ingest Slide Templates"
+  short_description: "既存PPTXのスライドを再利用可能なテンプレートへ取り込む"

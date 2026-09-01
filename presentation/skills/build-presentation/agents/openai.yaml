@@ -1,0 +1,3 @@
+interface:
+  display_name: "Build Presentation"
+  short_description: "テンプレート部品と新規作図を組み合わせてPPTXを生成・検証する"

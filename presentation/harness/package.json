@@ -1,0 +1,47 @@
+{
+  "name": "ai-engine-dev-presentation-harness",
+  "version": "0.1.0",
+  "description": "Deterministic presentation harness for template ingestion, editable PPTX generation, rendering, and quality gates.",
+  "type": "module",
+  "main": "src/index.ts",
+  "bin": {
+    "presentation-harness": "./src/cli.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "node --import tsx --test \"src/**/*.test.ts\"",
+    "cli": "tsx src/cli.ts",
+    "ensure-fonts": "tsx src/install-fonts.ts",
+    "install-fonts": "tsx src/install-fonts.ts",
+    "show-all-templates": "tsx src/show-all-templates.ts",
+    "quality-gate": "tsx src/quality-gate.ts",
+    "self-validate": "tsx src/self-validate.ts"
+  },
+  "keywords": [
+    "pptx",
+    "powerpoint",
+    "slides",
+    "presentation",
+    "templates",
+    "generator",
+    "ooxml"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "fast-xml-parser": "^5.9.3",
+    "jszip": "^3.10.1",
+    "pdf-to-img": "^6.2.0",
+    "pptxgenjs": "^4.0.1",
+    "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
