@@ -7,6 +7,7 @@ AIを活用した資料作成とシステム開発を、成果物、再利用部
 初めて参加する場合は、[Lerning/README.md](Lerning/README.md)から読み始めてください。
 
 - 資料作成: [`presentation/`](presentation/)
+- 資料作成用Skill: [`presentation/skills/README.md`](presentation/skills/README.md)
 - システム開発: [`development/`](development/)
 - システム開発用Skill: [`development/skills/README.md`](development/skills/README.md)
 
@@ -19,6 +20,10 @@ Matt Pocockの原文Skillは、開発途中・補助用途を含む全37個を[`
 通常の機能開発では、要求分析、仕様化、設計、計画、TDD、実装、デバッグ、コードレビューの中核8 Skillを使います。調査、文書化、デリバリーは、作業内容に応じて追加します。詳しい選び方と成果物は[Skill一覧](development/skills/README.md)を参照してください。
 
 承認済み計画を複数モデルで実行する場合は、[`orchestrated-development`](development/skills/orchestrated-development/SKILL.md)が、設計、Task実装、二軸レビュー、修正ループ、全体レビューを統括します。CodexではSol/Luna等を委譲時に指定し、Claude Codeでは`.claude/agents/`のOpus/Sonnet定義を使用します。
+
+## 資料作成ハーネス
+
+資料作成は、既存PowerPointの実Slideを再利用するclone-and-fillと、編集可能なObjectを新規作図する方式を組み合わせます。用途別の4 Skillが、Template取込、Template説明、Design System調整、Deck生成とQAを分担します。入口と標準Flowは[`presentation/README.md`](presentation/README.md)を参照してください。
 
 ## 共通原則
 

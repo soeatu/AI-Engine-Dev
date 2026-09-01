@@ -1,0 +1,10 @@
+node_modules/
+tmp/
+templates-preview/
+
+# Generated visual-QA artifacts. Keep final PPTX and text reports.
+projects/*/output/screenshots/
+projects/*/output/**/*.pdf
+examples/**/output/screenshots/
+examples/**/*.pdf
+**/screenshots/*.pdf

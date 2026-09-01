@@ -10,6 +10,16 @@
 - `scripts/`: 生成、変換、検査などを自動化する処理を置く。
 - `tests/`: 内容、表記、リンク、レイアウトなどの検証を置く。
 
+## PowerPointハーネス
+
+PowerPointを作成・改訂・部品化する場合は、最初に[`README.md`](README.md)で作業の入口を選ぶ。
+
+- 実行Engine、Template library、Deck projectは[`harness/`](harness/README.md)を使用する。
+- 資料作成Skillの選択は[`skills/README.md`](skills/README.md)、有効化は[`skills/SETUP.md`](skills/SETUP.md)を参照する。
+- 通常のDeck作成では[`build-presentation`](skills/build-presentation/SKILL.md)を使用し、`source-notes.txt`、Build report、QA reportを成果物と一緒に残す。
+- 既存Templateを利用する場合は実Slideのcloneを優先し、適合しないSlideだけを共通Design Systemで新規作図する。
+- PPTX構造検査、全Slideのrender、1枚ずつの目視確認を別々に実施し、未実施の確認を合格扱いにしない。
+
 ## 作業手順
 
 1. 目的、対象読者、伝えたい結論、利用場面、期限を確認する。
