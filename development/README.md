@@ -28,6 +28,12 @@
 
 作業内容に応じて、[`skills/README.md`](skills/README.md)から必要なSkillだけを選びます。小さく明確な変更では不要な工程を省略できますが、受け入れ条件、検証方法、権限の境界は実装前に確認します。
 
+## 既存Projectへの初回導入
+
+既存Projectへdevelopmentハーネスを初めて適用する場合は、ユーザーが[`bootstrap-development-harness`](skills/bootstrap-development-harness/SKILL.md)を明示的に起動します。このSkillはProjectの実装、設定、既存文書を調査し、Project rootのREADMEと`AGENTS.md`を作成または更新します。局所文書は、親文書だけでは役割や安全な変更方法を判断できないDirectoryに限って追加します。
+
+導入後の機能変更に伴うREADME、設計文書、ADRなどの同期には[`documentation`](skills/documentation/SKILL.md)を使用します。
+
 ## 作業の基本原則
 
 1. 利用者、目的、対象範囲、制約、受け入れ条件を確認する。

@@ -26,6 +26,7 @@
 ### 基本ルーティング
 
 - 標準工程では、`skills/`直下のAI-Engine-Dev統合Skillを使用する。
+- 既存Projectへ初めてdevelopmentハーネスを適用し、Projectの実物に基づくREADMEと`AGENTS.md`を整備する場合は、利用者が`bootstrap-development-harness`を明示的に起動する。
 - 要求が曖昧な場合は`requirements-analysis`、実装可能な振る舞いを確定する場合は`specification`を使う。
 - 責務、境界、データ、Interfaceを決める場合は`architecture-design`、実装順序と検証単位を決める場合は`implementation-planning`を使う。
 - 外部根拠が必要な場合は`research`、実装変更では`tdd`と`implementation`を使う。

@@ -12,24 +12,27 @@
 
 ## Skill全体
 
-このワークスペースには49個のSkill定義があります。同名Skillは統合されず、AI-Engine-Dev統合SkillとMatt Pocock原文Skillの両方が存在します。
+このワークスペースには50個のSkill定義があります。同名Skillは統合されず、AI-Engine-Dev統合SkillとMatt Pocock原文Skillの両方が存在します。
 
 | 区分 | Skill数 | 位置づけ |
 |---|---:|---|
-| AI-Engine-Dev統合Skill | 12 | 標準工程とオーケストレーション |
+| AI-Engine-Dev統合Skill | 13 | 初回導入、標準工程、オーケストレーション |
 | Matt Pocock安定版 | 25 | Engineering 18件とProductivity 7件 |
 | Matt Pocock In progress | 8 | 開発途中のベータ版 |
 | Matt Pocock Misc | 4 | 用途限定の補助Skill |
-| 合計 | 49 | Skill定義の総数 |
+| 合計 | 50 | Skill定義の総数 |
 
 詳細な利用場面と注意点は[Matt Pocock Skillガイド](matt-pocock/SKILL_GUIDE.md)、有効化方法は[セットアップガイド](matt-pocock/SETUP.md)を参照してください。
 
-### AI-Engine-Dev統合Skill（12件）
+### AI-Engine-Dev統合Skill（13件）
 
 以下は、個人、チーム、組織を問わず利用できるAI-Engine-Devの標準工程です。
 
+既存Projectへ初めてdevelopmentハーネスを適用するときは、ユーザーが`bootstrap-development-harness`を明示的に起動します。通常の変更に伴う文書同期には`documentation`を使います。
+
 | 工程 | 統合Skill | 主な参照元 | 主な成果物 |
 |---|---|---|---|
+| 初回導入 | [`bootstrap-development-harness`](bootstrap-development-harness/SKILL.md) | AI-Engine-Dev文書規則; Matt `writing-for-agents` | Project rootと必要なDirectoryのREADME、`AGENTS.md` |
 | 要求 | [`requirements-analysis`](requirements-analysis/SKILL.md) | Addy `interview-me`; Matt `grill-with-docs`, `domain-modeling` | `docs/requirements/<feature>.md` |
 | 仕様 | [`specification`](specification/SKILL.md) | Addy `spec-driven-development`; Matt `to-spec` | `docs/specs/<feature>.md` |
 | 設計 | [`architecture-design`](architecture-design/SKILL.md) | Addy `api-and-interface-design`; Matt `codebase-design`, `domain-modeling` | 設計記録、必要時ADR |
@@ -111,6 +114,9 @@
 ## 標準フロー
 
 ```text
+既存Projectへの初回導入（明示起動時のみ）
+  → bootstrap-development-harness
+
 Issue / 要望
   → requirements-analysis
   → specification

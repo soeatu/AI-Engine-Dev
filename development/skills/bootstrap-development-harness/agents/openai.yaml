@@ -1,0 +1,6 @@
+interface:
+  display_name: "Bootstrap Development Harness"
+  short_description: "既存Projectへ開発ハーネス文書を初期導入する"
+  default_prompt: "Use $bootstrap-development-harness to apply the development harness to this existing project and create or update its README.md and AGENTS.md."
+policy:
+  allow_implicit_invocation: false

@@ -42,6 +42,12 @@
 
 AIが生成したコードや判断には、誤り、脆弱性、既存仕様との不一致が含まれる可能性があります。実装、テスト、ログ、公式文書を確認し、採用理由と検証結果を残します。
 
+## 既存Projectで始める
+
+既存Projectへdevelopmentハーネスを初めて適用するときは、[`bootstrap-development-harness`](../development/skills/bootstrap-development-harness/SKILL.md)を明示的に起動します。Projectの実物を調べたうえで、利用者向けのREADMEとAgent向けの`AGENTS.md`を作成または更新し、必要なDirectoryだけに局所文書を追加します。
+
+初回導入後は、[システム開発用Skill一覧](../development/skills/README.md)から作業工程に合うSkillを選びます。
+
 ## 練習課題
 
 「利用者が問い合わせ内容を登録できる機能」を題材に、利用者、入力項目、正常時の流れ、異常時の流れ、受け入れ条件、必要なテストを整理してください。最後に、まだ確認できていない前提を一覧にします。
