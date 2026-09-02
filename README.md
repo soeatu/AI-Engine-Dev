@@ -11,6 +11,8 @@ AIを活用した資料作成とシステム開発を、成果物、再利用部
 - システム開発: [`development/`](development/)
 - システム開発用Skill: [`development/skills/README.md`](development/skills/README.md)
 
+空の新規Projectで開発ハーネスを使う場合は、[`development/README.md`のportable展開手順](development/README.md#新規projectへ展開する)に従って`development/.`をコピーします。既存Projectへ導入する場合は、同じ文書から[`bootstrap-development-harness`](development/skills/bootstrap-development-harness/SKILL.md)の経路を選びます。
+
 ## システム開発用Skillの考え方
 
 システム開発用Skillは、Addy Osmaniの`agent-skills`を「開発プロセスの骨格」、Matt Pocockの`skills`を「各工程のSoftware Engineering品質」として統合した汎用版です。要求からデリバリーまでを11の工程Skillに整理し、特定の組織、プロジェクト、AI製品に依存しない形で利用できます。既存Projectへの初回導入には[`bootstrap-development-harness`](development/skills/bootstrap-development-harness/SKILL.md)、複数モデルでの計画実行にはオーケストレーションModeを追加で使用します。
@@ -18,6 +20,8 @@ AIを活用した資料作成とシステム開発を、成果物、再利用部
 Matt Pocockの原文Skillは、開発途中・補助用途を含む全37個を[`development/skills/matt-pocock/`](development/skills/matt-pocock/README.md)に別枠で収録しています。AI-Engine-Dev統合Skillは標準工程、原文Skillは原文確認、個別利用、差分確認に使用します。利用を始めるときは[セットアップガイド](development/skills/matt-pocock/SETUP.md)と[Skillガイド](development/skills/matt-pocock/SKILL_GUIDE.md)を参照してください。
 
 通常の機能開発では、要求分析、仕様化、設計、計画、TDD、実装、デバッグ、コードレビューの中核8 Skillを使います。調査、文書化、デリバリーは、作業内容に応じて追加します。詳しい選び方と成果物は[Skill一覧](development/skills/README.md)を参照してください。
+
+設計や実装の構造を共有可能な図として残す場合は、[`archify`](development/skills/archify/README.md)を`architecture-design`の補助として使用できます。図の検証結果と、仕様・実装・本番構成に関する根拠は分けて扱います。
 
 承認済み計画を複数モデルで実行する場合は、[`orchestrated-development`](development/skills/orchestrated-development/SKILL.md)が、設計、Task実装、二軸レビュー、修正ループ、全体レビューを統括します。CodexではSol/Luna等を委譲時に指定し、Claude Codeでは`.claude/agents/`のOpus/Sonnet定義を使用します。
 

@@ -12,7 +12,7 @@
 
 ## Skill全体
 
-このワークスペースには50個のSkill定義があります。同名Skillは統合されず、AI-Engine-Dev統合SkillとMatt Pocock原文Skillの両方が存在します。
+このワークスペースには51個のSkill定義があります。同名Skillは統合されず、AI-Engine-Dev統合SkillとMatt Pocock原文Skillの両方が存在します。Archifyは、工程を置き換えないDevelopment補助Skillとして収録しています。
 
 | 区分 | Skill数 | 位置づけ |
 |---|---:|---|
@@ -20,7 +20,8 @@
 | Matt Pocock安定版 | 25 | Engineering 18件とProductivity 7件 |
 | Matt Pocock In progress | 8 | 開発途中のベータ版 |
 | Matt Pocock Misc | 4 | 用途限定の補助Skill |
-| 合計 | 50 | Skill定義の総数 |
+| Development補助Skill | 1 | 図生成・設計構造の検証 |
+| 合計 | 51 | Skill定義の総数 |
 
 詳細な利用場面と注意点は[Matt Pocock Skillガイド](matt-pocock/SKILL_GUIDE.md)、有効化方法は[セットアップガイド](matt-pocock/SETUP.md)を参照してください。
 
@@ -111,6 +112,14 @@
 
 現リビジョンではSkill本体はありません。廃止されたSkillは削除され、置き換え先は上流のChangesetで案内されます。
 
+### Development補助Skill（1件）
+
+標準工程の成果物を図として共有したり、設計変更のBefore / Delta / Afterを確認したりする場合に使います。標準工程の判断やコードの正しさを自動的に保証するSkillではありません。
+
+| Skill | 呼び出し | 用途 |
+|---|---|---|
+| [`archify`](archify/SKILL.md) | 図が必要な場合 | Architecture、Workflow、Sequence、Data Flow、Lifecycle図の作成・検証・設計差分の比較 |
+
 ## 標準フロー
 
 ```text
@@ -135,6 +144,8 @@ Issue / 要望
 小さく明確な変更では、不要な前工程を省略できます。ただし、実装前に受け入れ条件、検証方法、権限の境界は明確にします。
 
 承認済み計画をCodexまたはClaude Codeの役割別モデルへ委譲して実装する場合は、`orchestrated-development`を実行Modeとして選びます。これは各工程Skillを置き換えず、設計、実装、TDD、レビューの呼び出しと引き継ぎを統括します。
+
+Architecture設計の構造を図で共有する場合は、`architecture-design`の成果物を根拠に`archify`を補助的に使います。実装前後の差分を図で確認する場合は、固定したBefore / HeadのJSONを`archify compare`で比較し、図の検証結果とSpecification・Standardsレビューを分けて記録します。
 
 ## 参照元
 

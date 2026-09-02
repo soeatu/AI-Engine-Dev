@@ -44,6 +44,8 @@ AIが生成したコードや判断には、誤り、脆弱性、既存仕様と
 
 ## 既存Projectで始める
 
+空の新規Projectへ一式を展開する場合は、[`development/README.md`のportable展開手順](../development/README.md#新規projectへ展開する)に従い、隠しDirectoryを含む`development/.`をコピーします。既存Projectへ一括コピーせず、次のbootstrap経路を使い分けます。
+
 既存Projectへdevelopmentハーネスを初めて適用するときは、[`bootstrap-development-harness`](../development/skills/bootstrap-development-harness/SKILL.md)を明示的に起動します。Projectの実物を調べたうえで、利用者向けのREADMEとAgent向けの`AGENTS.md`を作成または更新し、必要なDirectoryだけに局所文書を追加します。
 
 初回導入後は、[システム開発用Skill一覧](../development/skills/README.md)から作業工程に合うSkillを選びます。

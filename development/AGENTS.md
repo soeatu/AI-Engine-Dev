@@ -1,12 +1,14 @@
 # システム開発領域ガイド
 
-このファイルは`development/`配下に適用します。より深い階層に`AGENTS.md`がある場合は、その範囲では局所的な指示を優先します。ルート`AGENTS.md`の共通規則と本ファイルの両方を満たしてください。
+このDirectoryはportable development harnessの正本です。AI-Engine-Dev配下では親のroot `AGENTS.md`と本ファイルを順に適用し、このDirectoryの内容を空の新規Project rootへコピーした場合は本ファイルがroot規則として適用されます。後者でも必要な開発規則、Skill、Template、検証入口がこのDirectory内で完結するよう、Pathはportable root基準で記載します。
+
+このファイルはharness root配下に適用します。より深い階層に`AGENTS.md`がある場合は、その範囲では局所的な指示を優先します。AI-Engine-Dev内では親root `AGENTS.md`の共通規則と本ファイルの両方を満たしてください。
 
 この領域では、要求整理、仕様化、設計、計画、調査、実装、テスト、障害調査、レビュー、文書化、デリバリーを扱います。成果物、検証、関連文書を同じ変更単位で整合させます。
 
 ## フォルダの役割
 
-- `projects/`: 個別システムまたは機能ごとの成果物とソースコードを置く。
+- `projects/`: AI-Engine-Dev内で複数Projectを管理するときに、個別システムまたは機能ごとの成果物とソースコードを置く。portable rootでは対象Projectの既存構造を維持し、ここへ移動しない。
 - `skills/`: 開発工程で繰り返し使うAI向け手順を置く。Skillの選択と標準フローは`skills/README.md`を正本とする。
 - `scripts/`: Build、Test、解析などを自動化する処理を置く。
 - `templates/`: 要求、設計、Test、調査報告などのひな型を置く。
