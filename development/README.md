@@ -2,9 +2,21 @@
 
 このフォルダは、AIを活用した要求分析、設計、実装、テスト、障害調査、デリバリーを行うための作業領域です。
 
+## 新規Projectへ展開する
+
+`development/`自身がportable harnessの正本です。空の新規Projectへ展開する場合は、AI-Engine-Devの親Directoryで次を実行します。
+
+```bash
+cp -R /path/to/AI-Engine-Dev/development/. /path/to/new-project/
+```
+
+`development/.`の末尾の`.`を省略しないでください。`.agents/`と`.claude/`を含む隠しDirectoryもコピーされ、コピー先がProject rootとしてそのまま使えます。コピー後は対象Projectの既存構造を維持し、`projects/`へSourceを移動する必要はありません。`projects/`はAI-Engine-Dev内で複数Projectを管理するときだけ使います。
+
+この操作は空の新規Project専用です。既存Projectへ一括コピーせず、既存構造と文書を調査する[`bootstrap-development-harness`](skills/bootstrap-development-harness/SKILL.md)を明示的に起動してください。新規Projectと既存Projectの導入判断はこの節を正本とします。
+
 ## フォルダ構成
 
-- [`projects/`](projects/): 個別システムや機能ごとの成果物、仕様、ソースコードを置く。
+- [`projects/`](projects/): AI-Engine-Dev内で複数Projectを管理するときだけ、個別システムや機能ごとの成果物、仕様、ソースコードを置く。portable rootでは対象Projectの標準構造（例: `src/`）を維持し、ここへ移動しない。
 - [`skills/`](skills/): 開発工程で繰り返し使うAI向け手順を置く。Skillの一覧と選び方は[`skills/README.md`](skills/README.md)を参照する。
 - [`scripts/`](scripts/): ビルド、テスト、解析などの自動化処理を置く。
 - [`templates/`](templates/): 要求、仕様、設計、テスト、調査報告などのひな型を置く。
@@ -27,6 +39,8 @@
 ```
 
 作業内容に応じて、[`skills/README.md`](skills/README.md)から必要なSkillだけを選びます。小さく明確な変更では不要な工程を省略できますが、受け入れ条件、検証方法、権限の境界は実装前に確認します。
+
+Architecture、Workflow、Sequence、Data Flow、Lifecycleを共有可能な図として残す場合は、[`archify`](skills/archify/README.md)を`architecture-design`の補助として使えます。Archifyの検証成功は、設計判断や本番構成の正しさそのものを証明しないため、根拠とレビュー結果を別に記録します。
 
 ## 既存Projectへの初回導入
 

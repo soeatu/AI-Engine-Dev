@@ -24,7 +24,7 @@ Controllerはコードを直接実装せず、設計、Task Brief、実装報告
 
 ## 実行記録
 
-プロジェクト規約がなければ、`docs/orchestration/<feature>/`を作業記録のRootとし、`development/templates/orchestration/`のひな型から次を作る。
+プロジェクト規約がなければ、`docs/orchestration/<feature>/`を作業記録のRootとし、harness root（このSkillの親`skills/`と同じ階層にある`templates/`を持つRoot）の`templates/orchestration/`から次を作る。コピー後もAI-Engine-Dev内でも、実行中のharness rootを基準に同じ相対Pathを使う。
 
 - `ledger.md`: Task、状態、担当モデル、基準点、判断、残課題
 - `task-<N>-brief.md`: 実装担当とレビュアーが共有する唯一の要求

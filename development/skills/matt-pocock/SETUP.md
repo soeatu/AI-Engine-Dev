@@ -1,6 +1,6 @@
 # Matt Pocock Skills セットアップガイド
 
-この文書は、`development/skills/matt-pocock/` に収録したMatt PocockのSkillを、AI-Engine-Devで利用できるようにする手順を説明します。
+この文書は、Matt PocockのSkillをAI-Engine-Dev rootとportable rootの両方で利用できるようにする手順を説明します。コマンドは、対象rootに`skills/matt-pocock/`があるportable layoutと、親rootに`development/skills/matt-pocock/`があるAI-Engine-Dev layoutを機械的に判定します。
 
 ## 先に理解すること
 
@@ -14,7 +14,7 @@ CodexのSkill仕様と探索場所は[OpenAI公式ドキュメント](https://le
 
 ## 推奨構成
 
-原文を`development/skills/matt-pocock/`の一か所だけで管理し、利用するAIごとのSkillディレクトリからシンボリックリンクを張ります。
+原文を`skills/matt-pocock/`（AI-Engine-Dev内では`development/skills/matt-pocock/`）の一か所だけで管理し、利用するAIごとのSkillディレクトリからシンボリックリンクを張ります。
 
 ```text
 development/skills/matt-pocock/   原文を保管する場所
@@ -34,7 +34,16 @@ development/skills/matt-pocock/   原文を保管する場所
 ```bash
 mkdir -p .agents/skills
 
-for skill_file in development/skills/matt-pocock/{engineering,productivity}/*/SKILL.md; do
+if [ -d skills/matt-pocock ]; then
+  harness_root=.
+elif [ -d development/skills/matt-pocock ]; then
+  harness_root=development
+else
+  printf 'error: run this command at a portable root or AI-Engine-Dev root\n' >&2
+  exit 1
+fi
+
+for skill_file in "$harness_root"/skills/matt-pocock/{engineering,productivity}/*/SKILL.md; do
   skill_dir=${skill_file%/SKILL.md}
   skill_name=${skill_dir##*/}
   link=.agents/skills/$skill_name
@@ -52,7 +61,16 @@ done
 ```bash
 mkdir -p .agents/skills
 
-for skill_file in development/skills/matt-pocock/{engineering,productivity,in-progress,misc}/*/SKILL.md; do
+if [ -d skills/matt-pocock ]; then
+  harness_root=.
+elif [ -d development/skills/matt-pocock ]; then
+  harness_root=development
+else
+  printf 'error: run this command at a portable root or AI-Engine-Dev root\n' >&2
+  exit 1
+fi
+
+for skill_file in "$harness_root"/skills/matt-pocock/{engineering,productivity,in-progress,misc}/*/SKILL.md; do
   skill_dir=${skill_file%/SKILL.md}
   skill_name=${skill_dir##*/}
   link=.agents/skills/$skill_name
@@ -77,12 +95,21 @@ CodexはSkillの変更を自動検出します。表示されない場合はCode
 
 ## Claude Codeで有効化する
 
-このリポジトリに収録した原文を使う場合は、リポジトリルートで次を実行します。
+このリポジトリに収録した原文を使う場合は、portable rootまたはAI-Engine-Dev rootで次を実行します。
 
 ```bash
 mkdir -p .claude/skills
 
-for skill_file in development/skills/matt-pocock/{engineering,productivity,in-progress,misc}/*/SKILL.md; do
+if [ -d skills/matt-pocock ]; then
+  harness_root=.
+elif [ -d development/skills/matt-pocock ]; then
+  harness_root=development
+else
+  printf 'error: run this command at a portable root or AI-Engine-Dev root\n' >&2
+  exit 1
+fi
+
+for skill_file in "$harness_root"/skills/matt-pocock/{engineering,productivity,in-progress,misc}/*/SKILL.md; do
   skill_dir=${skill_file%/SKILL.md}
   skill_name=${skill_dir##*/}
   link=.claude/skills/$skill_name
