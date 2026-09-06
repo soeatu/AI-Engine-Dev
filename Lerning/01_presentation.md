@@ -50,6 +50,8 @@
 
 実行手順は[`presentation/README.md`](../presentation/README.md)、Skillの選び方は[`presentation/skills/README.md`](../presentation/skills/README.md)を参照してください。
 
+`presentation/`を別Projectへコピーして利用する場合は、コピー先のProject rootで`./presentation/scripts/setup-skills.sh`を実行します。Skill登録とPowerPointハーネスの依存関係準備は別工程なので、続けて[`presentation/skills/SETUP.md`](../presentation/skills/SETUP.md)の手順を確認してください。
+
 ## AIが支援できること
 
 - 読み手に合わせた構成案や見出し案の作成

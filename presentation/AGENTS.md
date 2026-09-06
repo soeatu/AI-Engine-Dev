@@ -16,6 +16,7 @@ PowerPointを作成・改訂・部品化する場合は、最初に[`README.md`]
 
 - 実行Engine、Template library、Deck projectは[`harness/`](harness/README.md)を使用する。
 - 資料作成Skillの選択は[`skills/README.md`](skills/README.md)、有効化は[`skills/SETUP.md`](skills/SETUP.md)を参照する。
+- `presentation/`を別Projectへコピーした場合は、コピー先で[`scripts/setup-skills.sh`](scripts/setup-skills.sh)を実行してCodexとClaude Codeの検出先へSkillを登録する。
 - 通常のDeck作成では[`build-presentation`](skills/build-presentation/SKILL.md)を使用し、`source-notes.txt`、Build report、QA reportを成果物と一緒に残す。
 - 既存Templateを利用する場合は実Slideのcloneを優先し、適合しないSlideだけを共通Design Systemで新規作図する。
 - PPTX構造検査、全Slideのrender、1枚ずつの目視確認を別々に実施し、未実施の確認を合格扱いにしない。
