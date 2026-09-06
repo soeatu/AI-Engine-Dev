@@ -10,6 +10,7 @@
 | 既存PPTXのスライドを部品化する | [`ingest-slide-templates`](skills/ingest-slide-templates/SKILL.md) |
 | 部品の用途・容量・編集項目を記述する | [`describe-slide-template`](skills/describe-slide-template/SKILL.md) |
 | 色・書体・ロゴ・グリッドをブランドへ合わせる | [`customize-presentation-design`](skills/customize-presentation-design/SKILL.md) |
+| UI/UX設計知識からStyle・Color・Typography・Accessibilityの候補を探す | [`ui-ux-pro-max`](skills/ui-ux-pro-max/SKILL.md) |
 | 実行環境を準備する | [ハーネスREADME](harness/README.md) |
 | Codex / Claude CodeへSkillを有効化する | [セットアップ](skills/SETUP.md) |
 
@@ -33,6 +34,8 @@ PPTX・Build report・QA report・出典台帳を引き渡し
 
 テンプレートがあるという理由だけで使用せず、スライドの役割と情報量が合う場合に選びます。社内テンプレートを利用する場合は、利用権限を確認した原本から必要なスライドを取り込んでください。
 
+`ui-ux-pro-max`は、Style、Color、Typography、Accessibilityなどの候補を検索する補助Skillです。PowerPoint固有の構成判断、Template fidelity、出典管理、PPTX構造検査、全Slideの表示QAは`build-presentation`とハーネスの手順で別に確認します。
+
 ## フォルダ
 
 - `harness/`: TypeScriptエンジン、CLI、Design System、テンプレートライブラリ、Deck project。
@@ -49,5 +52,6 @@ PPTX・Build report・QA report・出典台帳を引き渡し
 - OpenAIのCodex Presentations Skill: 読者起点の構成、出典、テンプレート忠実性、全スライド表示QA。
 - Anthropicの公式PPTX Skill: 作成・編集・読取の入口、PptxGenJS / OOXMLの注意点、構造検査と表示QA。
 - [alfonsograziano/pptx-gen](https://github.com/alfonsograziano/pptx-gen): テンプレート取込、clone-and-fill、新規作図、4 Skill分割、決定論的build script。
+- [NextLevelBuilder/UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): Style、Color、Typography、Accessibility、Interaction、Stack別UI実装の検索型設計知識。
 
 取り込んだコードと参照Revisionは [Third-Party Notices](skills/THIRD_PARTY_NOTICES.md) に記録しています。
