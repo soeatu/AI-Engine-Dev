@@ -34,6 +34,14 @@ SOFTWARE.
 
 The bundled Lucide icon set under `presentation/harness/assets/icons/` is distributed under the ISC License. See [its license](../harness/assets/icons/LICENSE).
 
+## NextLevelBuilder — UI/UX Pro Max
+
+Source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+
+Reference revision: `b2ac9b2aa1c3bd6bb748b4b0f79c90319d50e0da` (`2.13.0`, verified 2026-09-06)
+
+The complete vendored Skill package is in [`ui-ux-pro-max/`](ui-ux-pro-max/). It includes the Skill definition, Python runtime, data, references, maintenance scripts, tests, fixtures, and the upstream MIT [`LICENSE`](ui-ux-pro-max/LICENSE). Local changes only adapt invocation and maintenance paths to the vendored directory layout.
+
 ## Reference-only official skills
 
 The following official skills were reviewed for workflow and quality principles. Their files are not redistributed in this workspace:

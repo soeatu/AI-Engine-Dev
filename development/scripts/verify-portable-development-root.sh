@@ -11,6 +11,7 @@ skills=(
   bootstrap-development-harness requirements-analysis specification
   architecture-design implementation-planning research tdd implementation
   debugging code-review documentation delivery orchestrated-development archify
+  ui-ux-pro-max
 )
 agents=(architecture-designer implementation-worker task-reviewer final-reviewer)
 agent_skills=(
@@ -71,7 +72,7 @@ if rg -n 'development/templates|/Users/|/home/' "$tmp_root/skills/orchestrated-d
 fi
 
 # Check the primary local Markdown destinations used by the portable README.
-for path in skills/README.md skills/bootstrap-development-harness/SKILL.md skills/orchestrated-development/SKILL.md; do
+for path in skills/README.md skills/bootstrap-development-harness/SKILL.md skills/orchestrated-development/SKILL.md skills/ui-ux-pro-max/README.md; do
   require_file "$tmp_root/$path"
 done
 

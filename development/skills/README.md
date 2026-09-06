@@ -12,7 +12,7 @@
 
 ## Skill全体
 
-このワークスペースには51個のSkill定義があります。同名Skillは統合されず、AI-Engine-Dev統合SkillとMatt Pocock原文Skillの両方が存在します。Archifyは、工程を置き換えないDevelopment補助Skillとして収録しています。
+このワークスペースには52個のSkill定義があります。同名Skillは統合されず、AI-Engine-Dev統合SkillとMatt Pocock原文Skillの両方が存在します。ArchifyとUI/UX Pro Maxは、工程を置き換えないDevelopment補助Skillとして収録しています。
 
 | 区分 | Skill数 | 位置づけ |
 |---|---:|---|
@@ -20,8 +20,8 @@
 | Matt Pocock安定版 | 25 | Engineering 18件とProductivity 7件 |
 | Matt Pocock In progress | 8 | 開発途中のベータ版 |
 | Matt Pocock Misc | 4 | 用途限定の補助Skill |
-| Development補助Skill | 1 | 図生成・設計構造の検証 |
-| 合計 | 51 | Skill定義の総数 |
+| Development補助Skill | 2 | 図生成・設計構造の検証、UI/UX設計知識の検索 |
+| 合計 | 52 | Skill定義の総数 |
 
 詳細な利用場面と注意点は[Matt Pocock Skillガイド](matt-pocock/SKILL_GUIDE.md)、有効化方法は[セットアップガイド](matt-pocock/SETUP.md)を参照してください。
 
@@ -112,13 +112,14 @@
 
 現リビジョンではSkill本体はありません。廃止されたSkillは削除され、置き換え先は上流のChangesetで案内されます。
 
-### Development補助Skill（1件）
+### Development補助Skill（2件）
 
 標準工程の成果物を図として共有したり、設計変更のBefore / Delta / Afterを確認したりする場合に使います。標準工程の判断やコードの正しさを自動的に保証するSkillではありません。
 
 | Skill | 呼び出し | 用途 |
 |---|---|---|
 | [`archify`](archify/SKILL.md) | 図が必要な場合 | Architecture、Workflow、Sequence、Data Flow、Lifecycle図の作成・検証・設計差分の比較 |
+| [`ui-ux-pro-max`](ui-ux-pro-max/SKILL.md) | UI/UX設計・実装・レビュー時 | Style、Color、Typography、Accessibility、Interaction、Responsive layout、Chart、22 Stackの設計知識を検索 |
 
 ## 標準フロー
 
@@ -147,10 +148,13 @@ Issue / 要望
 
 Architecture設計の構造を図で共有する場合は、`architecture-design`の成果物を根拠に`archify`を補助的に使います。実装前後の差分を図で確認する場合は、固定したBefore / HeadのJSONを`archify compare`で比較し、図の検証結果とSpecification・Standardsレビューを分けて記録します。
 
+UI/UXを扱う工程では、対象Stackと観測したいUX outcomeを明確にして`ui-ux-pro-max`を補助的に使います。検索結果だけで仕様適合、Accessibility適合、実装品質を確定せず、正本仕様、一次資料、Test、Simulator・実機またはBrowserでの確認と分けて記録します。
+
 ## 参照元
 
 - [Addy Osmani — agent-skills](https://github.com/addyosmani/agent-skills)
 - [Matt Pocock — skills](https://github.com/mattpocock/skills)
 - [Jesse Vincent — obra/superpowers](https://github.com/obra/superpowers)
+- [NextLevelBuilder — UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
 
 このディレクトリ直下の統合Skillは、上記リポジトリの考え方を、特定の組織やプロジェクトに依存しないワークフローとして再構成したものです。Matt Pocockの原文Skill 37個は[`matt-pocock/`](matt-pocock/README.md)に収録しています。有効化は[セットアップガイド](matt-pocock/SETUP.md)、各Skillの選び方は[Skillガイド](matt-pocock/SKILL_GUIDE.md)を参照してください。ライセンス表記は[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)にあります。

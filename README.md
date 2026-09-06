@@ -23,11 +23,13 @@ Matt Pocockの原文Skillは、開発途中・補助用途を含む全37個を[`
 
 設計や実装の構造を共有可能な図として残す場合は、[`archify`](development/skills/archify/README.md)を`architecture-design`の補助として使用できます。図の検証結果と、仕様・実装・本番構成に関する根拠は分けて扱います。
 
+UI/UXの設計・実装・レビューでは、[`ui-ux-pro-max`](development/skills/ui-ux-pro-max/README.md)を標準工程の補助として使用できます。資料作成側にも同じ固定RevisionのPackageを[`presentation/skills/ui-ux-pro-max`](presentation/skills/ui-ux-pro-max/README.md)へ収録しており、スライドの視覚設計を検討するときは`build-presentation`と表示QAを維持したまま併用します。
+
 承認済み計画を複数モデルで実行する場合は、[`orchestrated-development`](development/skills/orchestrated-development/SKILL.md)が、設計、Task実装、二軸レビュー、修正ループ、全体レビューを統括します。CodexではSol/Luna等を委譲時に指定し、Claude Codeでは`.claude/agents/`のOpus/Sonnet定義を使用します。
 
 ## 資料作成ハーネス
 
-資料作成は、既存PowerPointの実Slideを再利用するclone-and-fillと、編集可能なObjectを新規作図する方式を組み合わせます。用途別の4 Skillが、Template取込、Template説明、Design System調整、Deck生成とQAを分担します。入口と標準Flowは[`presentation/README.md`](presentation/README.md)を参照してください。
+資料作成は、既存PowerPointの実Slideを再利用するclone-and-fillと、編集可能なObjectを新規作図する方式を組み合わせます。用途別の4つの中核SkillがTemplate取込、Template説明、Design System調整、Deck生成とQAを分担し、UI/UX Pro Maxを視覚設計の検索補助として併用できます。入口と標準Flowは[`presentation/README.md`](presentation/README.md)を参照してください。
 
 ## 共通原則
 

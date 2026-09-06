@@ -42,6 +42,8 @@ cp -R /path/to/AI-Engine-Dev/development/. /path/to/new-project/
 
 Architecture、Workflow、Sequence、Data Flow、Lifecycleを共有可能な図として残す場合は、[`archify`](skills/archify/README.md)を`architecture-design`の補助として使えます。Archifyの検証成功は、設計判断や本番構成の正しさそのものを証明しないため、根拠とレビュー結果を別に記録します。
 
+Web、Mobile、Desktop UIの設計、実装、Accessibility、Responsive layout、Typography、Color、Chartを検討する場合は、[`ui-ux-pro-max`](skills/ui-ux-pro-max/README.md)を該当する標準工程の補助として使えます。検索結果は候補と確認観点として扱い、要求・仕様、Platform一次資料、Test、実機確認を別に残します。
+
 ## 既存Projectへの初回導入
 
 既存Projectへdevelopmentハーネスを初めて適用する場合は、ユーザーが[`bootstrap-development-harness`](skills/bootstrap-development-harness/SKILL.md)を明示的に起動します。このSkillはProjectの実装、設定、既存文書を調査し、Project rootのREADMEと`AGENTS.md`を作成または更新します。局所文書は、親文書だけでは役割や安全な変更方法を判断できないDirectoryに限って追加します。
