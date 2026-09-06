@@ -1,6 +1,6 @@
 ---
 name: build-presentation
-description: Build or revise an editable PowerPoint deck with the presentation harness under presentation/harness. Use when a user asks to create, regenerate, or visually QA a .pptx from a brief, notes, evidence, or an imported template library. Do not use only to import or document templates, or only to change the shared brand system.
+description: Build or revise an editable PowerPoint deck with the presentation harness under presentation/harness. Use when a user asks to create, add a section to, regenerate, or visually QA a .pptx from a brief, notes, evidence, or an imported template library. Do not use only to import or document templates, or only to change the shared brand system.
 ---
 
 # Build an editable presentation
@@ -23,15 +23,20 @@ Use a stable kebab-case deck id. Never overwrite another project unless the user
 
 ## Before building
 
-1. Confirm or infer the audience, purpose, central takeaway, requested evidence, output name, and deadline or meeting context. Ask only about a missing choice that materially changes the deck.
-2. Read [`references/planning-and-sources.md`](references/planning-and-sources.md). Record facts, assumptions, unresolved items, and source URLs or local paths in `source-notes.txt`. Do not invent numbers, quotations, outcomes, people, or implemented capabilities.
-3. Read `HARNESS_ROOT/design.md`.
-4. Inspect candidate `templates/*/description.md`, `template.yml`, `fields.yml`, and screenshots. Use a template only when its narrative role and content capacity fit.
-5. Define one narrative job and one audience-facing takeaway title per slide. Vary slide silhouettes while keeping the visual system coherent.
+1. Read [`references/planning-and-sources.md`](references/planning-and-sources.md) and apply its understanding gate. Determine whether this is a new deck or a revision. For a revision, inspect the current `brief.txt`, `build.ts`, source ledger, output deck, and rendered slides before proposing changes.
+2. Create or update `brief.txt` with the audience, purpose, use context, expected audience decision or action, central takeaway, scope, constraints, deadline or meeting context, requested evidence, and unresolved items.
+3. Present a concise understanding summary to the user and obtain confirmation before authoring the narrative, slide copy, `build.ts`, or PPTX. If a missing answer can materially change the deck, ask for it and pause deck creation. Minor details may remain explicitly unresolved.
+4. For an inserted section, record its section id, communication job, insertion anchor, transition from the preceding section, transition to the following section, evidence, and expected effect on existing slides. Preserve existing sections unless the user approves broader revision.
+5. Record facts, assumptions, unresolved items, and source URLs or local paths in `source-notes.txt`. Do not invent numbers, quotations, outcomes, people, or implemented capabilities.
+6. Read `HARNESS_ROOT/design.md`.
+7. Inspect candidate `templates/*/description.md`, `template.yml`, `fields.yml`, and screenshots. Use a template only when its narrative role and content capacity fit.
+8. Define one communication job per section and one audience-facing takeaway title per slide. Vary slide silhouettes while keeping the visual system coherent.
 
 ## Build
 
 Write a deterministic TypeScript `build.ts`. It must not call a model, network service, random generator, or changing clock during rendering.
+
+Keep each section as a contiguous, clearly labeled block in `build.ts`, or move large sections into deck-local functions imported by `build.ts`. The call order is the canonical slide order. To insert a section, place its block or function call at the agreed anchor; do not rewrite unaffected sections only to add new material.
 
 ```ts
 import { Presentation, md } from "../../src/index.js";
