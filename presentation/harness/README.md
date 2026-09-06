@@ -48,7 +48,7 @@ npm run quality-gate -- --project projects/<deck-id>
 projects/<deck-id>/
 ├── build.ts
 ├── custom.ts             # 必要な場合のみ
-├── brief.txt
+├── brief.txt              # 理解確認とセクション構成の正本
 ├── source-notes.txt
 ├── inputs/
 └── output/
@@ -57,5 +57,7 @@ projects/<deck-id>/
     ├── qa-report.md
     └── screenshots/
 ```
+
+`brief.txt` の理解確認を完了してから `build.ts` を作成・変更します。`build.ts` ではセクションを連続したBlockまたはDeck固有の関数として分け、呼び出し順をSlide順の正本にします。作成途中の資料へ差し込む場合は、合意した位置へセクションのBlockまたは関数呼び出しを追加し、全体を再生成・再検証します。
 
 通常の資料作成手順は [build-presentation Skill](../skills/build-presentation/SKILL.md) を参照してください。
