@@ -1,0 +1,243 @@
+templateId: guide-skill-catalog
+librarySlide: 0
+fields:
+  - id: skill-catalog
+    type: text
+    shapeId: "2"
+    name: Text 0
+    originalText: SKILL CATALOG
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.3
+    w: 8.75
+    h: 0.22
+  - id: catalog-title-with-one-clear-takeawa
+    type: text
+    shapeId: "3"
+    name: Text 1
+    originalText: Catalog title with one clear takeaway
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.72
+    w: 8.75
+    h: 0.6
+  - id: category
+    type: text
+    shapeId: "5"
+    name: Text 3
+    originalText: Category
+    preserveStyleByDefault: true
+    x: 0.87
+    y: 1.62
+    w: 1.28
+    h: 0.22
+  - id: skill
+    type: text
+    shapeId: "7"
+    name: Text 5
+    originalText: Skill
+    preserveStyleByDefault: true
+    x: 2.39
+    y: 1.62
+    w: 1.61
+    h: 0.22
+  - id: use-when
+    type: text
+    shapeId: "9"
+    name: Text 7
+    originalText: Use when
+    preserveStyleByDefault: true
+    x: 4.24
+    y: 1.62
+    w: 2.91
+    h: 0.22
+  - id: primary-output
+    type: text
+    shapeId: "11"
+    name: Text 9
+    originalText: Primary output
+    preserveStyleByDefault: true
+    x: 7.39
+    y: 1.62
+    w: 1.99
+    h: 0.22
+  - id: category-one
+    type: text
+    shapeId: "13"
+    name: Text 11
+    originalText: CATEGORY ONE
+    preserveStyleByDefault: true
+    x: 0.87
+    y: 2.13
+    w: 1.28
+    h: 0.38
+  - id: skill-name
+    type: text
+    shapeId: "15"
+    name: Text 13
+    originalText: Skill name
+    preserveStyleByDefault: true
+    x: 2.39
+    y: 2.13
+    w: 1.61
+    h: 0.38
+  - id: when-this-skill-fits
+    type: text
+    shapeId: "17"
+    name: Text 15
+    originalText: When this Skill fits
+    preserveStyleByDefault: true
+    x: 4.24
+    y: 2.13
+    w: 2.91
+    h: 0.38
+  - id: primary-output-2
+    type: text
+    shapeId: "19"
+    name: Text 17
+    originalText: Primary output
+    preserveStyleByDefault: true
+    x: 7.39
+    y: 2.13
+    w: 1.99
+    h: 0.38
+  - id: category-two
+    type: text
+    shapeId: "21"
+    name: Text 19
+    originalText: CATEGORY TWO
+    preserveStyleByDefault: true
+    x: 0.87
+    y: 2.81
+    w: 1.28
+    h: 0.38
+  - id: skill-name-2
+    type: text
+    shapeId: "23"
+    name: Text 21
+    originalText: Skill name
+    preserveStyleByDefault: true
+    x: 2.39
+    y: 2.81
+    w: 1.61
+    h: 0.38
+  - id: when-this-skill-fits-2
+    type: text
+    shapeId: "25"
+    name: Text 23
+    originalText: When this Skill fits
+    preserveStyleByDefault: true
+    x: 4.24
+    y: 2.81
+    w: 2.91
+    h: 0.38
+  - id: primary-output-3
+    type: text
+    shapeId: "27"
+    name: Text 25
+    originalText: Primary output
+    preserveStyleByDefault: true
+    x: 7.39
+    y: 2.81
+    w: 1.99
+    h: 0.38
+  - id: category-three
+    type: text
+    shapeId: "29"
+    name: Text 27
+    originalText: CATEGORY THREE
+    preserveStyleByDefault: true
+    x: 0.87
+    y: 3.49
+    w: 1.28
+    h: 0.38
+  - id: skill-name-3
+    type: text
+    shapeId: "31"
+    name: Text 29
+    originalText: Skill name
+    preserveStyleByDefault: true
+    x: 2.39
+    y: 3.49
+    w: 1.61
+    h: 0.38
+  - id: when-this-skill-fits-3
+    type: text
+    shapeId: "33"
+    name: Text 31
+    originalText: When this Skill fits
+    preserveStyleByDefault: true
+    x: 4.24
+    y: 3.49
+    w: 2.91
+    h: 0.38
+  - id: primary-output-4
+    type: text
+    shapeId: "35"
+    name: Text 33
+    originalText: Primary output
+    preserveStyleByDefault: true
+    x: 7.39
+    y: 3.49
+    w: 1.99
+    h: 0.38
+  - id: category-four
+    type: text
+    shapeId: "37"
+    name: Text 35
+    originalText: CATEGORY FOUR
+    preserveStyleByDefault: true
+    x: 0.87
+    y: 4.17
+    w: 1.28
+    h: 0.38
+  - id: skill-name-4
+    type: text
+    shapeId: "39"
+    name: Text 37
+    originalText: Skill name
+    preserveStyleByDefault: true
+    x: 2.39
+    y: 4.17
+    w: 1.61
+    h: 0.38
+  - id: when-this-skill-fits-4
+    type: text
+    shapeId: "41"
+    name: Text 39
+    originalText: When this Skill fits
+    preserveStyleByDefault: true
+    x: 4.24
+    y: 4.17
+    w: 2.91
+    h: 0.38
+  - id: primary-output-5
+    type: text
+    shapeId: "43"
+    name: Text 41
+    originalText: Primary output
+    preserveStyleByDefault: true
+    x: 7.39
+    y: 4.17
+    w: 1.99
+    h: 0.38
+  - id: ai-engine-dev-guide
+    type: text
+    shapeId: "45"
+    name: Text 43
+    originalText: AI-ENGINE-DEV GUIDE
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 5.16
+    w: 2.5
+    h: 0.18
+  - id: "00"
+    type: text
+    shapeId: "46"
+    name: Text 44
+    originalText: "00"
+    preserveStyleByDefault: true
+    x: 9.05
+    y: 5.16
+    w: 0.42
+    h: 0.18

@@ -1,0 +1,163 @@
+templateId: guide-step-by-step
+librarySlide: 0
+fields:
+  - id: step-by-step
+    type: text
+    shapeId: "2"
+    name: Text 0
+    originalText: STEP BY STEP
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.3
+    w: 8.75
+    h: 0.22
+  - id: four-step-procedure
+    type: text
+    shapeId: "3"
+    name: Text 1
+    originalText: Four-step procedure
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.72
+    w: 8.75
+    h: 0.6
+  - id: "1"
+    type: text
+    shapeId: "5"
+    name: Text 3
+    originalText: "1"
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 1.52
+    w: 0.5
+    h: 0.23
+  - id: read-the-entrypoint
+    type: text
+    shapeId: "6"
+    name: Text 4
+    originalText: Read the entrypoint
+    preserveStyleByDefault: true
+    x: 1.5
+    y: 1.44
+    w: 2.65
+    h: 0.33
+  - id: open-the-nearest-readme-and-agents-m
+    type: text
+    shapeId: "7"
+    name: Text 5
+    originalText: Open the nearest README and AGENTS.md.
+    preserveStyleByDefault: true
+    x: 4.25
+    y: 1.44
+    w: 5.25
+    h: 0.42
+  - id: "2"
+    type: text
+    shapeId: "10"
+    name: Text 8
+    originalText: "2"
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 2.34
+    w: 0.5
+    h: 0.23
+  - id: fix-the-brief
+    type: text
+    shapeId: "11"
+    name: Text 9
+    originalText: Fix the brief
+    preserveStyleByDefault: true
+    x: 1.5
+    y: 2.26
+    w: 2.65
+    h: 0.33
+  - id: record-scope-evidence-constraints-an
+    type: text
+    shapeId: "12"
+    name: Text 10
+    originalText: Record scope, evidence, constraints, and authority.
+    preserveStyleByDefault: true
+    x: 4.25
+    y: 2.26
+    w: 5.25
+    h: 0.42
+  - id: "3"
+    type: text
+    shapeId: "15"
+    name: Text 13
+    originalText: "3"
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 3.16
+    w: 0.5
+    h: 0.23
+  - id: run-the-skill
+    type: text
+    shapeId: "16"
+    name: Text 14
+    originalText: Run the Skill
+    preserveStyleByDefault: true
+    x: 1.5
+    y: 3.08
+    w: 2.65
+    h: 0.33
+  - id: create-the-artifact-with-its-require
+    type: text
+    shapeId: "17"
+    name: Text 15
+    originalText: Create the artifact with its required workflow.
+    preserveStyleByDefault: true
+    x: 4.25
+    y: 3.08
+    w: 5.25
+    h: 0.42
+  - id: "4"
+    type: text
+    shapeId: "20"
+    name: Text 18
+    originalText: "4"
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 3.98
+    w: 0.5
+    h: 0.23
+  - id: verify-and-hand-off
+    type: text
+    shapeId: "21"
+    name: Text 19
+    originalText: Verify and hand off
+    preserveStyleByDefault: true
+    x: 1.5
+    y: 3.9
+    w: 2.65
+    h: 0.33
+  - id: separate-completed-checks-from-remai
+    type: text
+    shapeId: "22"
+    name: Text 20
+    originalText: Separate completed checks from remaining risks.
+    preserveStyleByDefault: true
+    x: 4.25
+    y: 3.9
+    w: 5.25
+    h: 0.42
+  - id: ai-engine-dev-guide
+    type: text
+    shapeId: "24"
+    name: Text 22
+    originalText: AI-ENGINE-DEV GUIDE
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 5.16
+    w: 2.5
+    h: 0.18
+  - id: "00"
+    type: text
+    shapeId: "25"
+    name: Text 23
+    originalText: "00"
+    preserveStyleByDefault: true
+    x: 9.05
+    y: 5.16
+    w: 0.42
+    h: 0.18

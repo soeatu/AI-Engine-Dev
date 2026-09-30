@@ -1,0 +1,31 @@
+id: guide-process-flow
+name: Guide Process Flow
+kind: cloned-slide
+status: draft
+version: 1.0.0
+source:
+  deck: projects/ai-engine-dev-workspace-guide/output/template-deck.pptx
+  slide: 4
+  importedOn: 2026-09-06
+fonts: []
+variables:
+  - workflow
+  - five-stage-workflow
+  - "01"
+  - input
+  - goal-audience-evidence
+  - "02"
+  - select
+  - folder-and-skill
+  - "03"
+  - work
+  - artifact-and-source
+  - "04"
+  - verify
+  - tests-and-visual-qa
+  - "05"
+  - handoff
+  - results-and-risks
+  - ai-engine-dev-guide
+  - "00"
+tags: []

@@ -1,0 +1,28 @@
+id: guide-step-by-step
+name: Guide Step By Step
+kind: cloned-slide
+status: draft
+version: 1.0.0
+source:
+  deck: projects/ai-engine-dev-workspace-guide/output/template-deck.pptx
+  slide: 7
+  importedOn: 2026-09-06
+fonts: []
+variables:
+  - step-by-step
+  - four-step-procedure
+  - "1"
+  - read-the-entrypoint
+  - open-the-nearest-readme-and-agents-m
+  - "2"
+  - fix-the-brief
+  - record-scope-evidence-constraints-an
+  - "3"
+  - run-the-skill
+  - create-the-artifact-with-its-require
+  - "4"
+  - verify-and-hand-off
+  - separate-completed-checks-from-remai
+  - ai-engine-dev-guide
+  - "00"
+tags: []

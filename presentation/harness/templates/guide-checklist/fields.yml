@@ -1,0 +1,153 @@
+templateId: guide-checklist
+librarySlide: 0
+fields:
+  - id: final-check
+    type: text
+    shapeId: "2"
+    name: Text 0
+    originalText: FINAL CHECK
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.42
+    w: 8.75
+    h: 0.24
+  - id: the-reader-is-ready-when-these-six-c
+    type: text
+    shapeId: "3"
+    name: Text 1
+    originalText: The reader is ready when these six conditions are clear
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.76
+    w: 8.75
+    h: 0.78
+  - id: text-3
+    type: text
+    shapeId: "5"
+    name: Text 3
+    originalText: ✓
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 1.87
+    w: 0.42
+    h: 0.24
+  - id: i-know-which-folder-owns-the-work
+    type: text
+    shapeId: "6"
+    name: Text 4
+    originalText: I know which folder owns the work
+    preserveStyleByDefault: true
+    x: 1.33
+    y: 1.81
+    w: 3.58
+    h: 0.48
+  - id: text-6
+    type: text
+    shapeId: "8"
+    name: Text 6
+    originalText: ✓
+    preserveStyleByDefault: true
+    x: 5.25
+    y: 1.87
+    w: 0.42
+    h: 0.24
+  - id: i-selected-only-the-skills-required-
+    type: text
+    shapeId: "9"
+    name: Text 7
+    originalText: I selected only the Skills required for this task
+    preserveStyleByDefault: true
+    x: 5.83
+    y: 1.81
+    w: 3.58
+    h: 0.48
+  - id: text-9
+    type: text
+    shapeId: "11"
+    name: Text 9
+    originalText: ✓
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 2.73
+    w: 0.42
+    h: 0.24
+  - id: facts-assumptions-and-unresolved-ite
+    type: text
+    shapeId: "12"
+    name: Text 10
+    originalText: Facts, assumptions, and unresolved items are separated
+    preserveStyleByDefault: true
+    x: 1.33
+    y: 2.67
+    w: 3.58
+    h: 0.48
+  - id: text-12
+    type: text
+    shapeId: "14"
+    name: Text 12
+    originalText: ✓
+    preserveStyleByDefault: true
+    x: 5.25
+    y: 2.73
+    w: 0.42
+    h: 0.24
+  - id: outputs-and-canonical-documents-agre
+    type: text
+    shapeId: "15"
+    name: Text 13
+    originalText: Outputs and canonical documents agree
+    preserveStyleByDefault: true
+    x: 5.83
+    y: 2.67
+    w: 3.58
+    h: 0.48
+  - id: text-15
+    type: text
+    shapeId: "17"
+    name: Text 15
+    originalText: ✓
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 3.59
+    w: 0.42
+    h: 0.24
+  - id: completed-and-uncompleted-checks-are
+    type: text
+    shapeId: "18"
+    name: Text 16
+    originalText: Completed and uncompleted checks are reported
+    preserveStyleByDefault: true
+    x: 1.33
+    y: 3.53
+    w: 3.58
+    h: 0.48
+  - id: text-18
+    type: text
+    shapeId: "20"
+    name: Text 18
+    originalText: ✓
+    preserveStyleByDefault: true
+    x: 5.25
+    y: 3.59
+    w: 0.42
+    h: 0.24
+  - id: external-actions-stay-within-explici
+    type: text
+    shapeId: "21"
+    name: Text 19
+    originalText: External actions stay within explicit authority
+    preserveStyleByDefault: true
+    x: 5.83
+    y: 3.53
+    w: 3.58
+    h: 0.48
+  - id: reference-links-or-next-action
+    type: text
+    shapeId: "22"
+    name: Text 20
+    originalText: REFERENCE LINKS OR NEXT ACTION
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 4.76
+    w: 8.75
+    h: 0.22

@@ -1,0 +1,43 @@
+templateId: guide-cover
+librarySlide: 0
+fields:
+  - id: guide-category
+    type: text
+    shapeId: "3"
+    name: Text 1
+    originalText: GUIDE CATEGORY
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 1.1
+    w: 8.75
+    h: 0.3
+  - id: workspace-guide-title
+    type: text
+    shapeId: "4"
+    name: Text 2
+    originalText: Workspace guide title
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 1.65
+    w: 7.6
+    h: 0.82
+  - id: a-concise-subtitle-describing-the-au
+    type: text
+    shapeId: "5"
+    name: Text 3
+    originalText: A concise subtitle describing the audience and outcome
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 2.85
+    w: 7.4
+    h: 0.62
+  - id: version-or-context
+    type: text
+    shapeId: "6"
+    name: Text 4
+    originalText: VERSION OR CONTEXT
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 4.62
+    w: 3
+    h: 0.24

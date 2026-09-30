@@ -1,0 +1,145 @@
+templateId: guide-folder-map
+librarySlide: 0
+fields:
+  - id: workspace-map
+    type: text
+    shapeId: "2"
+    name: Text 0
+    originalText: WORKSPACE MAP
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.3
+    w: 8.75
+    h: 0.22
+  - id: folder-roles-become-clear-at-a-glanc
+    type: text
+    shapeId: "3"
+    name: Text 1
+    originalText: Folder roles become clear at a glance
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.72
+    w: 8.75
+    h: 0.6
+  - id: workspace-root-development-projects-
+    type: text
+    shapeId: "5"
+    name: Text 3
+    originalText: workspace-root/├─ development/│  ├─ projects/│  ├─ skills/│  ├─
+      scripts/│  └─ templates/├─ presentation/│  ├─ harness/│  ├─ skills/│  └─
+      presentations/└─ Lerning/
+    preserveStyleByDefault: true
+    x: 1.03
+    y: 1.76
+    w: 2.55
+    h: 2.68
+  - id: primary-area
+    type: text
+    shapeId: "8"
+    name: Text 6
+    originalText: PRIMARY AREA
+    preserveStyleByDefault: true
+    x: 4.47
+    y: 1.62
+    w: 2.05
+    h: 0.2
+  - id: folder-name
+    type: text
+    shapeId: "9"
+    name: Text 7
+    originalText: Folder name
+    preserveStyleByDefault: true
+    x: 4.47
+    y: 1.9
+    w: 2.05
+    h: 0.34
+  - id: responsibility-and-entry-point
+    type: text
+    shapeId: "10"
+    name: Text 8
+    originalText: Responsibility and entry point.
+    preserveStyleByDefault: true
+    x: 4.47
+    y: 2.32
+    w: 2.05
+    h: 0.44
+  - id: canonical-entry
+    type: text
+    shapeId: "13"
+    name: Text 11
+    originalText: CANONICAL ENTRY
+    preserveStyleByDefault: true
+    x: 7.17
+    y: 1.62
+    w: 2.15
+    h: 0.2
+  - id: readme-md
+    type: text
+    shapeId: "14"
+    name: Text 12
+    originalText: README.md
+    preserveStyleByDefault: true
+    x: 7.17
+    y: 1.9
+    w: 2.15
+    h: 0.34
+  - id: first-document-and-next-action
+    type: text
+    shapeId: "15"
+    name: Text 13
+    originalText: First document and next action.
+    preserveStyleByDefault: true
+    x: 7.17
+    y: 2.32
+    w: 2.15
+    h: 0.44
+  - id: boundary
+    type: text
+    shapeId: "18"
+    name: Text 16
+    originalText: BOUNDARY
+    preserveStyleByDefault: true
+    x: 4.47
+    y: 3.32
+    w: 4.85
+    h: 0.2
+  - id: what-belongs-elsewhere
+    type: text
+    shapeId: "19"
+    name: Text 17
+    originalText: What belongs elsewhere
+    preserveStyleByDefault: true
+    x: 4.47
+    y: 3.6
+    w: 4.85
+    h: 0.34
+  - id: name-the-nearest-related-area-and-pr
+    type: text
+    shapeId: "20"
+    name: Text 18
+    originalText: Name the nearest related area and prevent misplaced artifacts.
+    preserveStyleByDefault: true
+    x: 4.47
+    y: 4.02
+    w: 4.85
+    h: 0.57
+  - id: ai-engine-dev-guide
+    type: text
+    shapeId: "22"
+    name: Text 20
+    originalText: AI-ENGINE-DEV GUIDE
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 5.16
+    w: 2.5
+    h: 0.18
+  - id: "00"
+    type: text
+    shapeId: "23"
+    name: Text 21
+    originalText: "00"
+    preserveStyleByDefault: true
+    x: 9.05
+    y: 5.16
+    w: 0.42
+    h: 0.18

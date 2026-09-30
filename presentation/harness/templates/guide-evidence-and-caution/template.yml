@@ -1,0 +1,28 @@
+id: guide-evidence-and-caution
+name: Guide Evidence And Caution
+kind: cloned-slide
+status: draft
+version: 1.0.0
+source:
+  deck: projects/ai-engine-dev-workspace-guide/output/template-deck.pptx
+  slide: 9
+  importedOn: 2026-09-06
+fonts: []
+variables:
+  - evidence-and-caution
+  - evidence-and-authority
+  - confirmed
+  - fact
+  - verified-by-a-current-source-or-chec
+  - assumption
+  - assumption-2
+  - useful-for-progress-but-clearly-labe
+  - open
+  - unresolved
+  - needs-user-input-or-later-verificati
+  - boundary
+  - permission
+  - skills-do-not-expand-authority
+  - ai-engine-dev-guide
+  - "00"
+tags: []

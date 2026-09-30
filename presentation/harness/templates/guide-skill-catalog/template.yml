@@ -1,0 +1,36 @@
+id: guide-skill-catalog
+name: Guide Skill Catalog
+kind: cloned-slide
+status: draft
+version: 1.0.0
+source:
+  deck: projects/ai-engine-dev-workspace-guide/output/template-deck.pptx
+  slide: 5
+  importedOn: 2026-09-06
+fonts: []
+variables:
+  - skill-catalog
+  - catalog-title-with-one-clear-takeawa
+  - category
+  - skill
+  - use-when
+  - primary-output
+  - category-one
+  - skill-name
+  - when-this-skill-fits
+  - primary-output-2
+  - category-two
+  - skill-name-2
+  - when-this-skill-fits-2
+  - primary-output-3
+  - category-three
+  - skill-name-3
+  - when-this-skill-fits-3
+  - primary-output-4
+  - category-four
+  - skill-name-4
+  - when-this-skill-fits-4
+  - primary-output-5
+  - ai-engine-dev-guide
+  - "00"
+tags: []

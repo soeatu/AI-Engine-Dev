@@ -607,8 +607,12 @@ function replaceParagraphText(paragraphXml: string, value: string): string {
 
 function setRunText(runXml: string, value: string): string {
   const text = escapeXml(value);
-  if (runXml.includes("<a:t>")) return runXml.replace(/<a:t>[\s\S]*?<\/a:t>/, `<a:t>${text}</a:t>`);
-  return runXml.replace("</a:r>", `<a:t>${text}</a:t></a:r>`);
+  const language = /[\u3040-\u30ff\u3400-\u9fff\uf900-\ufaff]/u.test(value) ? "ja-JP" : undefined;
+  const localizedRun = language
+    ? runXml.replace(/<a:rPr\b[^>]*>/, (tag) => setOrReplaceAttr(tag, "lang", language))
+    : runXml;
+  if (localizedRun.includes("<a:t>")) return localizedRun.replace(/<a:t>[\s\S]*?<\/a:t>/, `<a:t>${text}</a:t>`);
+  return localizedRun.replace("</a:r>", `<a:t>${text}</a:t></a:r>`);
 }
 
 function styleShapeText(shapeXml: string, style: { fontSize?: number; color?: string; fontFace?: string }): string {

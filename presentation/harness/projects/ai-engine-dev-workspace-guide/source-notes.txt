@@ -1,0 +1,121 @@
+Deck: AI-Engine-Dev workspace guide
+Checked: 2026-09-06
+
+[S1]
+Type: user-provided
+Source: Current conversation
+Supports: Purpose, audience, expected reader action, desired level of detail, and template-first delivery order.
+Status: confirmed
+Notes: The user requested an instructional reference focused mainly on development/ and presentation/, with as many slides as needed.
+
+[S2]
+Type: local-file
+Source: AGENTS.md
+Supports: Workspace-wide folder responsibilities, Skill routing, evidence handling, validation, documentation synchronization, and permission boundaries.
+Status: confirmed
+Notes: Repository-wide agent instructions.
+
+[S3]
+Type: local-file
+Source: development/AGENTS.md
+Supports: Development-area workflow, routing rules, quality expectations, and completion boundaries.
+Status: confirmed
+Notes: Applies specifically under development/.
+
+[S4]
+Type: local-file
+Source: development/README.md
+Supports: Reader-facing purpose, folder structure, setup modes, and standard development workflow.
+Status: confirmed
+Notes: Canonical reader entrypoint for development/.
+
+[S5]
+Type: local-file
+Source: development/skills/README.md
+Supports: Development Skill categories, integrated workflow, auxiliary Skills, invocation expectations, and source collections.
+Status: confirmed
+Notes: Canonical development Skill-selection guide; the final-generation check confirmed 52 definitions: 13 integrated, 25 Matt stable, 8 Matt in progress, 4 Matt misc, and 2 development helpers.
+
+[S6]
+Type: local-file
+Source: presentation/AGENTS.md
+Supports: Presentation-area workflow, understanding gate, evidence, template selection, structure checks, and visual QA requirements.
+Status: confirmed
+Notes: Applies specifically under presentation/.
+
+[S7]
+Type: local-file
+Source: presentation/README.md
+Supports: Presentation folder roles, task entrypoints, template contract, harness workflow, and output locations.
+Status: confirmed
+Notes: Canonical reader entrypoint for presentation/.
+
+[S8]
+Type: local-file
+Source: presentation/skills/README.md
+Supports: Presentation Skill responsibilities, outputs, boundaries, and setup references.
+Status: confirmed
+Notes: Canonical presentation Skill-selection guide.
+
+[S9]
+Type: local-file
+Source: presentation/skills/SETUP.md
+Supports: Codex and Claude Code Skill registration, restart guidance, and harness dependency setup.
+Status: confirmed
+Notes: Environment-specific commands will be presented as procedures, not as proof that every reader's machine is configured.
+
+[S10]
+Type: local-file
+Source: Lerning/README.md; Lerning/01_presentation.md; Lerning/02_system-development.md; Lerning/03_ai-assisted-workflow.md
+Supports: Onboarding entrypoint and learning sequence.
+Status: confirmed
+Notes: Lerning/ remains secondary scope and should point readers toward development/ and presentation/.
+
+[S11]
+Type: no-external-source
+Source: Initial neutral template design proposal
+Supports: Layout selection, neutral colors, typography hierarchy, spacing, and reusable instructional slide patterns.
+Status: assumption
+Notes: Not an employer-approved brand. Replace or customize after an authoritative brand guide or template is supplied.
+
+[S12]
+Type: local-file
+Source: development/skills/matt-pocock/SETUP.md; development/skills/matt-pocock/SKILL_GUIDE.md
+Supports: Matt Pocock Skill activation, explicit versus automatic invocation, stable/beta/misc boundaries, names, uses, outputs, and cautions in the appendix.
+Status: confirmed
+Notes: The appendix summarizes selection information; each SKILL.md remains the procedural source of truth.
+
+[S13]
+Type: local-file
+Source: presentation/harness/design.md; presentation/harness/templates/README.md; presentation/harness/templates/guide-*/description.md
+Supports: Approved design system, template capacity, editable fields, layout selection, and visual QA criteria.
+Status: confirmed
+Notes: Noto Sans JP is used for Japanese deck text. It was installed locally for rendering; recipients without it may see a substitute font.
+
+[S14]
+Type: local-file
+Source: presentation/harness/src/presentation.ts; presentation/harness/src/ooxml.ts; presentation/harness/src/quality-gate.ts
+Supports: Deterministic build flow, template cloning, editable custom objects, PPTX validation, screenshot generation, and automated quality-gate behavior.
+Status: confirmed
+Notes: Engine implementation was inspected directly. Japanese replacement text is tagged ja-JP after the rendering defect found during this work.
+
+[S15]
+Type: user-provided
+Source: Current conversation, revision feedback on 2026-09-06
+Supports: Revised narrative order and acceptance criteria.
+Status: confirmed
+Notes: The user found the folder- and catalog-led version difficult to understand because it did not clearly answer what can be done, how to prepare the environment, or what happens after use.
+
+[S16]
+Type: local-file
+Source: presentation/scripts/setup-skills.sh; development/scripts/verify-portable-development-root.sh; presentation/harness/README.md
+Supports: Exact setup commands, expected links, Node.js and LibreOffice requirements, and verification steps.
+Status: confirmed
+Notes: The presentation setup script preserves conflicting existing entries. The Development verification script checks portable paths and Skill links in a temporary copied root.
+
+[S17]
+Type: user-provided
+Source: Current conversation, section 02 revision feedback on 2026-09-06
+Supports: Explicit two-environment explanation and environment-specific grouping of first-request examples.
+Status: confirmed
+Notes: Section 02 must identify Development as the system-development environment and Presentation as the document-creation environment before examples are introduced.

@@ -1,0 +1,193 @@
+templateId: guide-process-flow
+librarySlide: 0
+fields:
+  - id: workflow
+    type: text
+    shapeId: "2"
+    name: Text 0
+    originalText: WORKFLOW
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.3
+    w: 8.75
+    h: 0.22
+  - id: five-stage-workflow
+    type: text
+    shapeId: "3"
+    name: Text 1
+    originalText: Five-stage workflow
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.72
+    w: 8.75
+    h: 0.6
+  - id: "01"
+    type: text
+    shapeId: "6"
+    name: Text 4
+    originalText: "01"
+    preserveStyleByDefault: true
+    x: 0.91
+    y: 2.23
+    w: 0.42
+    h: 0.28
+  - id: input
+    type: text
+    shapeId: "7"
+    name: Text 5
+    originalText: Input
+    preserveStyleByDefault: true
+    x: 0.91
+    y: 2.63
+    w: 1.23
+    h: 0.35
+  - id: goal-audience-evidence
+    type: text
+    shapeId: "8"
+    name: Text 6
+    originalText: Goal, audience, evidence
+    preserveStyleByDefault: true
+    x: 0.91
+    y: 3.09
+    w: 1.23
+    h: 0.5
+  - id: "02"
+    type: text
+    shapeId: "11"
+    name: Text 9
+    originalText: "02"
+    preserveStyleByDefault: true
+    x: 2.71
+    y: 2.23
+    w: 0.42
+    h: 0.28
+  - id: select
+    type: text
+    shapeId: "12"
+    name: Text 10
+    originalText: Select
+    preserveStyleByDefault: true
+    x: 2.71
+    y: 2.63
+    w: 1.23
+    h: 0.35
+  - id: folder-and-skill
+    type: text
+    shapeId: "13"
+    name: Text 11
+    originalText: Folder and Skill
+    preserveStyleByDefault: true
+    x: 2.71
+    y: 3.09
+    w: 1.23
+    h: 0.5
+  - id: "03"
+    type: text
+    shapeId: "16"
+    name: Text 14
+    originalText: "03"
+    preserveStyleByDefault: true
+    x: 4.51
+    y: 2.23
+    w: 0.42
+    h: 0.28
+  - id: work
+    type: text
+    shapeId: "17"
+    name: Text 15
+    originalText: Work
+    preserveStyleByDefault: true
+    x: 4.51
+    y: 2.63
+    w: 1.23
+    h: 0.35
+  - id: artifact-and-source
+    type: text
+    shapeId: "18"
+    name: Text 16
+    originalText: Artifact and source
+    preserveStyleByDefault: true
+    x: 4.51
+    y: 3.09
+    w: 1.23
+    h: 0.5
+  - id: "04"
+    type: text
+    shapeId: "21"
+    name: Text 19
+    originalText: "04"
+    preserveStyleByDefault: true
+    x: 6.31
+    y: 2.23
+    w: 0.42
+    h: 0.28
+  - id: verify
+    type: text
+    shapeId: "22"
+    name: Text 20
+    originalText: Verify
+    preserveStyleByDefault: true
+    x: 6.31
+    y: 2.63
+    w: 1.23
+    h: 0.35
+  - id: tests-and-visual-qa
+    type: text
+    shapeId: "23"
+    name: Text 21
+    originalText: Tests and visual QA
+    preserveStyleByDefault: true
+    x: 6.31
+    y: 3.09
+    w: 1.23
+    h: 0.5
+  - id: "05"
+    type: text
+    shapeId: "25"
+    name: Text 23
+    originalText: "05"
+    preserveStyleByDefault: true
+    x: 8.11
+    y: 2.23
+    w: 0.42
+    h: 0.28
+  - id: handoff
+    type: text
+    shapeId: "26"
+    name: Text 24
+    originalText: Handoff
+    preserveStyleByDefault: true
+    x: 8.11
+    y: 2.63
+    w: 1.23
+    h: 0.35
+  - id: results-and-risks
+    type: text
+    shapeId: "27"
+    name: Text 25
+    originalText: Results and risks
+    preserveStyleByDefault: true
+    x: 8.11
+    y: 3.09
+    w: 1.23
+    h: 0.5
+  - id: ai-engine-dev-guide
+    type: text
+    shapeId: "29"
+    name: Text 27
+    originalText: AI-ENGINE-DEV GUIDE
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 5.16
+    w: 2.5
+    h: 0.18
+  - id: "00"
+    type: text
+    shapeId: "30"
+    name: Text 28
+    originalText: "00"
+    preserveStyleByDefault: true
+    x: 9.05
+    y: 5.16
+    w: 0.42
+    h: 0.18

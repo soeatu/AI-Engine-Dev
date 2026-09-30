@@ -1,0 +1,163 @@
+templateId: guide-routing-guide
+librarySlide: 0
+fields:
+  - id: routing-guide
+    type: text
+    shapeId: "2"
+    name: Text 0
+    originalText: ROUTING GUIDE
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.3
+    w: 8.75
+    h: 0.22
+  - id: routing-title-with-one-clear-takeawa
+    type: text
+    shapeId: "3"
+    name: Text 1
+    originalText: Routing title with one clear takeaway
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.72
+    w: 8.75
+    h: 0.6
+  - id: start
+    type: text
+    shapeId: "6"
+    name: Text 4
+    originalText: START
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 1.66
+    w: 1.75
+    h: 0.2
+  - id: task
+    type: text
+    shapeId: "7"
+    name: Text 5
+    originalText: Task
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 1.94
+    w: 1.75
+    h: 0.34
+  - id: required-outcome
+    type: text
+    shapeId: "8"
+    name: Text 6
+    originalText: Required outcome.
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 2.36
+    w: 1.75
+    h: 0.38
+  - id: development
+    type: text
+    shapeId: "11"
+    name: Text 9
+    originalText: DEVELOPMENT
+    preserveStyleByDefault: true
+    x: 4.17
+    y: 1.49
+    w: 1.85
+    h: 0.2
+  - id: build
+    type: text
+    shapeId: "12"
+    name: Text 10
+    originalText: Build
+    preserveStyleByDefault: true
+    x: 4.17
+    y: 1.77
+    w: 1.85
+    h: 0.34
+  - id: requirements-designcode-tests
+    type: text
+    shapeId: "13"
+    name: Text 11
+    originalText: Requirements · designCode · tests
+    preserveStyleByDefault: true
+    x: 4.17
+    y: 2.19
+    w: 1.85
+    h: 0.54
+  - id: presentation
+    type: text
+    shapeId: "16"
+    name: Text 14
+    originalText: PRESENTATION
+    preserveStyleByDefault: true
+    x: 4.17
+    y: 3.29
+    w: 1.85
+    h: 0.2
+  - id: explain
+    type: text
+    shapeId: "17"
+    name: Text 15
+    originalText: Explain
+    preserveStyleByDefault: true
+    x: 4.17
+    y: 3.57
+    w: 1.85
+    h: 0.34
+  - id: brief-decksources-visual-qa
+    type: text
+    shapeId: "18"
+    name: Text 16
+    originalText: Brief · deckSources · visual QA
+    preserveStyleByDefault: true
+    x: 4.17
+    y: 3.99
+    w: 1.85
+    h: 0.54
+  - id: next
+    type: text
+    shapeId: "21"
+    name: Text 19
+    originalText: NEXT
+    preserveStyleByDefault: true
+    x: 7.37
+    y: 2.39
+    w: 1.95
+    h: 0.2
+  - id: skill
+    type: text
+    shapeId: "22"
+    name: Text 20
+    originalText: Skill
+    preserveStyleByDefault: true
+    x: 7.37
+    y: 2.67
+    w: 1.95
+    h: 0.34
+  - id: read-matching-skill-md
+    type: text
+    shapeId: "23"
+    name: Text 21
+    originalText: Read matching SKILL.md.
+    preserveStyleByDefault: true
+    x: 7.37
+    y: 3.09
+    w: 1.95
+    h: 0.57
+  - id: ai-engine-dev-guide
+    type: text
+    shapeId: "29"
+    name: Text 27
+    originalText: AI-ENGINE-DEV GUIDE
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 5.16
+    w: 2.5
+    h: 0.18
+  - id: "00"
+    type: text
+    shapeId: "30"
+    name: Text 28
+    originalText: "00"
+    preserveStyleByDefault: true
+    x: 9.05
+    y: 5.16
+    w: 0.42
+    h: 0.18

@@ -1,0 +1,27 @@
+id: guide-checklist
+name: Guide Checklist
+kind: cloned-slide
+status: draft
+version: 1.0.0
+source:
+  deck: projects/ai-engine-dev-workspace-guide/output/template-deck.pptx
+  slide: 10
+  importedOn: 2026-09-06
+fonts: []
+variables:
+  - final-check
+  - the-reader-is-ready-when-these-six-c
+  - text-3
+  - i-know-which-folder-owns-the-work
+  - text-6
+  - i-selected-only-the-skills-required-
+  - text-9
+  - facts-assumptions-and-unresolved-ite
+  - text-12
+  - outputs-and-canonical-documents-agre
+  - text-15
+  - completed-and-uncompleted-checks-are
+  - text-18
+  - external-actions-stay-within-explici
+  - reference-links-or-next-action
+tags: []

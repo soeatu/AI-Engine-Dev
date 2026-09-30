@@ -42,6 +42,8 @@ npm run quality-gate -- --project projects/<deck-id>
 
 `templates/<name>/` の `template.pptx` が見た目の正本、`fields.yml` が編集契約、`description.md` が選択契約です。原本変更時は3つを同時に再確認します。
 
+利用可能なテンプレートと選択基準は[`templates/README.md`](templates/README.md)を参照してください。説明書・導入ガイド向けには、表紙、章区切り、フォルダ構成、フロー、Skill一覧、ルーティング、手順、比較、根拠区分、チェックリストの10種類を用意しています。
+
 ## Deck project
 
 ```text

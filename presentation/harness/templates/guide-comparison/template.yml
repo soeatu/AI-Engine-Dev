@@ -1,0 +1,23 @@
+id: guide-comparison
+name: Guide Comparison
+kind: cloned-slide
+status: draft
+version: 1.0.0
+source:
+  deck: projects/ai-engine-dev-workspace-guide/output/template-deck.pptx
+  slide: 8
+  importedOn: 2026-09-06
+fonts: []
+variables:
+  - comparison
+  - two-area-comparison
+  - left-area
+  - development
+  - purposeprimary-inputstypical-skillsm
+  - right-area
+  - presentation
+  - purposeprimary-inputstypical-skillsm-2
+  - shared-rule-evidence-canonical-sourc
+  - ai-engine-dev-guide
+  - "00"
+tags: []

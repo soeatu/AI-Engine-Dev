@@ -1,0 +1,43 @@
+templateId: guide-section-divider
+librarySlide: 0
+fields:
+  - id: "01"
+    type: text
+    shapeId: "2"
+    name: Text 0
+    originalText: "01"
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.75
+    w: 1.2
+    h: 0.85
+  - id: section-title
+    type: text
+    shapeId: "3"
+    name: Text 1
+    originalText: Section title
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 1.75
+    w: 7.6
+    h: 0.82
+  - id: what-the-reader-will-understand-in-t
+    type: text
+    shapeId: "4"
+    name: Text 2
+    originalText: What the reader will understand in this section
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 2.82
+    w: 7.7
+    h: 0.62
+  - id: ai-engine-dev-guide
+    type: text
+    shapeId: "6"
+    name: Text 4
+    originalText: AI-ENGINE-DEV GUIDE
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 4.72
+    w: 2.8
+    h: 0.22

@@ -85,3 +85,23 @@ test("an unknown override target fails the build", async () => {
     await rm(dir, { recursive: true, force: true });
   }
 });
+
+test("marks Japanese replacement text as Japanese for compatible renderers", async () => {
+  const dir = await mkdtemp(path.join(os.tmpdir(), "pptx-ja-build-test-"));
+  try {
+    const deck = new Presentation({ title: "Japanese deck", templateLibrary: TEMPLATES, projectDir: dir });
+    deck.addSlideFromTemplate({
+      templateName: "guide-cover",
+      variables: { "workspace-guide-title": "日本語タイトル" }
+    });
+
+    await deck.render({ output: "deck.pptx", progress: false });
+
+    const pkg = await PptxPackage.load(path.join(dir, "deck.pptx"));
+    const entries = await getSlideEntries(pkg);
+    const slideXml = await pkg.text(`ppt/slides/slide${entries.at(-1)!.slideNumber}.xml`);
+    assert.match(slideXml, /<a:rPr\b[^>]*lang="ja-JP"[^>]*>[\s\S]*?<a:t>日本語タイトル<\/a:t>/);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});

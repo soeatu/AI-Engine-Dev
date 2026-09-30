@@ -1,0 +1,163 @@
+templateId: guide-evidence-and-caution
+librarySlide: 0
+fields:
+  - id: evidence-and-caution
+    type: text
+    shapeId: "2"
+    name: Text 0
+    originalText: EVIDENCE AND CAUTION
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.3
+    w: 8.75
+    h: 0.22
+  - id: evidence-and-authority
+    type: text
+    shapeId: "3"
+    name: Text 1
+    originalText: Evidence and authority
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.72
+    w: 8.75
+    h: 0.6
+  - id: confirmed
+    type: text
+    shapeId: "6"
+    name: Text 4
+    originalText: CONFIRMED
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 1.64
+    w: 3.82
+    h: 0.2
+  - id: fact
+    type: text
+    shapeId: "7"
+    name: Text 5
+    originalText: Fact
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 1.92
+    w: 3.82
+    h: 0.34
+  - id: verified-by-a-current-source-or-chec
+    type: text
+    shapeId: "8"
+    name: Text 6
+    originalText: Verified by a current source or check.
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 2.34
+    w: 3.82
+    h: 0.37
+  - id: assumption
+    type: text
+    shapeId: "11"
+    name: Text 9
+    originalText: ASSUMPTION
+    preserveStyleByDefault: true
+    x: 5.49
+    y: 1.64
+    w: 3.82
+    h: 0.2
+  - id: assumption-2
+    type: text
+    shapeId: "12"
+    name: Text 10
+    originalText: Assumption
+    preserveStyleByDefault: true
+    x: 5.49
+    y: 1.92
+    w: 3.82
+    h: 0.34
+  - id: useful-for-progress-but-clearly-labe
+    type: text
+    shapeId: "13"
+    name: Text 11
+    originalText: Useful for progress, but clearly labeled.
+    preserveStyleByDefault: true
+    x: 5.49
+    y: 2.34
+    w: 3.82
+    h: 0.37
+  - id: open
+    type: text
+    shapeId: "16"
+    name: Text 14
+    originalText: OPEN
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 3.26
+    w: 3.82
+    h: 0.2
+  - id: unresolved
+    type: text
+    shapeId: "17"
+    name: Text 15
+    originalText: Unresolved
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 3.54
+    w: 3.82
+    h: 0.34
+  - id: needs-user-input-or-later-verificati
+    type: text
+    shapeId: "18"
+    name: Text 16
+    originalText: Needs user input or later verification.
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 3.96
+    w: 3.82
+    h: 0.37
+  - id: boundary
+    type: text
+    shapeId: "21"
+    name: Text 19
+    originalText: BOUNDARY
+    preserveStyleByDefault: true
+    x: 5.49
+    y: 3.26
+    w: 3.82
+    h: 0.2
+  - id: permission
+    type: text
+    shapeId: "22"
+    name: Text 20
+    originalText: Permission
+    preserveStyleByDefault: true
+    x: 5.49
+    y: 3.54
+    w: 3.82
+    h: 0.34
+  - id: skills-do-not-expand-authority
+    type: text
+    shapeId: "23"
+    name: Text 21
+    originalText: Skills do not expand authority.
+    preserveStyleByDefault: true
+    x: 5.49
+    y: 3.96
+    w: 3.82
+    h: 0.37
+  - id: ai-engine-dev-guide
+    type: text
+    shapeId: "25"
+    name: Text 23
+    originalText: AI-ENGINE-DEV GUIDE
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 5.16
+    w: 2.5
+    h: 0.18
+  - id: "00"
+    type: text
+    shapeId: "26"
+    name: Text 24
+    originalText: "00"
+    preserveStyleByDefault: true
+    x: 9.05
+    y: 5.16
+    w: 0.42
+    h: 0.18

@@ -1,0 +1,16 @@
+id: guide-section-divider
+name: Guide Section Divider
+kind: cloned-slide
+status: draft
+version: 1.0.0
+source:
+  deck: projects/ai-engine-dev-workspace-guide/output/template-deck.pptx
+  slide: 2
+  importedOn: 2026-09-06
+fonts: []
+variables:
+  - "01"
+  - section-title
+  - what-the-reader-will-understand-in-t
+  - ai-engine-dev-guide
+tags: []

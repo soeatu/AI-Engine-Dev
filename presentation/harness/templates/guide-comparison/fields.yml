@@ -1,0 +1,113 @@
+templateId: guide-comparison
+librarySlide: 0
+fields:
+  - id: comparison
+    type: text
+    shapeId: "2"
+    name: Text 0
+    originalText: COMPARISON
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.3
+    w: 8.75
+    h: 0.22
+  - id: two-area-comparison
+    type: text
+    shapeId: "3"
+    name: Text 1
+    originalText: Two-area comparison
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 0.72
+    w: 8.75
+    h: 0.6
+  - id: left-area
+    type: text
+    shapeId: "6"
+    name: Text 4
+    originalText: LEFT AREA
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 1.62
+    w: 3.78
+    h: 0.2
+  - id: development
+    type: text
+    shapeId: "7"
+    name: Text 5
+    originalText: Development
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 1.9
+    w: 3.78
+    h: 0.34
+  - id: purposeprimary-inputstypical-skillsm
+    type: text
+    shapeId: "8"
+    name: Text 6
+    originalText: PurposePrimary inputsTypical SkillsMain artifactsValidation and handoff
+    preserveStyleByDefault: true
+    x: 0.97
+    y: 2.32
+    w: 3.78
+    h: 1.97
+  - id: right-area
+    type: text
+    shapeId: "11"
+    name: Text 9
+    originalText: RIGHT AREA
+    preserveStyleByDefault: true
+    x: 5.54
+    y: 1.62
+    w: 3.78
+    h: 0.2
+  - id: presentation
+    type: text
+    shapeId: "12"
+    name: Text 10
+    originalText: Presentation
+    preserveStyleByDefault: true
+    x: 5.54
+    y: 1.9
+    w: 3.78
+    h: 0.34
+  - id: purposeprimary-inputstypical-skillsm-2
+    type: text
+    shapeId: "13"
+    name: Text 11
+    originalText: PurposePrimary inputsTypical SkillsMain artifactsValidation and handoff
+    preserveStyleByDefault: true
+    x: 5.54
+    y: 2.32
+    w: 3.78
+    h: 1.97
+  - id: shared-rule-evidence-canonical-sourc
+    type: text
+    shapeId: "15"
+    name: Text 13
+    originalText: "Shared rule: evidence, canonical sources, validation, human review"
+    preserveStyleByDefault: true
+    x: 2.25
+    y: 4.67
+    w: 5.5
+    h: 0.23
+  - id: ai-engine-dev-guide
+    type: text
+    shapeId: "17"
+    name: Text 15
+    originalText: AI-ENGINE-DEV GUIDE
+    preserveStyleByDefault: true
+    x: 0.75
+    y: 5.16
+    w: 2.5
+    h: 0.18
+  - id: "00"
+    type: text
+    shapeId: "18"
+    name: Text 16
+    originalText: "00"
+    preserveStyleByDefault: true
+    x: 9.05
+    y: 5.16
+    w: 0.42
+    h: 0.18

@@ -1,0 +1,36 @@
+Deck: AI-Engine-Dev workspace guide
+Mode: revision
+Audience: Workplace colleagues who will use AI-Engine-Dev; assume they understand ordinary file and folder operations but may not know Agent Skills or this repository's workflow.
+Purpose: Explain what AI-Engine-Dev can do, how to prepare a usable environment, how to give the first request, and what artifacts and verification evidence remain after use. Folder roles and Skill catalogs support those answers instead of leading the narrative.
+Use context: Detailed instructional reference for asynchronous reading, onboarding, and team explanation. It is not primarily a presenter-led pitch deck.
+Expected decision or action: Readers can decide whether the workspace fits their task, prepare either an AI-Engine-Dev or copied-project environment, issue a concrete first request, and locate the resulting files, checks, and remaining human decisions.
+Central takeaway: AI-Engine-Dev is not a separate application; it is a reusable set of AI work instructions, templates, generation tools, and verification rules that turns a request into reviewable artifacts inside Codex or Claude Code.
+Communication job: By the end, workplace colleagues should be able to prepare the environment and complete a first Development or Presentation task because capabilities, setup commands, request examples, and resulting artifacts are shown in that order.
+Scope: Focus on development/ and presentation/. Lead with capabilities, environment preparation, first-use examples, and before/after outcomes. Explain folder roles and Skill families only after the reader understands the use case. Keep the full Skill catalog as a reference appendix rather than the main explanation. Mention Lerning/ only as an optional onboarding entrypoint. Do not reproduce every line of every SKILL.md; link readers to canonical files for exact procedures.
+Constraints: Japanese; 16:9; detailed enough for standalone reading; editable native PowerPoint objects; readable without narration; accessible contrast; no confidential information; no unsupported claims; slide count may grow as needed. Template phase precedes final deck authoring.
+Template direction: Neutral professional technical-manual style, using the repository's current neutral design tokens. This is not an official employer brand. No logo until an approved asset is supplied.
+Proposed reusable layouts:
+1. Cover: title, document role, audience, version/context.
+2. Section divider: section purpose and what the reader will learn.
+3. Folder map: hierarchy with roles and canonical entrypoints.
+4. Concept flow: input -> Skill selection -> work -> validation -> handoff.
+5. Skill catalog: category, when to use, primary output, and cautions.
+6. Routing guide: task/question-based decision path to the correct Skill.
+7. Step-by-step procedure: numbered actions with inputs, outputs, and checks.
+8. Comparison: development and presentation responsibilities and boundaries.
+9. Evidence and caution: facts, assumptions, unresolved items, permissions, and human review.
+10. Checklist/summary: first actions, completion criteria, and reference links.
+Template acceptance criteria: Representative layouts render without clipping or unintended overlap; titles and body text remain legible; repeated margins, footer, color, and typography are consistent; diagrams remain editable; each template has exact editable-field documentation; package validation and full-size visual QA pass.
+Deadline: Not specified.
+Requested evidence: Current repository AGENTS.md, README.md, development/AGENTS.md, development/README.md, development/skills/README.md, presentation/AGENTS.md, presentation/README.md, presentation/skills/README.md, setup guides, and the relevant SKILL.md files.
+Unresolved: Whether an employer-approved brand guide, logo, font, or PowerPoint master must replace the neutral initial template. Detailed coverage of all 52 development Skill definitions will be placed in an appendix unless the user later requests a different structure.
+Confirmation: confirmed 2026-09-06 — after reviewing version 1, the user stated that the guide must clearly explain what can be done, how to prepare the environment, and what happens after use. The user then requested that section 02 explicitly state that the project has two environments, Development for system development and Presentation for document creation, and that examples be labeled or separated by environment. The approved visual design remains unchanged.
+
+Section map:
+[capabilities] Job: answer what the workspace is, what it can do, and why the outputs are different from an ordinary AI chat. Enters from: cover. Hands off to: setup choice. Status: revised.
+[environment-setup] Job: give current-repository, new-project, existing-project, Presentation Skill, harness, and optional Matt Skill setup procedures with success checks. Enters from: capabilities. Hands off to: first request. Status: revised.
+[first-use] Job: first distinguish the two work environments, Development for system development and Presentation for document creation, then show a common request format and environment-specific examples, workflows, artifacts, and handoff results. Enters from: verified setup. Hands off to: detailed reference. Status: revised.
+[development-reference] Job: explain the Development folder, standard workflow, and Skill families after the reader has seen a practical use. Enters from: Development examples. Hands off to: Presentation reference. Status: revised.
+[presentation-reference] Job: explain the Presentation folder, five Skills, Deck project files, and QA after the reader has seen a practical use. Enters from: Development reference. Hands off to: outcome and handoff. Status: revised.
+[outcome-and-handoff] Job: summarize before/after state, artifact locations, permissions, and the next human action. Enters from: both workflows. Hands off to: appendix. Status: revised.
+[appendix] Job: provide a compact reference for all 52 Development Skills and five Presentation Skills. Enters from: outcome summary. Hands off to: final first-use checklist. Status: existing, moved later.

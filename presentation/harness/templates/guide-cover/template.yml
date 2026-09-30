@@ -1,0 +1,16 @@
+id: guide-cover
+name: Guide Cover
+kind: cloned-slide
+status: draft
+version: 1.0.0
+source:
+  deck: projects/ai-engine-dev-workspace-guide/output/template-deck.pptx
+  slide: 1
+  importedOn: 2026-09-06
+fonts: []
+variables:
+  - guide-category
+  - workspace-guide-title
+  - a-concise-subtitle-describing-the-au
+  - version-or-context
+tags: []

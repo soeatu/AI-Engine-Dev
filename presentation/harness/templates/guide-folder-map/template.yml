@@ -1,0 +1,26 @@
+id: guide-folder-map
+name: Guide Folder Map
+kind: cloned-slide
+status: draft
+version: 1.0.0
+source:
+  deck: projects/ai-engine-dev-workspace-guide/output/template-deck.pptx
+  slide: 3
+  importedOn: 2026-09-06
+fonts: []
+variables:
+  - workspace-map
+  - folder-roles-become-clear-at-a-glanc
+  - workspace-root-development-projects-
+  - primary-area
+  - folder-name
+  - responsibility-and-entry-point
+  - canonical-entry
+  - readme-md
+  - first-document-and-next-action
+  - boundary
+  - what-belongs-elsewhere
+  - name-the-nearest-related-area-and-pr
+  - ai-engine-dev-guide
+  - "00"
+tags: []

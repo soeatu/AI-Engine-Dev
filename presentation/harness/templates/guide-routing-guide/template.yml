@@ -1,0 +1,28 @@
+id: guide-routing-guide
+name: Guide Routing Guide
+kind: cloned-slide
+status: draft
+version: 1.0.0
+source:
+  deck: projects/ai-engine-dev-workspace-guide/output/template-deck.pptx
+  slide: 6
+  importedOn: 2026-09-06
+fonts: []
+variables:
+  - routing-guide
+  - routing-title-with-one-clear-takeawa
+  - start
+  - task
+  - required-outcome
+  - development
+  - build
+  - requirements-designcode-tests
+  - presentation
+  - explain
+  - brief-decksources-visual-qa
+  - next
+  - skill
+  - read-matching-skill-md
+  - ai-engine-dev-guide
+  - "00"
+tags: []
