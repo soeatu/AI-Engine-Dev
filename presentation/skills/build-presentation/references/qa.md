@@ -8,6 +8,8 @@ Run content, package, and visual checks. A pass in one category does not imply t
 - Search for placeholder text, production notes, duplicated claims, and unsupported conclusions.
 - Confirm charts and tables match their source data and labels.
 - Confirm `source-notes.txt` covers externally sourced non-trivial claims and assets.
+- Confirm each content slide has the visual planned for it, or a recorded `text-only` reason. Review every "no visual element" warning in the QA report.
+- Confirm every image and external icon has an `asset-notes.txt` entry, the license was read on the asset page, `Commercial use: yes` is true, and required credits appear in the deck.
 
 ## Package
 
@@ -17,6 +19,6 @@ Run content, package, and visual checks. A pass in one category does not imply t
 
 ## Visual
 
-Inspect every rendered slide individually at full size, then review the file sequence for deck-level rhythm. Check clipped or overflowing text; unintended overlap; connectors crossing labels; one-line titles wrapping; inconsistent margins, alignment, spacing, footers, or page numbers; low contrast; weak hierarchy; blurry images; incorrect crops; leftover template objects; empty placeholders; and illegible charts or tables.
+Inspect every rendered slide individually at full size, then review the file sequence for deck-level rhythm. Check clipped or overflowing text; unintended overlap; connectors crossing labels; one-line titles wrapping; inconsistent margins, alignment, spacing, footers, or page numbers; low contrast; weak hierarchy; diagrams whose reading order is unclear; blurry images; incorrect crops; leftover template objects; empty placeholders; and illegible charts or tables.
 
 Fix the source build, regenerate the PPTX and all screenshots, and rerun the automated gate. Do not patch only the rendered image.

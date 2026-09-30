@@ -15,7 +15,9 @@ Resolve `presentation/harness/` from the workspace root and treat it as `HARNESS
 build.ts
 brief.txt
 source-notes.txt
+asset-notes.txt
 inputs/
+  assets/
 output/
 ```
 
@@ -25,12 +27,13 @@ Use a stable kebab-case deck id. Never overwrite another project unless the user
 
 1. Read [`references/planning-and-sources.md`](references/planning-and-sources.md) and apply its understanding gate. Determine whether this is a new deck or a revision. For a revision, inspect the current `brief.txt`, `build.ts`, source ledger, output deck, and rendered slides before proposing changes.
 2. Create or update `brief.txt` with the audience, purpose, use context, expected audience decision or action, central takeaway, scope, constraints, deadline or meeting context, requested evidence, and unresolved items.
-3. Present a concise understanding summary to the user and obtain confirmation before authoring the narrative, slide copy, `build.ts`, or PPTX. If a missing answer can materially change the deck, ask for it and pause deck creation. Minor details may remain explicitly unresolved.
+3. If the audience, purpose, use context, expected action, central takeaway, or scope is vague, run the clarification loop in `planning-and-sources.md`: ask a few prioritized questions with concrete candidates, restate the updated understanding, and repeat until every core item is clear or an agreed assumption. Then present a concise understanding summary and obtain confirmation before authoring the narrative, slide copy, `build.ts`, or PPTX. Minor details may remain explicitly unresolved.
 4. For an inserted section, record its section id, communication job, insertion anchor, transition from the preceding section, transition to the following section, evidence, and expected effect on existing slides. Preserve existing sections unless the user approves broader revision.
 5. Record facts, assumptions, unresolved items, and source URLs or local paths in `source-notes.txt`. Do not invent numbers, quotations, outcomes, people, or implemented capabilities.
-6. Read `HARNESS_ROOT/design.md`.
-7. Inspect candidate `templates/*/description.md`, `template.yml`, `fields.yml`, and screenshots. Use a template only when its narrative role and content capacity fit.
-8. Define one communication job per section and one audience-facing takeaway title per slide. Vary slide silhouettes while keeping the visual system coherent.
+6. Read [`references/visuals-and-assets.md`](references/visuals-and-assets.md). Plan a diagram or other visual for each content slide, prefer native diagrams and bundled icons, and use external images only under a license that allows commercial use and modification. Record every image and external icon in `asset-notes.txt`.
+7. Read `HARNESS_ROOT/design.md`.
+8. Inspect candidate `templates/*/description.md`, `template.yml`, `fields.yml`, and screenshots. Use a template only when its narrative role and content capacity fit.
+9. Define one communication job per section and one audience-facing takeaway title per slide. Vary slide silhouettes while keeping the visual system coherent.
 
 ## Build
 
@@ -89,10 +92,10 @@ npm run cli -- validate --pptx projects/<deck-id>/output/deck.pptx
 npm run quality-gate -- --project projects/<deck-id>
 ```
 
-The automated gate requires one rendered PNG per slide, a non-empty `source-notes.txt`, a valid PPTX package, and no common unresolved placeholder text. It does not replace manual inspection. Inspect every slide image at full size, correct defects, rebuild, and rerun the gate.
+The automated gate requires one rendered PNG per slide, a non-empty `source-notes.txt`, a valid PPTX package, no common unresolved placeholder text, and an `asset-notes.txt` entry with a commercial-use license whenever the PPTX embeds media. It also warns about slides without any visual element. It does not replace manual inspection. Inspect every slide image at full size, correct defects, rebuild, and rerun the gate.
 
 ## Handoff
 
-Return the final PPTX path, build report, QA report, and screenshot directory. Separate verified content and checks, warnings and unresolved facts, and checks not run because a dependency or human review was unavailable.
+Return the final PPTX path, build report, QA report, asset ledger, and screenshot directory. Separate verified content and checks, warnings and unresolved facts, and checks not run because a dependency or human review was unavailable.
 
 Do not claim visual QA passed if screenshots were skipped or not inspected.

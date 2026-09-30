@@ -22,6 +22,39 @@ Confirmation: pending | confirmed <date and user statement or decision>
 
 Show the user a concise summary of this understanding and obtain confirmation. Start slide authoring only when `Confirmation` is `confirmed`. If an unresolved choice could change the audience, purpose, expected action, central takeaway, or scope, resolve it first. Preserve smaller unknowns as explicit assumptions or unresolved items.
 
+## Clarification loop
+
+The six core items are `Audience`, `Purpose`, `Use context`, `Expected decision or action`, `Central takeaway`, and `Scope`. Mark each one in `brief.txt` as `clear`, `agreed-assumption`, or `open`.
+
+An item is `open` when you cannot state it from the user's words or supplied material without guessing. Typical signs:
+
+- The request names only a topic, such as "make slides about generative AI".
+- The reader is described only broadly, such as "for the company" or "for everyone".
+- The request lists content to include but not what the reader should conclude or do.
+- Several plausible readers or purposes would lead to different decks.
+
+While any core item is `open`, repeat this loop and do not write the outline, slide copy, `build.ts`, or PPTX:
+
+1. Ask at most five questions per round, the most deck-changing first. Start with the reader and what they should do after reading, then the takeaway, then scope and constraints.
+2. Make each question easy to answer: offer two to four concrete candidates, such as possible readers or draft takeaway sentences, plus a free-form option. Prefer the agent's multiple-choice question tool when it has one.
+3. After each answer, restate the updated understanding in a few lines, mark the items that changed, and ask only about what is still `open`.
+4. Record each round as one line in the `Clarification log` of `brief.txt`.
+
+When the user delegates a decision ("up to you"), propose one concrete value for that item, explain it in one sentence, and ask for approval. Once approved, mark it `agreed-assumption`. Never mark an item `clear` or `agreed-assumption` without an answer from the user.
+
+Between rounds you may read user-supplied material or run light research to make better candidates. Do not start collecting evidence for the deck body until the loop ends.
+
+The loop ends when every core item is `clear` or `agreed-assumption`. Then show the full understanding summary, including the planned visual approach, and set `Confirmation: confirmed` only after the user agrees. A clear, complete request still needs this final confirmation, but skips the question rounds.
+
+Add these lines to `brief.txt`:
+
+```text
+Core items: audience=<status> purpose=<status> use-context=<status> action=<status> takeaway=<status> scope=<status>
+Visual approach: <main diagram types and whether photos or external assets are expected>
+Clarification log:
+- R1 <date>: asked <topics>; answered <summary>
+```
+
 ## Communication job
 
 Write one sentence before choosing slides:
@@ -43,6 +76,7 @@ Slides: <planned slide roles or current slide numbers>
 Enters from: <idea established by the preceding section, or opening>
 Hands off to: <idea required by the following section, or close>
 Status: existing | new | revised
+Visuals: <one visual per planned slide, following references/visuals-and-assets.md>
 ```
 
 For a section insertion, first map the current deck, then define the new section's insertion anchor as `before <section-id>`, `after <section-id>`, or `replace <section-id>` with explicit user approval for replacement. Check whether the new section duplicates, contradicts, or changes assumptions in existing sections. Update only affected transitions and claims. Preserve the existing section order and content outside that impact radius.
@@ -65,7 +99,7 @@ Status: confirmed | assumption | unresolved
 Notes: <scope, date, formula, or limitation>
 ```
 
-Use `no-external-source` only for content that is genuinely supplied by the user or created as structure without external claims. If the deck uses external claims or images, record each source separately. Never put credentials, personal information, or confidential raw data into the ledger.
+Use `no-external-source` only for content that is genuinely supplied by the user or created as structure without external claims. If the deck uses external claims or images, record each source separately. Record image and icon licenses in `asset-notes.txt` as described in [`visuals-and-assets.md`](visuals-and-assets.md). Never put credentials, personal information, or confidential raw data into the ledger.
 
 ## Evidence rules
 
