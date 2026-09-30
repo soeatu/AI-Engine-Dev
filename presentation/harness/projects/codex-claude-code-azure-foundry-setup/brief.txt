@@ -1,0 +1,104 @@
+Deck: Codex CLI / Claude Code 導入とAzure AI Foundry接続手順
+Mode: new
+Audience: Codex CLI・Claude Codeを初めて導入するWindows利用の開発者。PowerShell操作とAzure Portalの基本操作は可能。
+Purpose: 2つのAIコーディングCLIを導入し、Azure AI Foundry上にデプロイしたモデル(OpenAI系/Claude)経由で利用できる状態にする手順を1か所にまとめる。
+Use context: 開発者向け手順書。資料を見ながら各自の端末で作業する(非同期参照が主)。
+Expected decision or action: 読者が資料を見ながら自分の端末にCLIを導入し、Foundryモデルへ接続して動作確認まで完了できる。
+Central takeaway: 「Foundryでデプロイ → CLIをインストール → 環境変数/設定ファイルでエンドポイント・認証を指定 → 疎通確認」の4段階で両CLIとも接続できる。
+Scope: 前提条件、Foundry側の準備(リソース/デプロイ/エンドポイント/キーまたはEntra ID)、Codex CLIのインストールとconfig.toml設定、Claude Codeのインストールと環境変数設定、動作確認、よくあるエラー、セキュリティ上の注意。
+Out of scope: macOS/Linux手順、Azureサブスクリプション契約・課金設定、組織ポリシー、IDE拡張の詳細。
+Constraints: 日本語。編集可能なPPTX。harnessの共通Design Systemで作成。秘密情報を資料に書かない。
+Deadline: 未指定
+Requested evidence: OpenAI Codex / Anthropic Claude Code / Microsoft Learnの公式ドキュメント(2026-09時点で確認)。
+Decisions: OS=Windows。認証=APIキー中心、Entra ID(az login)を補足。モデル=Codex CLIはFoundry上のGPT系、Claude CodeはFoundry上のClaude系。作業はharness/projects配下、完成PPTXをpresentation/presentations/へコピー。
+Unresolved: 組織固有のリソース名・リージョン・利用可能モデル(資料ではプレースホルダー表記)。スライド枚数は手順を網羅する範囲で15枚前後を目安。
+Confirmation: confirmed 2026-09-17 利用者がAskUserQuestionで上記4項目(読者/OS/認証/モデル・保存先)を選択
+
+Communication job: 資料を読み終えたWindows開発者が、自分の端末でCodex CLIとClaude Codeを導入し、Foundry上のモデルへ接続して動作確認まで完了できる。理由は、両CLIとも「Foundryでデプロイ → インストール → 接続設定 → 動作確認」の同じ4段階で接続できるから。
+Narrative arc: 全体像 → 共通準備 → CLI別手順 → 確認・トラブル対応 → 安全な運用(学習・手順の順)
+
+[cover]
+Job: 資料の対象と時点を示す
+Slides: 1
+Enters from: opening
+Hands off to: 4段階の全体像
+Status: new
+
+[overview]
+Job: 4段階の流れと、CLIごとに接続先エンドポイントが異なる構成を示す
+Slides: 2 4ステップ / 3 接続構成
+Enters from: 表紙
+Hands off to: 作業前の準備
+Status: new
+
+[prepare]
+Job: 前提条件、Foundryでのデプロイ、控える値を揃える
+Slides: 4 前提条件 / 5 デプロイ / 6 控える値
+Enters from: 全体像
+Hands off to: CLI別の手順
+Status: new
+
+[codex]
+Job: Codex CLIのインストール、config.toml、APIキー設定、起動
+Slides: 7 区切り / 8 インストール / 9 config.toml / 10 環境変数と起動
+Enters from: 控えた値
+Hands off to: Claude Code手順
+Status: new
+
+[claude-code]
+Job: Claude Codeのインストール、環境変数、モデル固定、Entra ID
+Slides: 11 区切り / 12 インストール / 13 環境変数 / 14 モデル固定 / 15 Entra ID
+Enters from: Codex手順
+Hands off to: 動作確認
+Status: new
+
+[verify-troubleshoot]
+Job: 両CLIの動作確認と、症状別の対処
+Slides: 16 動作確認 / 17 Codexのエラー / 18 Claude Codeのエラー
+Enters from: 設定完了
+Hands off to: 運用上の注意
+Status: new
+
+[security-close]
+Job: キー管理・権限・承認モードの注意と出典
+Slides: 19 セキュリティ / 20 出典
+Enters from: 動作確認
+Hands off to: close
+Status: new
+
+Template decision: 既定テンプレート(title-cover 34pt, content-lead-bullets 本文12pt)はbuild-presentation Skillのユーザーテンプレートなし時の最小文字サイズ(表紙50pt/タイトル35pt/本文16pt)を満たさないため、共通Design Systemでcustom slideとして作図する。
+
+--- Revision 2026-09-17: section insertion ---
+Mode: section-insertion
+Request: 画像モデル（GPT-Image-2.5）を利用する場合の設定を追記する。
+Decisions (confirmed 2026-09-17, AskUserQuestion):
+- 利用方法: FoundryのImages APIをPowerShellスクリプトで呼び、Codex CLI / Claude Codeからそのスクリプトを実行する。Codex組み込みの$imagegenは扱わない。
+- モデル: gpt-image-2.5-flare と gpt-image-2.5-sunburst の使い分けを示し、デプロイ名の差し替えで切り替える。
+- 位置: Part 3としてclaude-codeの後、verify-troubleshootの前に挿入。関連スライド（デプロイ手順、全体の流れ、動作確認、エラー対処、出典）も更新。
+
+[image-model]
+Job: GPT-Image-2.5をFoundryにデプロイし、スクリプト経由で両CLIから画像生成できるようにする
+Slides: 区切り / モデル選択(flare・sunburst) / 呼び出し構成 / スクリプト / 環境変数と実行 / CLIへの依頼方法
+Enters from: Claude Codeの接続設定完了（テキスト系モデルは両CLIで利用可能）
+Hands off to: 動作確認（画像生成の確認を含む）
+Status: new
+Insertion anchor: after claude-code
+Impact on existing: [overview] フロー手順1にに画像モデルを追加 / [prepare] デプロイ手順に画像モデルを追加 / [verify-troubleshoot] 動作確認を表に変更して画像を追加、画像生成のエラー対処スライドを追加 / [security-close] 出典に画像生成の公式手順を追加。その他のセクションは変更しない。
+
+--- Revision 2026-09-17 (2): section insertion ---
+Mode: section-insertion
+Request: Computer Useを利用する場合の手順を追記する。
+Decisions (confirmed 2026-09-17, AskUserQuestion):
+- 利用形態: Responses APIのcomputerツールで操作ループを自作する（Python + Playwright）。Codex CLI / Claude Codeの組み込みComputer UseはFoundry経由で使えない旨を冒頭で明記。
+- モデル・認証: GPT-5.6系（sol / terra / luna）をAPIキーで利用。GPT-5.5も同じ手順で使えると補足。
+- 位置: Part 4としてimage-modelの後、verify-troubleshootの前に挿入。前提条件、デプロイ手順、動作確認、エラー対処、運用上の注意、出典も更新。
+- 付属物: 資料のコード抜粋では全体を載せきれないため、完全なスクリプト computer_use_loop.py を資料と同じフォルダ(presentation/presentations/)に置く。
+
+[computer-use]
+Job: Foundry上のGPT-5.6系でComputer Useを使う方法（CLIでは不可、APIで自作）と、その安全な動かし方を示す
+Slides: 区切り / 使える範囲 / 操作ループの仕組み / 準備 / 最初の依頼 / ループ処理 / 安全対策
+Enters from: 画像モデル（CLIからスクリプトでAPIを呼ぶ構成）
+Hands off to: 動作確認（Computer Useの確認を含む）
+Status: new
+Insertion anchor: after image-model
+Impact on existing: [prepare] 前提条件にPythonを追加、デプロイ手順にGPT-5.6系を追加 / [verify-troubleshoot] 動作確認にComputer Useを追加、Computer Useのエラー対処スライドを追加 / [security-close] 運用上の注意にComputer Useを追加、出典を2枚に分割して追加。
