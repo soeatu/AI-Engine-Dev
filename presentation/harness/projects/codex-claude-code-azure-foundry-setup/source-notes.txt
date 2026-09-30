@@ -1,0 +1,131 @@
+Deck: Codex CLI / Claude Code 導入とAzure AI Foundry接続手順
+Checked: 2026-09-17
+
+[S1]
+Type: URL
+Source: https://code.claude.com/docs/en/microsoft-foundry
+Supports: Slides 3, 4, 5, 6, 13, 14, 15, 16, 18。CLAUDE_CODE_USE_FOUNDRY / ANTHROPIC_FOUNDRY_RESOURCE / ANTHROPIC_FOUNDRY_BASE_URL (https://{resource}.services.ai.azure.com/anthropic) / ANTHROPIC_FOUNDRY_API_KEY / ANTHROPIC_FOUNDRY_AUTH_TOKEN、DefaultAzureCredential(az login)、ANTHROPIC_DEFAULT_{OPUS,SONNET,HAIKU}_MODELでのデプロイ固定、/statusでMicrosoft Foundry表示、RBACロール(Azure AI User / Cognitive Services User)、トラブルシュート2件。
+Status: confirmed
+Notes: 公式例はbash(export)。PowerShell表記($env: / [Environment]::SetEnvironmentVariable)への置き換えは資料作成者による変換。
+
+[S2]
+Type: URL
+Source: https://code.claude.com/docs/en/setup
+Supports: Slides 4, 12, 16。Windows 10 1809+、PowerShellインストール(irm https://claude.ai/install.ps1 | iex)、winget install Anthropic.ClaudeCode、Git for Windows推奨、claude --version / claude doctor、管理者権限不要、Foundry時はCLAUDE_CODE_USE_POWERSHELL_TOOL=1でPowerShellツール有効化。
+Status: confirmed
+Notes: 2026-09-17取得。
+
+[S3]
+Type: URL
+Source: https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/codex
+Supports: Slides 4, 5, 6, 8, 9, 10, 16, 17, 19。前提(Contributor権限、Windows 11はWSL2)、推論モデルのデプロイ、npm install -g @openai/codex、config.toml(model_provider="azure", base_url=https://<resource>.openai.azure.com/openai/v1, env_key, wire_api="responses")、env_keyには環境変数名を指定、codex exec、トラブルシュート表、「Entra ID support is currently not available for Codex」、Agent(full access)の注意。
+Status: confirmed
+Notes: ms.date 2026-09-03。
+
+[S4]
+Type: URL
+Source: https://github.com/openai/codex (README.md, docs/install.md)
+Supports: Slide 8。Windows向けスタンドアロンインストーラー powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"、npm install -g @openai/codex。docs/install.mdの要件表はWindows 11 via WSL2。
+Status: confirmed
+Notes: README(ネイティブWindowsインストーラー)とinstall.md/MS Learn(WSL2)で記載が異なるため、資料では両経路を併記し、ネイティブで問題があればWSL2を使う旨を記載。
+
+[S5]
+Type: URL
+Source: https://learn.chatgpt.com/docs/config-file/config-advanced (旧 https://developers.openai.com/codex/config-advanced)
+Supports: Slide 9。ユーザー設定は~/.codex/config.toml、CODEX_HOMEの既定は~/.codex、model_providerキー。
+Status: confirmed
+Notes: Windowsでの実パス %USERPROFILE%\.codex\config.toml は ~ = ユーザーホームからの推定。assumption扱いとし、スライドでは「既定」と表記。
+
+[S6]
+Type: URL
+Source: https://learn.chatgpt.com/docs/windows/windows-sandbox
+Supports: Slide 8 補足。Codexはネイティブ Windows(CLI)を利用可能、Windowsサンドボックス(elevated / unelevated)。
+Status: confirmed
+Notes: 取得ページの要約に基づく。
+
+[A1]
+Type: no-external-source
+Source: 資料作成者の構成
+Supports: Slides 2, 6, 16, 19 の整理(4段階の流れ、控える値の表、確認チェックリスト、キー管理の推奨)。
+Status: assumption
+Notes: 公式手順を並べ替え・要約したもの。環境変数へのキー保存はユーザープロファイルに平文で残るという注意はWindows環境変数の一般的な性質に基づく。
+
+[U1]
+Type: no-external-source
+Source: 未確認
+Supports: 全体
+Status: unresolved
+Notes: 実環境(Windows端末・Azureサブスクリプション)での通し動作確認は未実施。組織固有のリソース名、リージョン、利用可能なモデルとバージョンは資料では<resource>等のプレースホルダー表記。Codex CLIのEntra ID(command認証でaz トークン取得)構成は未検証のため記載しない。
+
+[S7]
+Type: URL
+Source: https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/dall-e
+Supports: Part 3（モデル選択、呼び出し構成、スクリプト）、画像エラー対処のサイズ条件。GPT-Image-2.5-Sunburst（最も高性能、編集精度重視）とGPT-Image-2.5-Flare（高品質な日常生成で最速）がGA。生成エンドポイント https://<resource>.openai.azure.com/openai/v1/images/generations?api-version=2025-04-01-preview、ヘッダー api-key または Authorization: Bearer、ボディ model(デプロイ名)/prompt/size/n/quality/output_format、quality は GPT-Image-2.5で xhigh/max/auto も可、サイズは16px単位・縦横比1:3〜3:1・長辺3,840px以下、応答 data[0].b64_json。
+Status: confirmed
+Notes: 2026-09-17取得。スクリプトはこの仕様からPowerShellへ変換した資料作成者の構成。
+
+[S8]
+Type: URL
+Source: https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure
+Supports: gpt-image-2.5-flare / gpt-image-2.5-sunburst がFoundry Models sold by Azureの画像生成モデルに含まれること。リージョン提供状況は同ページのリンク先で確認。
+Status: confirmed
+Notes: ms.date 2026-09-04。
+
+[S9]
+Type: URL
+Source: https://github.com/openai/codex/issues/19133
+Supports: 資料では扱わない判断の根拠（Azure接続時にWindows/WSLでCodex組み込み画像ツールが使えない未解決Issue）。
+Status: confirmed
+Notes: 利用者の選択により$imagegenはスライドに記載しない。
+
+[A2]
+Type: no-external-source
+Source: 資料作成者の構成
+Supports: gen-image.ps1 の実装（UTF-8バイト列で送信、base64をPNGへ保存）、環境変数名 AZURE_IMAGE_RESOURCE / AZURE_IMAGE_DEPLOYMENT / AZURE_IMAGE_API_KEY、AGENTS.md / CLAUDE.md への使い方記載、画像エラー対処表の401/404/文字化け/実行ポリシー行。
+Status: assumption
+Notes: Windows PowerShell 5.1は文字列ボディを非UTF-8で送る場合があるためバイト列で送る。PowerShell実行ポリシーは端末設定に依存。スクリプトは実環境で未実行（構文検査の結果はQAレポート参照）。
+
+[S10]
+Type: URL
+Source: https://learn.microsoft.com/en-us/azure/ai-foundry/openai/how-to/computer-use (Computer Use in Azure OpenAI (classic), ms.date 2026-03-09)
+Supports: Part 4 の操作ループ（Responses APIに tools=[{"type":"computer"}]、computer_call の actions を実行、computer_call_output で computer_screenshot を返す、previous_response_id、pending_safety_checks と acknowledged_safety_checks、推奨解像度 1440x900 / 1600x900、低権限VMで機密データなしの環境を推奨、Playwright連携サンプル）。computer_use_loop.py はこのサンプルを同期API・APIキー認証に簡略化したもの。
+Status: confirmed
+Notes: 記事は旧(classic)ポータル向けで、サンプルモデルは gpt-5.4。GPT-5.6系での実行例は公式にない。
+
+[S11]
+Type: URL
+Source: https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/reasoning (ms.date 2026-08-20)
+Supports: gpt-5.6-sol / terra / luna と gpt-5.5 は利用申請不要（クォータ段階によりクォータ申請）、gpt-5.4 は制限解除済み。gpt-5.6 は Chat Completions で推論とツールを同時に使えないため Responses API を使う。reasoning.context の既定が all_turns でトークン消費が増えるため current_turn を指定できる。
+Status: confirmed
+
+[S12]
+Type: URL
+Source: https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure
+Supports: gpt-5.6-sol / terra / luna（2026-07-09）と gpt-5.5 の機能欄に Computer use が記載されていること。
+Status: confirmed
+Notes: 推論モデル記事のバージョン日付（2026-06-25）と異なる。
+
+[S13]
+Type: URL
+Source: https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/tools/computer-use (ms.date 2026-08-21)
+Supports: Foundry Agent Service の Computer Use ツールは computer-use-preview のみ対応（利用申請必要、eastus2 / swedencentral / southindia）。Browser Automation はすべてのGPTモデルで利用可能。
+Status: confirmed
+
+[S14]
+Type: URL
+Source: https://code.claude.com/docs/en/computer-use / https://learn.chatgpt.com/docs/computer-use
+Supports: Claude Code の組み込み Computer Use は claude.ai 認証が必要で Microsoft Foundry など他社プロバイダーでは不可（明記）。Codex の Computer Use は Desktop アプリのプラグインで ChatGPT のプランが前提（Azure 利用への言及なし、使えないと判断）。
+Status: confirmed (Claude Code) / assumption (Codex)
+
+[S15]
+Type: URL
+Source: https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/responses
+Supports: OpenAI(api_key=os.getenv("AZURE_OPENAI_API_KEY"), base_url="https://<resource>.openai.azure.com/openai/v1/") によるAPIキー認証、previous_response_id、output_text。
+Status: confirmed
+
+[A3]
+Type: no-external-source
+Source: 資料作成者の構成
+Supports: computer_use_loop.py の実装（同期Playwright、MAX_STEPS上限、安全チェックの人手承認、キー対応表の簡略化）、環境変数名 AZURE_CU_RESOURCE / AZURE_CU_DEPLOYMENT / AZURE_CU_API_KEY、Computer Useのエラー対処表の404行・停止行。
+Status: assumption
+Notes: スクリプトは構文検査のみ実施し、実際のGPT-5.6系デプロイでは未実行。
