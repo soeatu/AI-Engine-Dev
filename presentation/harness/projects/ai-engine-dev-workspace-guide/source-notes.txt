@@ -137,6 +137,13 @@ Notes: 索引ページは配列の位置から4件ごとに算出（ページ = 
 [S20]
 Type: local-file
 Source: Repository root の実ディレクトリ（AGENTS.md, CLAUDE.md, README.md, Lerning/, development/, presentation/, docs/orchestration/, .agents/skills/, .claude/skills/）、development/README.md「新規Projectへ展開する」「フォルダ構成」
-Supports: 4枚目のRepository構成図、13枚目のコピー元・コピー先ツリー（development/ の .agents/ .claude/ を含む構成）、32・37枚目のフォルダ構成図。
+Supports: 4枚目のRepository構成図、13枚目のコピー元・コピー先ツリー（development/ の .agents/ .claude/ を含む構成）、32・39枚目のフォルダ構成図。
 Status: confirmed
 Notes: 2026-10-02 に ls -a で確認。.agents/skills と .claude/skills は development/ 配下のSkillへのLink。
+
+[S21]
+Type: local-file
+Source: development/skills/orchestrated-development/SKILL.md; development/skills/orchestrated-development/references/codex.md; development/skills/orchestrated-development/references/claude-code.md; development/.claude/agents/*.md
+Supports: Slides 36–37, the Brain/Planner and Worker Agent separation, the model assigned to each tier per platform, and the review loop between them.
+Status: confirmed
+Notes: Brain/Planner uses Sol on Codex and Opus on Claude Code; Worker uses Luna on Codex and Sonnet on Claude Code. Requested by the user on 2026-10-03.

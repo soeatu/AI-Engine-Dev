@@ -36,18 +36,25 @@ Controllerはコードを直接実装せず、設計、Task Brief、実装報告
 
 ## Model Routing
 
-役割に必要な最小モデルを明示して委譲する。Platformの既定モデルへ暗黙継承させない。
+役割を「ブレイン/プランナー」と「ワーカー」の2階層に分け、各Platformで次のモデルへ固定する。Platformの既定モデルへ暗黙継承させない。
 
-| 役割 | Codex | Claude Code | 基準 |
+| 階層 | Codex | Claude Code | 担当 |
 |---|---|---|---|
-| Architecture・計画 | Sol high以上 | Opus high以上 | 境界、Trade-off、複数Moduleの判断 |
-| 明確な小規模実装 | Luna medium | Sonnet medium | 完全なBrief、1〜2ファイル、既知の検証方法 |
-| 統合を伴う実装 | Terra highまたはSol high | Sonnet high | 複数ファイル、外部連携、デバッグ |
-| Task review | Sol high | Opus high | 仕様適合と品質の独立判定 |
-| 小さな修正の再レビュー | Luna/Terra medium | Sonnet medium | 指摘と修正差分だけを確認 |
-| Whole-branch review | Sol high以上 | Opus high以上 | Task間の整合、回帰、Architecture |
+| ブレイン/プランナー | Sol | Opus | Controller、Architecture・計画、Task review、再レビュー、Whole-branch review |
+| ワーカー | Luna | Sonnet | Task Briefに基づく実装、検証、自己レビュー |
 
-Lunaへ委譲するTaskは、実装方法の選択ではなく、明確な契約の実現を中心にする。Briefを読んでもArchitecture判断が残る場合は、Taskを再設計するか上位モデルへ送る。
+役割ごとのeffortは次を基準にする。
+
+| 役割 | 階層 | effort | 基準 |
+|---|---|---|---|
+| Architecture・計画 | ブレイン/プランナー | high以上 | 境界、Trade-off、複数Moduleの判断 |
+| 明確な小規模実装 | ワーカー | medium | 完全なBrief、1〜2ファイル、既知の検証方法 |
+| 統合を伴う実装 | ワーカー | high | 複数ファイル、外部連携、デバッグ |
+| Task review | ブレイン/プランナー | high | 仕様適合と品質の独立判定 |
+| 小さな修正の再レビュー | ブレイン/プランナー | medium | 指摘と修正差分だけを確認 |
+| Whole-branch review | ブレイン/プランナー | high以上 | Task間の整合、回帰、Architecture |
+
+ワーカーへ委譲するTaskは、実装方法の選択ではなく、明確な契約の実現を中心にする。Briefを読んでもArchitecture判断が残る場合は、ワーカーへ渡さずブレイン/プランナーへ戻してTaskを再設計する。
 
 ## Task Loop
 
@@ -77,7 +84,7 @@ Lunaへ委譲するTaskは、実装方法の選択ではなく、明確な契約
 Critical、Important、仕様不適合を、同じImplementerへ指摘単位で戻す。修正後は、前回の指摘と修正差分だけを別Contextで再レビューする。
 
 - Round 1〜3: 同じImplementerを再開し、Contextを保持する。
-- Round 4: 新しいImplementerへ切り替え、少なくとも一段上のモデルを使う。
+- Round 4: 新しいワーカーのImplementerへ切り替え、effortを一段上げる。ブレイン/プランナーが原因を分析し、必要ならBriefを補強してから渡す。
 - Round 5: 最後の修正と再レビューを行い、残件ごとにControllerが根拠付きで判定する。
 
 5 Round後も受け入れ条件に関わる問題が残る場合は、そのTaskを完了にしない。計画不備、情報不足、設計判断のいずれかへ戻し、台帳へ停止理由を記録する。
@@ -88,7 +95,7 @@ SpecificationとStandardsが合格し、検証証拠を確認できたときだ�
 
 ### 6. 全体レビューを行う
 
-全Task完了後、最上位モデルの新しいContextへ計画、全Task Brief、実装報告、レビュー、全体差分を渡す。Task間の契約、重複、欠落、回帰、移行順序、運用・Rollbackを確認し、`final-review.md`へ記録する。
+全Task完了後、ブレイン/プランナーの新しいContextへ計画、全Task Brief、実装報告、レビュー、全体差分を渡す。Task間の契約、重複、欠落、回帰、移行順序、運用・Rollbackを確認し、`final-review.md`へ記録する。
 
 ## 並列実行
 

@@ -1,8 +1,8 @@
 # QA report
 
 - PPTX package: valid
-- Slides: 62
-- Rendered slide images: 62
+- Slides: 64
+- Rendered slide images: 64
 - Source ledger: present
 - Embedded media files: 0
 - Asset ledger entries: 1
@@ -19,6 +19,13 @@
 ## Manual visual review
 
 Automated checks do not prove visual quality. Inspect every rendered slide at full size and record clipping, overlap, contrast, alignment, chart accuracy, and source-placement findings before delivery.
+
+### Manual visual review result (2026-10-04, model-separated Agents)
+
+- Render method: LibreOffice未導入のため、前回と同じくKeynote Creator StudioでPDF化し、pdftoppm(110dpi)で全64枚をPNG化（output/screenshots）。PowerPoint／Google Slidesでの表示は未確認。
+- Change: 「03 Developmentを詳しく見る」の末尾（35: Skillの系統の直後）に、36: ブレイン/プランナー（Codex Sol／Claude Code Opus）とワーカー（Codex Luna／Claude Code Sonnet）の役割比較、37: Planner→Worker→Planner→Worker→Plannerのレビューループを追加した。以降のページ番号を2つずつ繰り下げた（全64枚）。
+- Review: 36・37枚目を原寸で確認し、見出し・カード本文・下部の共通ルール・工程カードに文字切れ、重なり、孤立文字がないことを確認した。30〜63枚目のフッター番号を切り出して一覧で照合し、Slide位置と一致することを確認した（章扉と最終ページは番号なし）。
+- Data check: モデル割り当ては development/skills/orchestrated-development/ の SKILL.md、references/codex.md、references/claude-code.md と .claude/agents/ の定義に一致（source-notes S21）。
 
 ### Manual visual review result (2026-10-01〜02, visual brush-up and folder diagrams)
 

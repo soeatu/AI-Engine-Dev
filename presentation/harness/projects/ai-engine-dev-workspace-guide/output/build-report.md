@@ -1,9 +1,9 @@
 # Build report
 
-- Generated at: 2026-10-04T09:37:43.861Z
-- Output: /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/existing-powerpoint-list-a2ddcf/presentation/harness/projects/ai-engine-dev-workspace-guide/output/deck.pptx
-- Slides built: 62
-- Templates used: guide-cover, guide-process-flow, guide-process-flow, guide-section-divider, guide-routing-guide, guide-checklist, guide-section-divider, guide-section-divider, guide-process-flow, guide-section-divider, guide-process-flow, guide-section-divider, guide-routing-guide, guide-process-flow, guide-section-divider, guide-process-flow, guide-section-divider, guide-comparison, guide-checklist, guide-section-divider, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-evidence-and-caution, guide-checklist
+- Generated at: 2026-10-04T11:50:57.033Z
+- Output: /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/magical-sutherland-e04a04/presentation/harness/projects/ai-engine-dev-workspace-guide/output/deck.pptx
+- Slides built: 64
+- Templates used: guide-cover, guide-process-flow, guide-process-flow, guide-section-divider, guide-routing-guide, guide-checklist, guide-section-divider, guide-section-divider, guide-process-flow, guide-section-divider, guide-process-flow, guide-section-divider, guide-routing-guide, guide-process-flow, guide-comparison, guide-process-flow, guide-section-divider, guide-process-flow, guide-section-divider, guide-comparison, guide-checklist, guide-section-divider, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-evidence-and-caution, guide-checklist
 - Custom slides used: guide-question-journey, guide-kit-architecture, guide-folder-tree, guide-capability-cards, guide-capability-cards, guide-before-after, guide-icon-steps, guide-copy-tree, guide-stage-map, guide-node-map, guide-command-pipeline, guide-staircase, guide-fork, guide-request-anatomy, guide-request-flow, guide-request-flow, guide-request-flow, guide-folder-tree, guide-authority-spectrum, guide-folder-tree, guide-composition, guide-folder-tree, guide-node-map, guide-node-map, guide-skill-family-map
 - Screenshots: none
 

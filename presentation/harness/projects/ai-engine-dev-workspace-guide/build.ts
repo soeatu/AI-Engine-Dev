@@ -522,11 +522,26 @@ deck.addCustomSlide(compositionSlide({
   note: "52件すべてを有効活用する必要はなく、1つの依頼には必要なSkillだけを使う"
 }));
 
+addTemplate("guide-comparison", {
+  comparison: "モデル別AGENT", "two-area-comparison": "判断するAgentと実装するAgentをモデルごとに分ける",
+  "left-area": "BRAIN / PLANNER", development: "Codex：Sol｜Claude Code：Opus",
+  "purposeprimary-inputstypical-skillsm": "全体の進行と判定（Controller）\nArchitecture設計と実装計画\nTask Briefの作成と固定\nTask reviewと修正後の再レビュー\n全Task完了後の全体レビュー",
+  "right-area": "WORKER", presentation: "Codex：Luna｜Claude Code：Sonnet",
+  "purposeprimary-inputstypical-skillsm-2": "固定されたBriefだけを実装\nTestと検証Commandの実行\n自己レビューと実装報告\n設計判断が残ればPlannerへ戻す\n難しいTaskはeffortを上げる",
+  "shared-rule-evidence-canonical-sourc": "モデルは既定値に任せず、役割ごとに明示して委譲する",
+  "ai-engine-dev-guide": FOOTER, "00": page(36)
+}, { "two-area-comparison": 24, development: 13, presentation: 13, "purposeprimary-inputstypical-skillsm": 12, "purposeprimary-inputstypical-skillsm-2": 12, "shared-rule-evidence-canonical-sourc": 11, "ai-engine-dev-guide": 8, "00": 8 });
+
+addProcess("実装とレビューを別Agent・別Contextで回す", [
+  ["計画", "Planner\n設計・Brief"], ["実装", "Worker\n実装・検証"], ["審査", "Planner\n二軸Review"],
+  ["修正", "Worker\n指摘を修正"], ["完了", "Planner\n全体Review"]
+], 37, "ORCHESTRATED-DEVELOPMENT");
+
 // 5. Presentation reference
 addSection("04", "Presentationを詳しく見る", "Deck作成、Template再利用、生成Engine、品質確認の役割を確認する");
 
 deck.addCustomSlide(folderTreeSlide({
-  pageNum: 37, eyebrow: "PRESENTATION", title: "完成資料と再利用基盤を分けて管理する",
+  pageNum: 39, eyebrow: "PRESENTATION", title: "完成資料と再利用基盤を分けて管理する",
   caption: "presentation/",
   nodes: [
     { name: "presentation/", depth: 0, folder: true },
@@ -548,7 +563,7 @@ deck.addCustomSlide(folderTreeSlide({
 }));
 
 deck.addCustomSlide(nodeMapSlide({
-  pageNum: 38, eyebrow: "PRESENTATION SKILL", title: "5つのPresentation Skillは役割ごとに選ぶ",
+  pageNum: 40, eyebrow: "PRESENTATION SKILL", title: "5つのPresentation Skillは役割ごとに選ぶ",
   nodes: [
     { id: "ingest", x: 0.75, y: 1.45, w: 2.55, h: 0.95, label: "1 部品化", title: "ingest-slide-templates", body: "既存PPTXを再利用する", tone: "accent2" },
     { id: "describe", x: 0.75, y: 2.75, w: 2.55, h: 0.95, label: "2 部品説明", title: "describe-slide-template", body: "AIが選べる説明を作る", tone: "accent2" },
@@ -567,7 +582,7 @@ deck.addCustomSlide(nodeMapSlide({
 }));
 
 deck.addCustomSlide(nodeMapSlide({
-  pageNum: 39, eyebrow: "DECK PROJECT", title: "目的・根拠・生成・結果を別Fileで残す",
+  pageNum: 41, eyebrow: "DECK PROJECT", title: "目的・根拠・生成・結果を別Fileで残す",
   nodes: [
     { id: "brief", x: 0.75, y: 1.45, w: 2.7, h: 1.25, label: "1 目的", title: "brief.txt", body: "読者、目的、期待する行動、結論、範囲、確認状態。", tone: "accent" },
     { id: "notes", x: 0.75, y: 2.95, w: 2.7, h: 1.25, label: "2 根拠", title: "source-notes.txt", body: "事実、仮定、未確認、出典、支持する主張。", tone: "accent2" },
@@ -589,7 +604,7 @@ deck.addCustomSlide(nodeMapSlide({
 addProcess("PPTX生成成功と資料品質を別々に確認する", [
   ["Build", "TypeScript\nPPTX生成"], ["構造", "Package・Field\nSlide数"], ["画像化", "全Slideを\n同じ条件でRender"],
   ["目視", "切れ・重なり\n余白・対比"], ["引渡", "実施済み\n未実施を分離"]
-], 40, "PRESENTATION QA");
+], 42, "PRESENTATION QA");
 
 // 6. Outcome and handoff
 addSection("05", "使った結果を引き継ぐ", "成果物、検証、未確認事項、次の人の行動を一つにまとめる");
@@ -601,7 +616,7 @@ addTemplate("guide-comparison", {
   "right-area": "READY TO REVIEW", presentation: "引き継げる状態",
   "purposeprimary-inputstypical-skillsm-2": "成果物へのPathがある\n正本文書と変更が一致する\n検証Commandと結果がある\n未確認・Riskが分離される\n次のHuman actionが明確",
   "shared-rule-evidence-canonical-sourc": "利用後に確認するもの：成果物・根拠・検証・未確認・次の行動",
-  "ai-engine-dev-guide": FOOTER, "00": page(42)
+  "ai-engine-dev-guide": FOOTER, "00": page(44)
 }, { "two-area-comparison": 27, "purposeprimary-inputstypical-skillsm": 12, "purposeprimary-inputstypical-skillsm-2": 12, "shared-rule-evidence-canonical-sourc": 11, "ai-engine-dev-guide": 8, "00": 8 });
 
 addTemplate("guide-checklist", {
@@ -619,7 +634,7 @@ addTemplate("guide-checklist", {
 addSection("06", "Skill索引", "ここからは必要なSkillを名前で探すための参照資料");
 
 deck.addCustomSlide(skillFamilyMapSlide({
-  pageNum: 45, eyebrow: "APPENDIX：SKILL MAP", title: "Skill索引は8つの系統で探す",
+  pageNum: 47, eyebrow: "APPENDIX：SKILL MAP", title: "Skill索引は8つの系統で探す",
   groups: [
     { area: "DEV・統合", tone: "accent", families: [{ name: "統合Skill", count: 13, examples: "requirements-analysis\nspecification / tdd", pages: "索引 1〜4" }] },
     {
@@ -695,7 +710,7 @@ const developmentSkills: SkillRow[] = [
 if (developmentSkills.length !== 52) throw new Error(`Expected 52 development Skills, found ${developmentSkills.length}.`);
 
 for (let index = 0; index < developmentSkills.length; index += 4) {
-  addCatalog(`Development Skill索引 ${index / 4 + 1}/13`, developmentSkills.slice(index, index + 4), 46 + index / 4, "APPENDIX：52 SKILLS");
+  addCatalog(`Development Skill索引 ${index / 4 + 1}/13`, developmentSkills.slice(index, index + 4), 48 + index / 4, "APPENDIX：52 SKILLS");
 }
 
 addCatalog("Presentation Skill索引 1/2", [
@@ -703,14 +718,14 @@ addCatalog("Presentation Skill索引 1/2", [
   { category: "取込", name: "ingest-slide-templates", when: "既存Slideを部品化", output: "Template一式" },
   { category: "説明", name: "describe-slide-template", when: "Template用途を記述", output: "description.md" },
   { category: "Design", name: "customize-presentation-design", when: "共通Designを変更", output: "design.ts・design.md" }
-], 59, "APPENDIX：PRESENTATION");
+], 61, "APPENDIX：PRESENTATION");
 
 addCatalog("Presentation Skill索引 2/2", [
   { category: "UI/UX補助", name: "ui-ux-pro-max", when: "設計知識・候補を検索", output: "候補・確認観点" },
   { category: "正本", name: "presentation/skills/README.md", when: "Skillを選ぶ", output: "入口と境界" },
   { category: "設定", name: "presentation/skills/SETUP.md", when: "Codex/Claudeへ登録", output: "Linkと検証手順" },
   { category: "実行", name: "presentation/harness/README.md", when: "依存・Commandを確認", output: "生成・QA手順" }
-], 60, "APPENDIX：PRESENTATION");
+], 62, "APPENDIX：PRESENTATION");
 
 addTemplate("guide-evidence-and-caution", {
   "evidence-and-caution": "用語", "evidence-and-authority": "4つの用語を同じ意味で使う",
@@ -718,7 +733,7 @@ addTemplate("guide-evidence-and-caution", {
   assumption: "OUTPUT", "assumption-2": "成果物", "useful-for-progress-but-clearly-labe": "利用されるSlide、仕様、Code、Test、調査報告など。",
   open: "EVIDENCE", unresolved: "根拠", "needs-user-input-or-later-verificati": "判断を支える仕様、実装、Log、Test、公式文書。",
   boundary: "OPEN", permission: "未確認事項", "skills-do-not-expand-authority": "必要だが権限・環境・情報不足で確認できないこと。",
-  "ai-engine-dev-guide": FOOTER, "00": page(61)
+  "ai-engine-dev-guide": FOOTER, "00": page(63)
 }, { "evidence-and-authority": 30, "verified-by-a-current-source-or-chec": 12, "useful-for-progress-but-clearly-labe": 12, "needs-user-input-or-later-verificati": 12, "skills-do-not-expand-authority": 12, "ai-engine-dev-guide": 8, "00": 8 });
 
 addTemplate("guide-checklist", {
