@@ -119,3 +119,24 @@ Source: Current conversation, section 02 revision feedback on 2026-09-06
 Supports: Explicit two-environment explanation and environment-specific grouping of first-request examples.
 Status: confirmed
 Notes: Section 02 must identify Development as the system-development environment and Presentation as the document-creation environment before examples are introduced.
+
+[S18]
+Type: no-external-source
+Source: 資料作成者の構成（2026-10-01 図解ブラッシュアップ）
+Supports: 図解化で追加した構成上の表現。読み方スライドの疑問と章の対応、再利用キットの構成図、依頼文4要素の例文（Development 例1の依頼文を分割）、利用前後の対応関係、権限スペクトラム、Presentation Skillの関係図、Deck projectのFile入出力図。
+Status: confirmed
+Notes: 既存スライドの内容を図に置き換えたもので、新しい機能や数値の主張は追加していない。権限スペクトラムの補足文はAGENTS.md／CLAUDE.mdの「Skill利用は権限を追加しない」に基づく。
+
+[S19]
+Type: calculation
+Source: projects/ai-engine-dev-workspace-guide/build.ts の developmentSkills 配列（52件）と Presentation Skill索引
+Supports: Skill分類マップの件数（統合13、Matt明示9、Matt自動9、Productivity 7、Beta 8、Misc 4、補助2、Presentation 5）と索引ページ範囲、Skillの系統スライドの構成比（13件と39件、Matt原文37件）。
+Status: confirmed
+Notes: 索引ページは配列の位置から4件ごとに算出（ページ = 位置 ÷ 4 の切り捨て + 1）。ui-ux-pro-maxはDevelopment補助とPresentationの両方に掲載されている。
+
+[S20]
+Type: local-file
+Source: Repository root の実ディレクトリ（AGENTS.md, CLAUDE.md, README.md, Lerning/, development/, presentation/, docs/orchestration/, .agents/skills/, .claude/skills/）、development/README.md「新規Projectへ展開する」「フォルダ構成」
+Supports: 4枚目のRepository構成図、13枚目のコピー元・コピー先ツリー（development/ の .agents/ .claude/ を含む構成）、32・37枚目のフォルダ構成図。
+Status: confirmed
+Notes: 2026-10-02 に ls -a で確認。.agents/skills と .claude/skills は development/ 配下のSkillへのLink。

@@ -34,3 +34,28 @@ Section map:
 [presentation-reference] Job: explain the Presentation folder, five Skills, Deck project files, and QA after the reader has seen a practical use. Enters from: Development reference. Hands off to: outcome and handoff. Status: revised.
 [outcome-and-handoff] Job: summarize before/after state, artifact locations, permissions, and the next human action. Enters from: both workflows. Hands off to: appendix. Status: revised.
 [appendix] Job: provide a compact reference for all 52 Development Skills and five Presentation Skills. Enters from: outcome summary. Hands off to: final first-use checklist. Status: existing, moved later.
+
+--- Revision 2026-10-01: visual brush-up ---
+Mode: revision
+Request: 図解などを入れて、わかりやすい内容にブラッシュアップする。
+Decisions (confirmed 2026-10-01, AskUserQuestion):
+- 範囲: 内容と順序は維持し、文章・表・番号付きリストだけのスライドを、既存テンプレートと同じ見た目の図解スライドへ置き換える。
+- Skill索引: 表のまま残し、索引の冒頭にSkill分類マップを1枚追加する。
+Core items: audience=clear purpose=clear use-context=clear action=clear takeaway=clear scope=clear（既存briefから変更なし）
+Visual approach: ネイティブ図形の図解とバンドルのLucideアイコン（ISC）のみ。写真や外部素材は使わない。既存テンプレートの書体（Noto Sans JP）、見出し、カード、フッターに合わせる。
+Visual plan:
+- 2 読み方: 4つの疑問と章の対応フロー / 3 再利用キット: キット→CLI→対象Project→成果物の構成図
+- 4, 5 できること: アイコン付き4カード / 8 利用前後: 対応する5項目の前後比較図
+- 11 このRepositoryで使う: アイコン付き4ステップ / 13 既存Project: 保持と追加を示すbootstrap図 / 14 Skill登録: setup Scriptから2つのSkill置き場へのリンク図
+- 15 生成Engine: Commandパイプライン / 16 Matt原文Skill: 段階的に追加する階段図
+- 19 2つの作業環境: 成果物で分岐する図 / 20 依頼文の型: 依頼文の4区画の分解図
+- 22, 24, 26 依頼例: 依頼文→AIが進める工程の縦フロー（24は「診断まで」の停止線付き）
+- 29 人が決めること: AI自律から人の承認までの権限スペクトラム / 34 Skillの系統: 13件と39件の構成比バーと説明
+- 37 Presentation Skill: 5 Skillの関係図 / 38 Deck project: Fileの入出力図
+- 新規 Skill分類マップ（06の区切りの直後）: 52+5 Skillの系統別マップ
+- 既存の図解（6, 7, 10, 23, 27, 28, 31–33, 36, 39）、チェックリスト（17, 42, 60）、比較（41）、用語（59）、索引表は維持
+- 1 表紙, 区切り, 索引表: text-only（表紙・区切り・参照用の表のため）
+
+--- Revision 2026-10-02: folder diagrams ---
+Request: フォルダ構成図も追加する。
+Decision (confirmed 2026-10-02, AskUserQuestion): Repository全体の構成図を4枚目（再利用キットの直後）に追加し、文字ツリーで描いていた4枚（新規Projectへのコピー、成果物の場所、development/、presentation/）を箱と線のフォルダ構成図に置き換える。以降のページ番号は1つずつ繰り下げる（全62枚）。
