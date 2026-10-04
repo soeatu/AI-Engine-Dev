@@ -1,0 +1,12 @@
+[A1]
+File: presentation/harness/assets/icons/*.svg（ネイティブ図形として描画、画像の埋め込みなし）
+Origin: bundled
+Source: https://lucide.dev （lucide-static パッケージ、presentation/harness/assets/icons/）
+Author: Lucide contributors
+License: ISC
+License URL: https://lucide.dev/license
+Commercial use: yes
+Attribution: not required
+Modified: yes: 線の色を資料の配色に変更
+Checked: 2026-10-01
+Used on: 図解スライドのアイコン全般

@@ -1,20 +1,40 @@
 # QA report
 
 - PPTX package: valid
-- Slides: 36
-- Rendered slide images: 36
+- Slides: 37
+- Rendered slide images: 37
 - Source ledger: present
+- Embedded media files: 0
+- Asset ledger entries: 1
 - Automated result: PASS
 
 ## Automated findings
 
 - None
 
+## Warnings
+
+- Slide 1 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
+- Slide 8 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
+- Slide 12 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
+- Slide 17 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
+- Slide 23 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
+- Slide 36 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
+- Slide 37 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
+
 ## Manual visual review
 
 Automated checks do not prove visual quality. Inspect every rendered slide at full size and record clipping, overlap, contrast, alignment, chart accuracy, and source-placement findings before delivery.
 
-### Manual visual review result (2026-09-17, revision 3: computer-use section insertion)
+### Manual visual review result (2026-10-01〜02, revisions 4–5: visual brush-up and folder diagram)
+
+- Render method: LibreOffice未導入のため、Keynote Creator StudioでPDF化し、pdftoppm(110dpi)で全37枚をPNG化（output/screenshots）。PowerPoint for Windowsとはフォント代替や行高が異なる可能性がある。
+- Change (revision 4): 内容と順序を維持し、文章・表だけのスライドを図解へ置き換えた（アイコン付きフロー、ハブ型構成図、コード＋処理フロー帯、コード横の段階レール、2レーン比較、比較カード、ループ図、レーン図、確認箇所と症状の対応図など）。「4つの値」は環境変数名が長いため表を維持。
+- Change (revision 5): 7枚目に「設定とスクリプトの置き場所」のフォルダ構成図を追加（以降の番号は1つずつ繰り下げ）。
+- Review: 変更・追加した全スライドを原寸で確認し、チップ内の折り返し、コードとラベルの重なり、カード内のはみ出し、ループ矢印の向き、ツリーのファイル名の折り返しを修正して再確認した。全37枚を縮小一覧でも確認した。
+- Warnings above: 表紙・区切り・出典一覧は計画どおりtext-only。
+
+### Earlier review result (2026-09-17, revision 3: computer-use section insertion)
 
 - Render method: LibreOffice未導入のため、Keynote Creator StudioでPDF化し、pdftoppm(110dpi)で全36枚をPNG化。PowerPoint for Windowsとはフォント代替や行高が異なる可能性がある。
 - Change: [computer-use] セクション(22–28枚目)をimage-modelの後に挿入。関連更新: 4(前提条件にPython)、5(デプロイ手順にGPT-5.6系、5手順用に行間とnote位置を調整)、29(動作確認にComputer Use)、33(Computer Useのエラー対処を追加)、34(運用上の注意に追加)、35–36(出典を2枚に分割)。tableSlideのnoteは表の下端に合わせて自動配置するよう変更。

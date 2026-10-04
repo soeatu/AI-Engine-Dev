@@ -6,7 +6,7 @@
 
 - `brief.txt`: 対象読者、目的、範囲、構成、確認状態
 - `source-notes.txt`: 確認済み情報、出典、件数の根拠
-- `build.ts`: 資料本編62ページの生成コード
+- `build.ts`: 資料本編64ページの生成コード
 - `build-templates.ts`: この資料用に作成した10種類の再利用Templateを確認するための生成コード
 - `output/deck.pptx`: 資料本編
 - `output/template-deck.pptx`: Template確認用Deck

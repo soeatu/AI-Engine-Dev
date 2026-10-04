@@ -102,3 +102,27 @@ Hands off to: 動作確認（Computer Useの確認を含む）
 Status: new
 Insertion anchor: after image-model
 Impact on existing: [prepare] 前提条件にPythonを追加、デプロイ手順にGPT-5.6系を追加 / [verify-troubleshoot] 動作確認にComputer Useを追加、Computer Useのエラー対処スライドを追加 / [security-close] 運用上の注意にComputer Useを追加、出典を2枚に分割して追加。
+
+--- Revision 2026-10-01: visual brush-up ---
+Mode: revision
+Request: 図解などを入れて、わかりやすい内容にブラッシュアップする。
+Decisions (confirmed 2026-10-01, AskUserQuestion):
+- 範囲: 内容と順序は維持し、文章・表・番号付きリストだけのスライドを図解（フロー、構成図、比較、アイコン付きカード）へ置き換える。全体像の図解は必要な分だけ追加する。
+- コードのスライド: コードはコピーできる形のまま残し、設定がどこに保存され何に効くかを示す小さな図を添える。枚数は大きく増やさない。
+Core items: audience=clear purpose=clear use-context=clear action=clear takeaway=clear scope=clear（既存briefから変更なし）
+Visual approach: ネイティブ図形の図解とバンドルのLucideアイコン（ISC）のみ。写真や外部素材は使わない。
+Visual plan:
+- 2 4ステップ: アイコン付きフロー / 3 接続構成: 構成図（既存）
+- 4 前提条件: アイコン付きカード6枚 / 5 デプロイ: ハブ型の構成図（Foundry→4デプロイ→利用するCLI） / 6 控える値: 表＋アイコン（環境変数名が長く図形に収まらないため表を維持）
+- 8, 10, 12, 13, 20, 25 コード: コード＋下部の処理フロー帯 / 9 config.toml: コード＋読み込みの流れ帯
+- 14 モデル固定: コード＋別名→デプロイ名の対応図 / 15 Entra ID: APIキー方式とEntra ID方式の2レーン比較図
+- 17 flare/sunburst: 比較カード＋共通仕様帯 / 18 画像API構成: 構成図（既存） / 19, 26, 27 長いコード: 右端に処理段階のレール
+- 21 CLIへの伝え方: 依頼→CLI→承認→PNGのフロー / 23 使える範囲: 可否アイコン付きの比較行 / 24 操作ループ: 戻り矢印付きのループ図
+- 28 安全対策, 34 運用: アイコン付きカード / 29 動作確認: 対象→コマンド→結果のレーン図
+- 30–33 エラー対処: 設定の通り道（縦チェーン）に症状と確認点を対応させた図
+- 1 表紙, 7/11/16/22 区切り, 35–36 出典: text-only（表紙・区切り・出典一覧のため）
+
+--- Revision 2026-10-02: folder diagram ---
+Request: フォルダ構成図も追加する。
+Decision (confirmed 2026-10-02, AskUserQuestion): 両資料に追加する。本資料には、設定ファイルとスクリプトの置き場所を示す構成図を[prepare]の末尾（4つの値の後）に1枚追加する。
+Visual: ユーザー設定（%USERPROFILE%\.codex\config.toml、ユーザー環境変数）と作業Project（AGENTS.md、CLAUDE.md、scripts\gen-image.ps1、computer_use_loop.py、.venv）のツリー。各ファイルに対応するPartのタグを付ける。Projectの配置は一例と明記する。
