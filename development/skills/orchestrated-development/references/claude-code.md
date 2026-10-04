@@ -1,6 +1,6 @@
 # Claude Codeでの実行
 
-Project Rootの`.claude/agents/`にある役割定義を使用する。
+Project Rootの`.claude/agents/`にある役割定義を使用する。ブレイン/プランナー（Controller、設計、レビュー）はOpus、ワーカー（実装）はSonnetに固定する。
 
 | Agent | 用途 | model / effort |
 |---|---|---|
@@ -9,7 +9,7 @@ Project Rootの`.claude/agents/`にある役割定義を使用する。
 | `task-reviewer` | Taskの二軸レビュー | Opus / high |
 | `final-reviewer` | 全体レビュー | Opus / high |
 
-Taskが複数ファイルの統合や難しいデバッグを含む場合は、`implementation-worker`の呼び出し時effortを`high`へ上げる。Architecture判断が残るTaskは実装担当へ渡さず、`architecture-designer`へ戻す。
+Taskが複数ファイルの統合や難しいデバッグを含む場合も、モデルはSonnetのまま`implementation-worker`の呼び出し時effortを`high`へ上げる。修正後の再レビューは`task-reviewer`（Opus）を新しいContextで呼び出す。Architecture判断が残るTaskは実装担当へ渡さず、`architecture-designer`へ戻す。
 
 Agentを呼び出すときは、要求をPromptへ展開せず、Brief、報告先、差分または基準点の絶対パスを渡す。モデルの実効値が組織のallowlistや環境設定により置換された場合は、その表示を確認して`ledger.md`へ記録する。
 

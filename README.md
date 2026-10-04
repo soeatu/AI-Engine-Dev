@@ -25,7 +25,7 @@ Matt Pocockの原文Skillは、開発途中・補助用途を含む全37個を[`
 
 UI/UXの設計・実装・レビューでは、[`ui-ux-pro-max`](development/skills/ui-ux-pro-max/README.md)を標準工程の補助として使用できます。資料作成側にも同じ固定RevisionのPackageを[`presentation/skills/ui-ux-pro-max`](presentation/skills/ui-ux-pro-max/README.md)へ収録しており、スライドの視覚設計を検討するときは`build-presentation`と表示QAを維持したまま併用します。
 
-承認済み計画を複数モデルで実行する場合は、[`orchestrated-development`](development/skills/orchestrated-development/SKILL.md)が、設計、Task実装、二軸レビュー、修正ループ、全体レビューを統括します。CodexではSol/Luna等を委譲時に指定し、Claude Codeでは`.claude/agents/`のOpus/Sonnet定義を使用します。
+承認済み計画を複数モデルで実行する場合は、[`orchestrated-development`](development/skills/orchestrated-development/SKILL.md)が、設計、Task実装、二軸レビュー、修正ループ、全体レビューを統括します。ブレイン/プランナーはCodexではSol、Claude CodeではOpus、ワーカーはCodexではLuna、Claude CodeではSonnetを使用します（Claude Codeは`.claude/agents/`の定義で固定）。
 
 ## 資料作成ハーネス
 

@@ -347,6 +347,21 @@ addTemplate("guide-comparison", {
   "ai-engine-dev-guide": FOOTER, "00": page(34)
 }, { "two-area-comparison": 27, "purposeprimary-inputstypical-skillsm": 12, "purposeprimary-inputstypical-skillsm-2": 12, "shared-rule-evidence-canonical-sourc": 11, "ai-engine-dev-guide": 8, "00": 8 });
 
+addTemplate("guide-comparison", {
+  comparison: "モデル別AGENT", "two-area-comparison": "判断するAgentと実装するAgentをモデルごとに分ける",
+  "left-area": "BRAIN / PLANNER", development: "Codex：Sol｜Claude Code：Opus",
+  "purposeprimary-inputstypical-skillsm": "全体の進行と判定（Controller）\nArchitecture設計と実装計画\nTask Briefの作成と固定\nTask reviewと修正後の再レビュー\n全Task完了後の全体レビュー",
+  "right-area": "WORKER", presentation: "Codex：Luna｜Claude Code：Sonnet",
+  "purposeprimary-inputstypical-skillsm-2": "固定されたBriefだけを実装\nTestと検証Commandの実行\n自己レビューと実装報告\n設計判断が残ればPlannerへ戻す\n難しいTaskはeffortを上げる",
+  "shared-rule-evidence-canonical-sourc": "モデルは既定値に任せず、役割ごとに明示して委譲する",
+  "ai-engine-dev-guide": FOOTER, "00": page(35)
+}, { "two-area-comparison": 24, development: 13, presentation: 13, "purposeprimary-inputstypical-skillsm": 12, "purposeprimary-inputstypical-skillsm-2": 12, "shared-rule-evidence-canonical-sourc": 11, "ai-engine-dev-guide": 8, "00": 8 });
+
+addProcess("実装とレビューを別Agent・別Contextで回す", [
+  ["計画", "Planner\n設計・Brief"], ["実装", "Worker\n実装・検証"], ["審査", "Planner\n二軸Review"],
+  ["修正", "Worker\n指摘を修正"], ["完了", "Planner\n全体Review"]
+], 36, "ORCHESTRATED-DEVELOPMENT");
+
 // 5. Presentation reference
 addSection("04", "Presentationを詳しく見る", "Deck作成、Template再利用、生成Engine、品質確認の役割を確認する");
 
@@ -356,7 +371,7 @@ addTemplate("guide-folder-map", {
   "primary-area": "作成中", "folder-name": "harness/projects/", "responsibility-and-entry-point": "資料ごとのBrief、生成Code、出典、出力を管理する。",
   "canonical-entry": "再利用", "readme-md": "harness/templates/", "first-document-and-next-action": "実Slideと編集Field、用途説明を部品として管理する。",
   boundary: "共有", "what-belongs-elsewhere": "presentations/", "name-the-nearest-related-area-and-pr": "完成版またはReview対象を共有領域へ置く。",
-  "ai-engine-dev-guide": FOOTER, "00": page(36)
+  "ai-engine-dev-guide": FOOTER, "00": page(38)
 }, { "folder-roles-become-clear-at-a-glanc": 27, "folder-name": 15, "responsibility-and-entry-point": 11, "readme-md": 15, "first-document-and-next-action": 11, "what-belongs-elsewhere": 17, "name-the-nearest-related-area-and-pr": 11, "ai-engine-dev-guide": 8, "00": 8 }, { "workspace-root-development-projects-": MONO });
 
 addCatalog("5つのPresentation Skillは役割ごとに選ぶ", [
@@ -364,7 +379,7 @@ addCatalog("5つのPresentation Skillは役割ごとに選ぶ", [
   { category: "部品化", name: "ingest-slide-templates", when: "既存PPTXを再利用", output: "template.pptx等" },
   { category: "部品説明", name: "describe-slide-template", when: "AIが選べる説明を作る", output: "description.md" },
   { category: "共通Design", name: "customize-presentation-design", when: "色・書体・Logo変更", output: "design.ts・design.md" }
-], 37, "PRESENTATION SKILL");
+], 39, "PRESENTATION SKILL");
 
 addTemplate("guide-step-by-step", {
   "step-by-step": "DECK PROJECT", "four-step-procedure": "目的・根拠・生成・結果を別Fileで残す",
@@ -372,13 +387,13 @@ addTemplate("guide-step-by-step", {
   "2": "2", "fix-the-brief": "source-notes.txt", "record-scope-evidence-constraints-an": "事実、仮定、未確認、出典、支持する主張。",
   "3": "3", "run-the-skill": "build.ts", "create-the-artifact-with-its-require": "Slide順と内容を決定論的なCodeで再生成可能にする。",
   "4": "4", "verify-and-hand-off": "output/", "separate-completed-checks-from-remai": "deck.pptx、全枚画像、Build report、QA report。",
-  "ai-engine-dev-guide": FOOTER, "00": page(38)
+  "ai-engine-dev-guide": FOOTER, "00": page(40)
 }, { "four-step-procedure": 27, "ai-engine-dev-guide": 8, "00": 8 });
 
 addProcess("PPTX生成成功と資料品質を別々に確認する", [
   ["Build", "TypeScript\nPPTX生成"], ["構造", "Package・Field\nSlide数"], ["画像化", "全Slideを\n同じ条件でRender"],
   ["目視", "切れ・重なり\n余白・対比"], ["引渡", "実施済み\n未実施を分離"]
-], 39, "PRESENTATION QA");
+], 41, "PRESENTATION QA");
 
 // 6. Outcome and handoff
 addSection("05", "使った結果を引き継ぐ", "成果物、検証、未確認事項、次の人の行動を一つにまとめる");
@@ -390,7 +405,7 @@ addTemplate("guide-comparison", {
   "right-area": "READY TO REVIEW", presentation: "引き継げる状態",
   "purposeprimary-inputstypical-skillsm-2": "成果物へのPathがある\n正本文書と変更が一致する\n検証Commandと結果がある\n未確認・Riskが分離される\n次のHuman actionが明確",
   "shared-rule-evidence-canonical-sourc": "利用後に確認するもの：成果物・根拠・検証・未確認・次の行動",
-  "ai-engine-dev-guide": FOOTER, "00": page(41)
+  "ai-engine-dev-guide": FOOTER, "00": page(43)
 }, { "two-area-comparison": 27, "purposeprimary-inputstypical-skillsm": 12, "purposeprimary-inputstypical-skillsm-2": 12, "shared-rule-evidence-canonical-sourc": 11, "ai-engine-dev-guide": 8, "00": 8 });
 
 addTemplate("guide-checklist", {
@@ -465,7 +480,7 @@ const developmentSkills: SkillRow[] = [
 if (developmentSkills.length !== 52) throw new Error(`Expected 52 development Skills, found ${developmentSkills.length}.`);
 
 for (let index = 0; index < developmentSkills.length; index += 4) {
-  addCatalog(`Development Skill索引 ${index / 4 + 1}/13`, developmentSkills.slice(index, index + 4), 44 + index / 4, "APPENDIX：52 SKILLS");
+  addCatalog(`Development Skill索引 ${index / 4 + 1}/13`, developmentSkills.slice(index, index + 4), 46 + index / 4, "APPENDIX：52 SKILLS");
 }
 
 addCatalog("Presentation Skill索引 1/2", [
@@ -473,14 +488,14 @@ addCatalog("Presentation Skill索引 1/2", [
   { category: "取込", name: "ingest-slide-templates", when: "既存Slideを部品化", output: "Template一式" },
   { category: "説明", name: "describe-slide-template", when: "Template用途を記述", output: "description.md" },
   { category: "Design", name: "customize-presentation-design", when: "共通Designを変更", output: "design.ts・design.md" }
-], 57, "APPENDIX：PRESENTATION");
+], 59, "APPENDIX：PRESENTATION");
 
 addCatalog("Presentation Skill索引 2/2", [
   { category: "UI/UX補助", name: "ui-ux-pro-max", when: "設計知識・候補を検索", output: "候補・確認観点" },
   { category: "正本", name: "presentation/skills/README.md", when: "Skillを選ぶ", output: "入口と境界" },
   { category: "設定", name: "presentation/skills/SETUP.md", when: "Codex/Claudeへ登録", output: "Linkと検証手順" },
   { category: "実行", name: "presentation/harness/README.md", when: "依存・Commandを確認", output: "生成・QA手順" }
-], 58, "APPENDIX：PRESENTATION");
+], 60, "APPENDIX：PRESENTATION");
 
 addTemplate("guide-evidence-and-caution", {
   "evidence-and-caution": "用語", "evidence-and-authority": "4つの用語を同じ意味で使う",
@@ -488,7 +503,7 @@ addTemplate("guide-evidence-and-caution", {
   assumption: "OUTPUT", "assumption-2": "成果物", "useful-for-progress-but-clearly-labe": "利用されるSlide、仕様、Code、Test、調査報告など。",
   open: "EVIDENCE", unresolved: "根拠", "needs-user-input-or-later-verificati": "判断を支える仕様、実装、Log、Test、公式文書。",
   boundary: "OPEN", permission: "未確認事項", "skills-do-not-expand-authority": "必要だが権限・環境・情報不足で確認できないこと。",
-  "ai-engine-dev-guide": FOOTER, "00": page(59)
+  "ai-engine-dev-guide": FOOTER, "00": page(61)
 }, { "evidence-and-authority": 30, "verified-by-a-current-source-or-chec": 12, "useful-for-progress-but-clearly-labe": 12, "needs-user-input-or-later-verificati": 12, "skills-do-not-expand-authority": 12, "ai-engine-dev-guide": 8, "00": 8 });
 
 addTemplate("guide-checklist", {
