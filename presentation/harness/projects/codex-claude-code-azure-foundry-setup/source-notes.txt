@@ -129,3 +129,17 @@ Source: 資料作成者の構成
 Supports: computer_use_loop.py の実装（同期Playwright、MAX_STEPS上限、安全チェックの人手承認、キー対応表の簡略化）、環境変数名 AZURE_CU_RESOURCE / AZURE_CU_DEPLOYMENT / AZURE_CU_API_KEY、Computer Useのエラー対処表の404行・停止行。
 Status: assumption
 Notes: スクリプトは構文検査のみ実施し、実際のGPT-5.6系デプロイでは未実行。
+
+[A4]
+Type: no-external-source
+Source: 資料作成者の構成（2026-10-01 図解ブラッシュアップ）
+Supports: 図解化で追加した構成上の表現。処理フロー帯（例: setxで保存 → 新しいターミナルで起動 → Foundry）、コード横の段階ラベル（入力・URL・本文・送信・保存など）、操作ループの戻り矢印、エラー対処図の「確認する箇所（上から順に）」の並び、「この資料の方法」の表示。
+Status: confirmed
+Notes: 既存スライドの内容とコードを図に置き換えたもので、新しい事実の主張は追加していない。エラー対処図の並びは確認の順番の提案であり、CLIが設定を読む順序を示すものではない。
+
+[A5]
+Type: no-external-source
+Source: 資料作成者の構成（2026-10-02 フォルダ構成図）
+Supports: 7枚目「設定とスクリプトの置き場所」。各ファイルのパスは本資料の既存スライド（config.toml: Part 1、gen-image.ps1・AGENTS.md・CLAUDE.md: Part 3、computer_use_loop.py・.venv: Part 4）から集約した。
+Status: confirmed
+Notes: AGENTS.md・CLAUDE.md・computer_use_loop.py・.venv を作業Projectの直下に置く配置は一例（スライドにも明記）。
