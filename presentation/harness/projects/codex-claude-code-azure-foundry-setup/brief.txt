@@ -10,7 +10,7 @@ Out of scope: macOS/Linux手順、Azureサブスクリプション契約・課�
 Constraints: 日本語。編集可能なPPTX。harnessの共通Design Systemで作成。秘密情報を資料に書かない。
 Deadline: 未指定
 Requested evidence: OpenAI Codex / Anthropic Claude Code / Microsoft Learnの公式ドキュメント(2026-09時点で確認)。
-Decisions: OS=Windows。認証=APIキー中心、Entra ID(az login)を補足。モデル=Codex CLIはFoundry上のGPT系、Claude CodeはFoundry上のClaude系。作業はharness/projects配下、完成PPTXをpresentation/presentations/へコピー。
+Decisions: OS=Windows。認証=APIキー中心、Entra ID(az login)を補足。モデル=Codex CLIはFoundry上のGPT系、Claude CodeはFoundry上のClaude系。作業はharness/projects配下、完成PPTXをpresentation/presentations/codex-claude-code-azure-foundry-setup/へコピー。
 Unresolved: 組織固有のリソース名・リージョン・利用可能モデル(資料ではプレースホルダー表記)。スライド枚数は手順を網羅する範囲で15枚前後を目安。
 Confirmation: confirmed 2026-09-17 利用者がAskUserQuestionで上記4項目(読者/OS/認証/モデル・保存先)を選択
 
@@ -92,7 +92,7 @@ Decisions (confirmed 2026-09-17, AskUserQuestion):
 - 利用形態: Responses APIのcomputerツールで操作ループを自作する（Python + Playwright）。Codex CLI / Claude Codeの組み込みComputer UseはFoundry経由で使えない旨を冒頭で明記。
 - モデル・認証: GPT-5.6系（sol / terra / luna）をAPIキーで利用。GPT-5.5も同じ手順で使えると補足。
 - 位置: Part 4としてimage-modelの後、verify-troubleshootの前に挿入。前提条件、デプロイ手順、動作確認、エラー対処、運用上の注意、出典も更新。
-- 付属物: 資料のコード抜粋では全体を載せきれないため、完全なスクリプト computer_use_loop.py を資料と同じフォルダ(presentation/presentations/)に置く。
+- 付属物: 資料のコード抜粋では全体を載せきれないため、完全なスクリプト computer_use_loop.py を資料と同じフォルダ(presentation/presentations/codex-claude-code-azure-foundry-setup/)に置く。
 
 [computer-use]
 Job: Foundry上のGPT-5.6系でComputer Useを使う方法（CLIでは不可、APIで自作）と、その安全な動かし方を示す
@@ -126,3 +126,30 @@ Visual plan:
 Request: フォルダ構成図も追加する。
 Decision (confirmed 2026-10-02, AskUserQuestion): 両資料に追加する。本資料には、設定ファイルとスクリプトの置き場所を示す構成図を[prepare]の末尾（4つの値の後）に1枚追加する。
 Visual: ユーザー設定（%USERPROFILE%\.codex\config.toml、ユーザー環境変数）と作業Project（AGENTS.md、CLAUDE.md、scripts\gen-image.ps1、computer_use_loop.py、.venv）のツリー。各ファイルに対応するPartのタグを付ける。Projectの配置は一例と明記する。
+
+--- Revision 2026-10-06: readability and navigation ---
+Mode: revision
+Request: 資料がわかりづらいので、ブラッシュアップする。
+Clarification log:
+- R1 2026-10-06: asked 対象資料・わかりにくい点・変更範囲・表示確認の方法; answered 両方の資料、「文字が小さく情報が多い」「枚数が多く探しにくい」「図が抽象的」、構成から見直す（色・書体は維持）、LibreOfficeを導入。
+- R2 2026-10-06: asked 改訂案の承認・表示確認の方法（LibreOfficeで日本語が出ないため）; answered この案で進める、Keynoteで書き出す。
+Core items: audience=clear purpose=clear use-context=clear action=clear takeaway=clear scope=clear（既存briefから変更なし）
+Confirmation: confirmed 2026-10-06 利用者がAskUserQuestionで改訂案を承認
+Decisions:
+- 冒頭に「必要なPartだけ読めばよい」案内（ページ番号付き）を追加する。
+- 抽象的な「4ステップ」図を、Part 1〜4ごとのデプロイ・導入・設定・確認の対応表に置き換える。
+- 接続先URLの図に画像スクリプトとComputer Useも入れて1枚にまとめ、画像APIの構成図（旧19）は削除する。
+- トラブル対処（旧31〜34）を各Partの末尾へ移し、Partごとに完結させる。Partの扉にページ範囲と設定する値を載せる。
+- Computer Useのコードは操作ループ（旧28）だけを残し、最初の依頼のコード（旧27）は削除する。全文は付属の computer_use_loop.py。
+- 色・書体（Inter、JetBrains Mono、harness共通の配色）と文字サイズ（タイトル35pt、本文16pt）は維持する。
+Section map (36 slides):
+[cover] 1 表紙
+[guide] 2 必要なPartだけ読めばよい（新規） Visual: 共通→CLI選択→任意Part→確認の経路図とページ番号
+[overview] 3 Partごとの4ステップ（対応表に置換） Visual: Part×4段階の表 / 4 接続先のURLは2種類（旧3と旧19を統合） Visual: 4つの利用元→2種類のエンドポイントの構成図
+[prepare] 5 前提条件 / 6 デプロイ / 7 控える値 / 8 置き場所（変更なし）
+[codex] 9 扉 / 10 インストール / 11 config.toml / 12 APIキーと起動 / 13 トラブル対処（旧31を移動）
+[claude-code] 14 扉 / 15 インストール / 16 環境変数 / 17 モデル固定 / 18 Entra ID / 19 トラブル対処（旧32を移動）
+[image-model] 20 扉 / 21 flareとsunburst / 22 スクリプト / 23 環境変数と実行 / 24 CLIへの伝え方 / 25 トラブル対処（旧33を移動）
+[computer-use] 26 扉 / 27 使える範囲 / 28 操作ループ / 29 準備 / 30 ループのコード / 31 安全対策 / 32 トラブル対処（旧34を移動）
+[verify-close] 33 4つの接続の確認 / 34 運用 / 35–36 出典
+Visual: 扉はページ範囲、手順、設定する値を表示する。ほかの図解は既存を維持。

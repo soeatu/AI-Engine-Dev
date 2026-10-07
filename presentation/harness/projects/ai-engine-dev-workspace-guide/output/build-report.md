@@ -1,38 +1,54 @@
 # Build report
 
-- Generated at: 2026-10-04T11:50:57.033Z
-- Output: /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/magical-sutherland-e04a04/presentation/harness/projects/ai-engine-dev-workspace-guide/output/deck.pptx
-- Slides built: 64
-- Templates used: guide-cover, guide-process-flow, guide-process-flow, guide-section-divider, guide-routing-guide, guide-checklist, guide-section-divider, guide-section-divider, guide-process-flow, guide-section-divider, guide-process-flow, guide-section-divider, guide-routing-guide, guide-process-flow, guide-comparison, guide-process-flow, guide-section-divider, guide-process-flow, guide-section-divider, guide-comparison, guide-checklist, guide-section-divider, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-skill-catalog, guide-evidence-and-caution, guide-checklist
-- Custom slides used: guide-question-journey, guide-kit-architecture, guide-folder-tree, guide-capability-cards, guide-capability-cards, guide-before-after, guide-icon-steps, guide-copy-tree, guide-stage-map, guide-node-map, guide-command-pipeline, guide-staircase, guide-fork, guide-request-anatomy, guide-request-flow, guide-request-flow, guide-request-flow, guide-folder-tree, guide-authority-spectrum, guide-folder-tree, guide-composition, guide-folder-tree, guide-node-map, guide-node-map, guide-skill-family-map
-- Screenshots: none
+- Generated at: 2026-10-07T12:57:17.144Z
+- Output: /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/deck.pptx
+- Slides built: 43
+- Templates used: 
+- Custom slides used: guide-cover, guide-map, guide-chapter, guide-kit, guide-contrast, guide-fork, guide-capability, guide-capability, guide-chapter, guide-route, guide-step-cards, guide-command, guide-command, guide-setup-rows, guide-checklist, guide-chapter, guide-anatomy, guide-request, guide-request, guide-request, guide-zones, guide-chapter, guide-checklist, guide-tree, guide-chapter, guide-tree, guide-pick, guide-roles, guide-loop, guide-file-flow, guide-stages, guide-chapter, guide-families, guide-skill-table, guide-skill-table, guide-skill-table, guide-skill-table, guide-skill-table, guide-skill-table, guide-skill-table, guide-pair-list, guide-glossary, guide-closing
+- Screenshots: /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-01.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-02.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-03.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-04.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-05.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-06.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-07.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-08.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-09.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-10.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-11.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-12.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-13.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-14.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-15.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-16.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-17.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-18.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-19.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-20.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-21.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-22.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-23.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-24.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-25.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-26.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-27.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-28.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-29.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-30.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-31.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-32.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-33.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-34.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-35.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-36.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-37.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-38.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-39.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-40.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-41.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-42.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/ai-engine-dev-workspace-guide/output/screenshots/slide-43.png
 
 ## Warnings
 
-- custom-slide-generated: Generated custom slide 'guide-question-journey'.
-- custom-slide-generated: Generated custom slide 'guide-kit-architecture'.
-- custom-slide-generated: Generated custom slide 'guide-folder-tree'.
-- custom-slide-generated: Generated custom slide 'guide-capability-cards'.
-- custom-slide-generated: Generated custom slide 'guide-capability-cards'.
-- custom-slide-generated: Generated custom slide 'guide-before-after'.
-- custom-slide-generated: Generated custom slide 'guide-icon-steps'.
-- custom-slide-generated: Generated custom slide 'guide-copy-tree'.
-- custom-slide-generated: Generated custom slide 'guide-stage-map'.
-- custom-slide-generated: Generated custom slide 'guide-node-map'.
-- custom-slide-generated: Generated custom slide 'guide-command-pipeline'.
-- custom-slide-generated: Generated custom slide 'guide-staircase'.
+- custom-slide-generated: Generated custom slide 'guide-cover'.
+- custom-slide-generated: Generated custom slide 'guide-map'.
+- custom-slide-generated: Generated custom slide 'guide-chapter'.
+- custom-slide-generated: Generated custom slide 'guide-kit'.
+- custom-slide-generated: Generated custom slide 'guide-contrast'.
 - custom-slide-generated: Generated custom slide 'guide-fork'.
-- custom-slide-generated: Generated custom slide 'guide-request-anatomy'.
-- custom-slide-generated: Generated custom slide 'guide-request-flow'.
-- custom-slide-generated: Generated custom slide 'guide-request-flow'.
-- custom-slide-generated: Generated custom slide 'guide-request-flow'.
-- custom-slide-generated: Generated custom slide 'guide-folder-tree'.
-- custom-slide-generated: Generated custom slide 'guide-authority-spectrum'.
-- custom-slide-generated: Generated custom slide 'guide-folder-tree'.
-- custom-slide-generated: Generated custom slide 'guide-composition'.
-- custom-slide-generated: Generated custom slide 'guide-folder-tree'.
-- custom-slide-generated: Generated custom slide 'guide-node-map'.
-- custom-slide-generated: Generated custom slide 'guide-node-map'.
-- custom-slide-generated: Generated custom slide 'guide-skill-family-map'.
-- font-not-embedded: Font(s) not embedded in the deck and not known system fonts: Noto Sans JP. The deck was still built; viewers without these fonts see a substitute. Run `npm run install-fonts` or embed them in the template PPTX for exact rendering.
-- screenshots-skipped: LibreOffice was not found, so screenshots were skipped. The .pptx was still built. Install LibreOffice (https://www.libreoffice.org) to enable screenshots.
+- custom-slide-generated: Generated custom slide 'guide-capability'.
+- custom-slide-generated: Generated custom slide 'guide-capability'.
+- custom-slide-generated: Generated custom slide 'guide-chapter'.
+- custom-slide-generated: Generated custom slide 'guide-route'.
+- custom-slide-generated: Generated custom slide 'guide-step-cards'.
+- custom-slide-generated: Generated custom slide 'guide-command'.
+- custom-slide-generated: Generated custom slide 'guide-command'.
+- custom-slide-generated: Generated custom slide 'guide-setup-rows'.
+- custom-slide-generated: Generated custom slide 'guide-checklist'.
+- custom-slide-generated: Generated custom slide 'guide-chapter'.
+- custom-slide-generated: Generated custom slide 'guide-anatomy'.
+- custom-slide-generated: Generated custom slide 'guide-request'.
+- custom-slide-generated: Generated custom slide 'guide-request'.
+- custom-slide-generated: Generated custom slide 'guide-request'.
+- custom-slide-generated: Generated custom slide 'guide-zones'.
+- custom-slide-generated: Generated custom slide 'guide-chapter'.
+- custom-slide-generated: Generated custom slide 'guide-checklist'.
+- custom-slide-generated: Generated custom slide 'guide-tree'.
+- custom-slide-generated: Generated custom slide 'guide-chapter'.
+- custom-slide-generated: Generated custom slide 'guide-tree'.
+- custom-slide-generated: Generated custom slide 'guide-pick'.
+- custom-slide-generated: Generated custom slide 'guide-roles'.
+- custom-slide-generated: Generated custom slide 'guide-loop'.
+- custom-slide-generated: Generated custom slide 'guide-file-flow'.
+- custom-slide-generated: Generated custom slide 'guide-stages'.
+- custom-slide-generated: Generated custom slide 'guide-chapter'.
+- custom-slide-generated: Generated custom slide 'guide-families'.
+- custom-slide-generated: Generated custom slide 'guide-skill-table'.
+- custom-slide-generated: Generated custom slide 'guide-skill-table'.
+- custom-slide-generated: Generated custom slide 'guide-skill-table'.
+- custom-slide-generated: Generated custom slide 'guide-skill-table'.
+- custom-slide-generated: Generated custom slide 'guide-skill-table'.
+- custom-slide-generated: Generated custom slide 'guide-skill-table'.
+- custom-slide-generated: Generated custom slide 'guide-skill-table'.
+- custom-slide-generated: Generated custom slide 'guide-pair-list'.
+- custom-slide-generated: Generated custom slide 'guide-glossary'.
+- custom-slide-generated: Generated custom slide 'guide-closing'.

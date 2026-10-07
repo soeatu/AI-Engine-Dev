@@ -12,8 +12,8 @@ import {
   codeFlowSlide,
   codeMappingSlide,
   compareCardsSlide,
-  connectionSlide,
   coverSlide,
+  endpointMapSlide,
   faultMapSlide,
   fileMapSlide,
   flowSlide,
@@ -22,6 +22,7 @@ import {
   iconListSlide,
   lanesSlide,
   railCodeSlide,
+  routeMapSlide,
   sectionSlide,
   sourcesSlide,
   stageFlowSlide,
@@ -41,6 +42,21 @@ const deck = new Presentation({
 let page = 0;
 const next = () => ++page;
 
+// 案内スライドと扉に出すページ範囲。末尾で実際のページと照合する。
+const PAGES = {
+  prepare: [3, 8],
+  codex: [9, 13],
+  claude: [14, 19],
+  image: [20, 25],
+  cu: [26, 32],
+  close: [33, 34],
+  sources: [35, 36]
+} as const;
+type Section = keyof typeof PAGES;
+const pages = (range: readonly [number, number]) => `p.${range[0]}–${range[1]}`;
+const starts: Partial<Record<Section, number>> = {};
+const mark = (section: Section) => { starts[section] = page + 1; };
+
 // ── [cover] ─────────────────────────────────────────────
 next();
 deck.addCustomSlide(coverSlide({
@@ -51,41 +67,78 @@ deck.addCustomSlide(coverSlide({
 
 // ── [overview] ──────────────────────────────────────────
 const OVERVIEW = "全体像";
-deck.addCustomSlide(flowSlide({
+deck.addCustomSlide(routeMapSlide({
   pageNum: next(),
   label: OVERVIEW,
-  title: "4ステップで両CLIを接続する",
-  steps: [
-    { heading: "デプロイ", body: "GPT系\nClaude系\n画像モデル\nを配置", icon: "cloud" },
-    { heading: "導入", body: "PowerShellで\n2つのCLIを\nインストール", icon: "download" },
-    { heading: "接続設定", body: "Codex:\nconfig.toml\nClaude Code:\n環境変数", icon: "settings" },
-    { heading: "動作確認", body: "codex exec\n/status\nで応答を確認", icon: "circle-check" }
+  title: "必要なPartだけ読めばよい",
+  tiers: [
+    { who: "全員", boxes: [{ tag: "共通", name: "準備", detail: "全体像・前提・デプロイ・控える値", pages: pages(PAGES.prepare), tone: "ink" }] },
+    {
+      who: "使うCLIだけ",
+      boxes: [
+        { tag: "Part 1", name: "Codex CLI", pages: pages(PAGES.codex), tone: "accent" },
+        { tag: "Part 2", name: "Claude Code", pages: pages(PAGES.claude), tone: "accent2" }
+      ]
+    },
+    {
+      who: "必要な場合",
+      boxes: [
+        { tag: "Part 3", name: "画像モデル", pages: pages(PAGES.image), tone: "accent3" },
+        { tag: "Part 4", name: "Computer Use", pages: pages(PAGES.cu), tone: "ink" }
+      ]
+    },
+    {
+      who: "全員",
+      boxes: [
+        { tag: "最後", name: "確認と運用", pages: pages(PAGES.close), tone: "ink" },
+        { tag: "参考", name: "出典", pages: pages(PAGES.sources), tone: "muted" }
+      ]
+    }
   ]
 }));
 
-deck.addCustomSlide(connectionSlide({
+mark("prepare");
+deck.addCustomSlide(tableSlide({
   pageNum: next(),
   label: OVERVIEW,
-  title: "CLIごとに接続先URLが異なる",
+  title: "どのPartも4ステップで進む",
+  header: ["Part", "1 デプロイ", "2 導入", "3 設定", "4 確認"],
+  colW: [2.05, 1.95, 1.65, 1.5, 1.6],
+  rowH: 0.7,
   rows: [
+    ["Part 1\nCodex CLI", "GPT系モデル", "Codex CLI", "config.toml\nAPIキー", "codex exec"],
+    ["Part 2\nClaude Code", "Claude系モデル", "Claude Code", "環境変数", "/status"],
+    ["Part 3\n画像モデル", "GPT-Image-2.5", "スクリプト", "環境変数", "PNGを保存"],
+    ["Part 4\nComputer Use", "GPT-5.6系", "Python\nPlaywright", "環境変数", "ブラウザ操作"]
+  ],
+  note: "各Partの扉に、そのPartで設定する値をまとめている"
+}));
+
+deck.addCustomSlide(endpointMapSlide({
+  pageNum: next(),
+  label: OVERVIEW,
+  title: "接続先のURLは2種類",
+  endpoints: [
     {
-      cli: "Codex CLI",
-      via: "config.toml",
-      target: "GPT系デプロイ",
+      heading: "GPT系・画像・Computer Use のデプロイ",
       host: "<resource>.openai.azure.com",
       path: "/openai/v1",
-      tone: "accent"
+      tone: "accent",
+      clients: [
+        { tag: "Part 1", name: "Codex CLI" },
+        { tag: "Part 3", name: "画像生成" },
+        { tag: "Part 4", name: "Computer Use" }
+      ]
     },
     {
-      cli: "Claude Code",
-      via: "環境変数",
-      target: "Claude系デプロイ",
+      heading: "Claude系デプロイ",
       host: "<resource>.services.ai.azure.com",
       path: "/anthropic",
-      tone: "accent2"
+      tone: "accent2",
+      clients: [{ tag: "Part 2", name: "Claude Code" }]
     }
   ],
-  note: "<resource> は自分のFoundryリソース名に置き換える"
+  note: "<resource> は、そのPartで使うFoundryリソース名に置き換える"
 }));
 
 // ── [prepare] ───────────────────────────────────────────
@@ -174,11 +227,14 @@ deck.addCustomSlide(fileMapSlide({
 
 // ── [codex] ─────────────────────────────────────────────
 const CODEX = "Part 1  Codex CLI";
+mark("codex");
 next();
 deck.addCustomSlide(sectionSlide({
   part: "Part 1",
   title: "Codex CLI",
-  lead: "インストール → config.toml → APIキー → 起動"
+  lead: "インストール → config.toml → APIキーと起動 → うまくいかないとき",
+  pages: pages(PAGES.codex),
+  values: ["%USERPROFILE%\\.codex\\config.toml", "AZURE_OPENAI_API_KEY"]
 }));
 
 deck.addCustomSlide(codeFlowSlide({
@@ -246,13 +302,28 @@ deck.addCustomSlide(codeFlowSlide({
   note: "Codex CLIは現時点でEntra ID認証に非対応（MS Learn）"
 }));
 
+deck.addCustomSlide(faultMapSlide({
+  pageNum: next(),
+  label: CODEX,
+  title: "Codexのエラーは設定3点を確認",
+  chainLabel: "確認する箇所",
+  rows: [
+    { part: "プロバイダー", icon: "file-cog", symptom: "Azure設定が無視される → 次の2つがあるか", check: "model_provider = \"azure\" と [model_providers.azure]" },
+    { part: "APIキー", icon: "key-round", symptom: "401 / 403", check: "AZURE_OPENAI_API_KEY が設定済みか\nenv_key にキーを直接書いていないか" },
+    { part: "base_url", icon: "link", symptom: "ENOTFOUND / 404", check: "base_url のリソース名とドメイン、末尾の /openai/v1" }
+  ]
+}));
+
 // ── [claude-code] ───────────────────────────────────────
 const CLAUDE = "Part 2  Claude Code";
+mark("claude");
 next();
 deck.addCustomSlide(sectionSlide({
   part: "Part 2",
   title: "Claude Code",
-  lead: "インストール → 環境変数 → モデル固定 → 認証の選択"
+  lead: "インストール → 環境変数 → モデル固定 → 認証の選択 → うまくいかないとき",
+  pages: pages(PAGES.claude),
+  values: ["CLAUDE_CODE_USE_FOUNDRY", "ANTHROPIC_FOUNDRY_RESOURCE", "ANTHROPIC_FOUNDRY_API_KEY", "ANTHROPIC_DEFAULT_*_MODEL"]
 }));
 
 deck.addCustomSlide(codeFlowSlide({
@@ -350,13 +421,29 @@ deck.addCustomSlide(lanesSlide({
   ]
 }));
 
+deck.addCustomSlide(faultMapSlide({
+  pageNum: next(),
+  label: CLAUDE,
+  title: "Claude Codeは認証と名前を確認",
+  chainLabel: "確認する箇所",
+  rows: [
+    { part: "ターミナル", icon: "terminal", symptom: "設定が反映されない", check: "setx の後に新しいターミナルを開いたか" },
+    { part: "認証", icon: "user-check", symptom: "ChainedTokenCredential authentication failed", check: "az login でEntra IDを構成するか、APIキーを設定する" },
+    { part: "リソース名", icon: "cloud", symptom: "接続エラーが続く", check: "ANTHROPIC_FOUNDRY_RESOURCE のリソース名" },
+    { part: "デプロイ名", icon: "layers", symptom: "モデル呼び出しが失敗する", check: "デプロイ名と ANTHROPIC_DEFAULT_*_MODEL" }
+  ]
+}));
+
 // ── [image-model] ───────────────────────────────────────
 const IMAGE = "Part 3  画像モデル";
+mark("image");
 next();
 deck.addCustomSlide(sectionSlide({
   part: "Part 3",
   title: "画像モデル",
-  lead: "GPT-Image-2.5 をデプロイ → スクリプト → 環境変数 → CLIから実行"
+  lead: "モデルを選ぶ → スクリプト → 環境変数 → CLIから実行 → うまくいかないとき",
+  pages: pages(PAGES.image),
+  values: ["scripts\\gen-image.ps1", "AZURE_IMAGE_RESOURCE", "AZURE_IMAGE_DEPLOYMENT", "AZURE_IMAGE_API_KEY"]
 }));
 
 deck.addCustomSlide(compareCardsSlide({
@@ -369,23 +456,6 @@ deck.addCustomSlide(compareCardsSlide({
   ],
   common: "共通: quality は xhigh / max / auto も可。サイズは16px単位・長辺3,840pxまで",
   note: "提供リージョンはMS Learnのリージョン一覧で確認する"
-}));
-
-deck.addCustomSlide(connectionSlide({
-  pageNum: next(),
-  label: IMAGE,
-  title: "CLIはスクリプト経由で画像APIを呼ぶ",
-  rows: [
-    {
-      cli: "Codex CLI\nClaude Code",
-      via: "gen-image.ps1",
-      target: "画像デプロイ（GPT-Image-2.5）",
-      host: "<resource>.openai.azure.com",
-      path: "/openai/v1/images/generations",
-      tone: "accent"
-    }
-  ],
-  note: "どちらのCLIも同じスクリプトを実行するため、設定は1回で済む"
 }));
 
 deck.addCustomSlide(railCodeSlide({
@@ -463,13 +533,29 @@ deck.addCustomSlide(stageFlowSlide({
   note: "Codex CLIではネット接続を伴う実行で承認を求められる"
 }));
 
+deck.addCustomSlide(faultMapSlide({
+  pageNum: next(),
+  label: IMAGE,
+  title: "画像生成はキー・名前・サイズを確認",
+  chainLabel: "確認する箇所",
+  rows: [
+    { part: "起動", icon: "play", symptom: "スクリプトを実行できない", check: "-ExecutionPolicy Bypass -File で起動する" },
+    { part: "本文", icon: "file-text", symptom: "日本語が文字化けする", check: "本文をUTF-8のバイト列で送っているか" },
+    { part: "サイズ", icon: "maximize", symptom: "400（サイズ）", check: "16px単位、長辺3,840px以下、縦横比1:3〜3:1か" },
+    { part: "キーと接続先", icon: "key-round", symptom: "401 / 404", check: "401はキー、404はリソース名とデプロイ名を確認" }
+  ]
+}));
+
 // ── [computer-use] ──────────────────────────────────────
 const CU = "Part 4  Computer Use";
+mark("cu");
 next();
 deck.addCustomSlide(sectionSlide({
   part: "Part 4",
   title: "Computer Use",
-  lead: "GPT-5.6系をデプロイ → Python準備 → 操作ループ → 安全対策"
+  lead: "使える範囲 → 操作ループ → Python準備 → 安全対策 → うまくいかないとき",
+  pages: pages(PAGES.cu),
+  values: ["computer_use_loop.py", "AZURE_CU_RESOURCE", "AZURE_CU_DEPLOYMENT", "AZURE_CU_API_KEY"]
 }));
 
 deck.addCustomSlide(statusRowsSlide({
@@ -525,34 +611,7 @@ deck.addCustomSlide(codeFlowSlide({
 deck.addCustomSlide(railCodeSlide({
   pageNum: next(),
   label: CU,
-  title: "最初の依頼で画面を渡す",
-  lineSpacing: 20,
-  rail: [
-    { line: 1, text: "接続" },
-    { line: 7, text: "モデル" },
-    { line: 9, text: "依頼文" },
-    { line: 11, text: "画面" }
-  ],
-  code: [
-    "client = OpenAI(",
-    "    api_key=os.environ[\"AZURE_CU_API_KEY\"],",
-    "    base_url=f\"https://{RESOURCE}.openai.azure.com\"",
-    "             \"/openai/v1/\")",
-    "",
-    "response = client.responses.create(",
-    "    model=MODEL,  # GPT-5.6系のデプロイ名",
-    "    tools=[{\"type\": \"computer\"}],",
-    "    input=[{\"role\": \"user\", \"content\": [",
-    "        {\"type\": \"input_text\", \"text\": task},",
-    "        {\"type\": \"input_image\",",
-    "         \"image_url\": screenshot(page)}]}])"
-  ].join("\n")
-}));
-
-deck.addCustomSlide(railCodeSlide({
-  pageNum: next(),
-  label: CU,
-  title: "computer_callを実行して返す",
+  title: "最初の依頼の後、このループを回す",
   lineSpacing: 19,
   rail: [
     { line: 2, text: "提案" },
@@ -591,8 +650,22 @@ deck.addCustomSlide(iconListSlide({
   ]
 }));
 
+deck.addCustomSlide(faultMapSlide({
+  pageNum: next(),
+  label: CU,
+  title: "Computer Useは応答と画面を確認",
+  chainLabel: "確認する箇所",
+  rows: [
+    { part: "接続先", icon: "cloud", symptom: "404", check: "AZURE_CU_RESOURCE とデプロイ名が正しいか" },
+    { part: "ツール指定", icon: "wrench", symptom: "computer_call が返らない", check: "tools に computer を指定し、画面操作が必要な依頼か" },
+    { part: "画面サイズ", icon: "maximize", symptom: "クリック位置がずれる", check: "画面サイズを1440×900などにしているか" },
+    { part: "ループ制御", icon: "repeat", symptom: "途中で止まる", check: "MAX_STEPS の上限や安全チェックで中断していないか" }
+  ]
+}));
+
 // ── [verify-troubleshoot] ───────────────────────────────
-const VERIFY = "確認と対処";
+const VERIFY = "確認と運用";
+mark("close");
 deck.addCustomSlide(verifyLanesSlide({
   pageNum: next(),
   label: VERIFY,
@@ -607,72 +680,21 @@ deck.addCustomSlide(verifyLanesSlide({
   note: "setx の後は、新しく開いたターミナルで確認する"
 }));
 
-deck.addCustomSlide(faultMapSlide({
-  pageNum: next(),
-  label: VERIFY,
-  title: "Codexのエラーは設定3点を確認",
-  chainLabel: "確認する箇所",
-  rows: [
-    { part: "プロバイダー", icon: "file-cog", symptom: "Azure設定が無視される → 次の2つがあるか", check: "model_provider = \"azure\" と [model_providers.azure]" },
-    { part: "APIキー", icon: "key-round", symptom: "401 / 403", check: "AZURE_OPENAI_API_KEY が設定済みか。env_key にキーを直接書いていないか" },
-    { part: "base_url", icon: "link", symptom: "ENOTFOUND / 404", check: "base_url のリソース名とドメイン、末尾の /openai/v1" }
-  ]
-}));
-
-deck.addCustomSlide(faultMapSlide({
-  pageNum: next(),
-  label: VERIFY,
-  title: "Claude Codeは認証と名前を確認",
-  chainLabel: "確認する箇所",
-  rows: [
-    { part: "ターミナル", icon: "terminal", symptom: "設定が反映されない", check: "setx の後に新しいターミナルを開いたか" },
-    { part: "認証", icon: "user-check", symptom: "ChainedTokenCredential authentication failed", check: "az login でEntra IDを構成するか、APIキーを設定する" },
-    { part: "リソース名", icon: "cloud", symptom: "接続エラーが続く", check: "ANTHROPIC_FOUNDRY_RESOURCE のリソース名" },
-    { part: "デプロイ名", icon: "layers", symptom: "モデル呼び出しが失敗する", check: "デプロイ名と ANTHROPIC_DEFAULT_*_MODEL" }
-  ]
-}));
-
-deck.addCustomSlide(faultMapSlide({
-  pageNum: next(),
-  label: VERIFY,
-  title: "画像生成はキー・名前・サイズを確認",
-  chainLabel: "確認する箇所",
-  rows: [
-    { part: "起動", icon: "play", symptom: "スクリプトを実行できない", check: "-ExecutionPolicy Bypass -File で起動する" },
-    { part: "本文", icon: "file-text", symptom: "日本語が文字化けする", check: "本文をUTF-8のバイト列で送っているか" },
-    { part: "サイズ", icon: "maximize", symptom: "400（サイズ）", check: "16px単位、長辺3,840px以下、縦横比1:3〜3:1か" },
-    { part: "APIキー", icon: "key-round", symptom: "401", check: "AZURE_IMAGE_API_KEY が画像用リソースのキーか" },
-    { part: "接続先", icon: "cloud", symptom: "404", check: "AZURE_IMAGE_RESOURCE とデプロイ名が正しいか" }
-  ]
-}));
-
-deck.addCustomSlide(faultMapSlide({
-  pageNum: next(),
-  label: VERIFY,
-  title: "Computer Useは応答と画面を確認",
-  chainLabel: "確認する箇所",
-  rows: [
-    { part: "接続先", icon: "cloud", symptom: "404", check: "AZURE_CU_RESOURCE とデプロイ名が正しいか" },
-    { part: "ツール指定", icon: "wrench", symptom: "computer_call が返らない", check: "tools に computer を指定し、画面操作が必要な依頼か" },
-    { part: "画面サイズ", icon: "maximize", symptom: "クリック位置がずれる", check: "画面サイズを1440×900などにしているか" },
-    { part: "ループ制御", icon: "repeat", symptom: "途中で止まる", check: "MAX_STEPS の上限や安全チェックで中断していないか" }
-  ]
-}));
-
 // ── [security-close] ────────────────────────────────────
 deck.addCustomSlide(iconCardsSlide({
   pageNum: next(),
-  label: "運用",
+  label: VERIFY,
   title: "キーと権限は最小限で運用する",
   cols: 2,
   cards: [
-    { icon: "key-round", heading: "キー", body: "ファイルやリポジトリに書かず、漏えい時は再生成する" },
-    { icon: "shield-check", heading: "権限", body: "呼び出し用ロールだけ付与し、Claude CodeはEntra IDで" },
-    { icon: "bot", heading: "自律実行", tone: "accent2", body: "フルアクセスモードはサンドボックス等と併用する" },
-    { icon: "monitor", heading: "Computer Use", tone: "accent2", body: "検証用VMで動かし、安全チェックは人が承認する" }
+    { icon: "key-round", heading: "キー", body: "ファイルやリポジトリに書かず、\n漏えい時は再生成する" },
+    { icon: "shield-check", heading: "権限", body: "呼び出し用ロールだけ付与し、\nClaude CodeはEntra IDで" },
+    { icon: "bot", heading: "自律実行", tone: "accent2", body: "フルアクセスモードは\nサンドボックス等と併用する" },
+    { icon: "monitor", heading: "Computer Use", tone: "accent2", body: "検証用VMで動かし、\n安全チェックは人が承認する" }
   ]
 }));
 
+mark("sources");
 deck.addCustomSlide(sourcesSlide({
   pageNum: next(),
   title: "出典（1/2・9月17日確認）",
@@ -696,6 +718,22 @@ deck.addCustomSlide(sourcesSlide({
     { name: "Claude Code computer use", url: "code.claude.com/docs/en/computer-use" }
   ]
 }));
+
+for (const [section, range] of Object.entries(PAGES) as Array<[Section, readonly [number, number]]>) {
+  if (starts[section] !== range[0]) throw new Error(`${section} starts on page ${starts[section]}, but PAGES says ${range[0]}`);
+}
+const ends: Record<Section, number> = {
+  prepare: (starts.codex ?? 0) - 1,
+  codex: (starts.claude ?? 0) - 1,
+  claude: (starts.image ?? 0) - 1,
+  image: (starts.cu ?? 0) - 1,
+  cu: (starts.close ?? 0) - 1,
+  close: (starts.sources ?? 0) - 1,
+  sources: page
+};
+for (const [section, range] of Object.entries(PAGES) as Array<[Section, readonly [number, number]]>) {
+  if (ends[section] !== range[1]) throw new Error(`${section} ends on page ${ends[section]}, but PAGES says ${range[1]}`);
+}
 
 await deck.render({
   output: "output/deck.pptx",

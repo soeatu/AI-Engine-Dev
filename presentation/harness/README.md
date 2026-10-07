@@ -62,4 +62,6 @@ projects/<deck-id>/
 
 `brief.txt` の理解確認を完了してから `build.ts` を作成・変更します。`build.ts` ではセクションを連続したBlockまたはDeck固有の関数として分け、呼び出し順をSlide順の正本にします。作成途中の資料へ差し込む場合は、合意した位置へセクションのBlockまたは関数呼び出しを追加し、全体を再生成・再検証します。
 
+完成版を共有する場合は、`output/deck.pptx` を `../presentations/<deck-id>/<資料タイトル>.pptx` へコピーし、[完成資料一覧](../presentations/README.md)を更新します。
+
 通常の資料作成手順は [build-presentation Skill](../skills/build-presentation/SKILL.md) を参照してください。

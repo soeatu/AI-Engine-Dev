@@ -1,17 +1,18 @@
 # Build report
 
-- Generated at: 2026-10-01T22:05:45.704Z
-- Output: /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/existing-powerpoint-list-a2ddcf/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/deck.pptx
-- Slides built: 37
+- Generated at: 2026-10-06T14:38:56.352Z
+- Output: /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/deck.pptx
+- Slides built: 36
 - Templates used: 
-- Custom slides used: cover, flow, connection, icon-list, hub, table, file-map, section, code-flow, code-flow, code-flow, section, code-flow, code-flow, code-mapping, lanes, section, compare-cards, connection, rail-code, code-flow, stage-flow, section, status-rows, flow, code-flow, rail-code, rail-code, icon-list, verify-lanes, fault-map, fault-map, fault-map, fault-map, icon-cards, sources, sources
-- Screenshots: none
+- Custom slides used: cover, route-map, table, endpoint-map, icon-list, hub, table, file-map, section, code-flow, code-flow, code-flow, fault-map, section, code-flow, code-flow, code-mapping, lanes, fault-map, section, compare-cards, rail-code, code-flow, stage-flow, fault-map, section, status-rows, flow, code-flow, rail-code, icon-list, fault-map, verify-lanes, icon-cards, sources, sources
+- Screenshots: /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-01.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-02.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-03.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-04.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-05.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-06.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-07.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-08.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-09.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-10.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-11.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-12.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-13.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-14.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-15.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-16.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-17.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-18.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-19.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-20.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-21.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-22.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-23.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-24.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-25.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-26.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-27.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-28.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-29.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-30.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-31.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-32.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-33.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-34.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-35.png, /Users/soenoa/Documents/ChatGPT/AI-Engine-Dev/.claude/worktrees/powerpoint-folder-organization-4edb2e/presentation/harness/projects/codex-claude-code-azure-foundry-setup/output/screenshots/slide-36.png
 
 ## Warnings
 
 - custom-slide-generated: Generated custom slide 'cover'.
-- custom-slide-generated: Generated custom slide 'flow'.
-- custom-slide-generated: Generated custom slide 'connection'.
+- custom-slide-generated: Generated custom slide 'route-map'.
+- custom-slide-generated: Generated custom slide 'table'.
+- custom-slide-generated: Generated custom slide 'endpoint-map'.
 - custom-slide-generated: Generated custom slide 'icon-list'.
 - custom-slide-generated: Generated custom slide 'hub'.
 - custom-slide-generated: Generated custom slide 'table'.
@@ -20,30 +21,27 @@
 - custom-slide-generated: Generated custom slide 'code-flow'.
 - custom-slide-generated: Generated custom slide 'code-flow'.
 - custom-slide-generated: Generated custom slide 'code-flow'.
+- custom-slide-generated: Generated custom slide 'fault-map'.
 - custom-slide-generated: Generated custom slide 'section'.
 - custom-slide-generated: Generated custom slide 'code-flow'.
 - custom-slide-generated: Generated custom slide 'code-flow'.
 - custom-slide-generated: Generated custom slide 'code-mapping'.
 - custom-slide-generated: Generated custom slide 'lanes'.
+- custom-slide-generated: Generated custom slide 'fault-map'.
 - custom-slide-generated: Generated custom slide 'section'.
 - custom-slide-generated: Generated custom slide 'compare-cards'.
-- custom-slide-generated: Generated custom slide 'connection'.
 - custom-slide-generated: Generated custom slide 'rail-code'.
 - custom-slide-generated: Generated custom slide 'code-flow'.
 - custom-slide-generated: Generated custom slide 'stage-flow'.
+- custom-slide-generated: Generated custom slide 'fault-map'.
 - custom-slide-generated: Generated custom slide 'section'.
 - custom-slide-generated: Generated custom slide 'status-rows'.
 - custom-slide-generated: Generated custom slide 'flow'.
 - custom-slide-generated: Generated custom slide 'code-flow'.
 - custom-slide-generated: Generated custom slide 'rail-code'.
-- custom-slide-generated: Generated custom slide 'rail-code'.
 - custom-slide-generated: Generated custom slide 'icon-list'.
+- custom-slide-generated: Generated custom slide 'fault-map'.
 - custom-slide-generated: Generated custom slide 'verify-lanes'.
-- custom-slide-generated: Generated custom slide 'fault-map'.
-- custom-slide-generated: Generated custom slide 'fault-map'.
-- custom-slide-generated: Generated custom slide 'fault-map'.
-- custom-slide-generated: Generated custom slide 'fault-map'.
 - custom-slide-generated: Generated custom slide 'icon-cards'.
 - custom-slide-generated: Generated custom slide 'sources'.
 - custom-slide-generated: Generated custom slide 'sources'.
-- screenshots-skipped: LibreOffice was not found, so screenshots were skipped. The .pptx was still built. Install LibreOffice (https://www.libreoffice.org) to enable screenshots.
