@@ -132,7 +132,7 @@ Type: calculation
 Source: projects/ai-engine-dev-workspace-guide/build.ts の developmentSkills 配列（52件）と Presentation Skill索引
 Supports: Skill分類マップの件数（統合13、Matt明示9、Matt自動9、Productivity 7、Beta 8、Misc 4、補助2、Presentation 5）と索引ページ範囲、Skillの系統スライドの構成比（13件と39件、Matt原文37件）。
 Status: confirmed
-Notes: 索引ページは配列の位置から4件ごとに算出（ページ = 位置 ÷ 4 の切り捨て + 1）。ui-ux-pro-maxはDevelopment補助とPresentationの両方に掲載されている。
+Notes: 索引ページは配列の位置から4件ごとに算出（ページ = 位置 ÷ 4 の切り捨て + 1）。ui-ux-pro-maxはDevelopment補助とPresentationの両方に掲載されている。2026-10-06の再構成で索引ページと developmentSkills 配列は削除し、件数の根拠はS23へ移した。
 
 [S20]
 Type: local-file
@@ -147,3 +147,31 @@ Source: development/skills/orchestrated-development/SKILL.md; development/skills
 Supports: Slides 36–37, the Brain/Planner and Worker Agent separation, the model assigned to each tier per platform, and the review loop between them.
 Status: confirmed
 Notes: Brain/Planner uses Sol on Codex and Opus on Claude Code; Worker uses Luna on Codex and Sonnet on Claude Code. Requested by the user on 2026-10-03.
+
+[S22]
+Type: user-provided
+Source: Current conversation, revision feedback on 2026-10-06
+Supports: 2026-10-06の再構成（文字が小さく情報が多い、枚数が多く探しにくい、図が抽象的という指摘への対応）、Skill索引を系統マップとREADMEへの案内に置き換える判断。
+Status: confirmed
+Notes: AskUserQuestionで利用者が選択。brief.txt の Revision 2026-10-06 に記録。
+
+[S23]
+Type: local-file
+Source: development/skills/README.md; development/skills/matt-pocock/（engineering 18、productivity 7、in-progress 8、misc 4）; development/skills/matt-pocock/SKILL_GUIDE.md; presentation/skills/README.md; development/README.md; presentation/skills/SETUP.md; presentation/harness/README.md
+Supports: 27枚目「Skillは状況で選ぶ」（工程と統合Skillの対応）、33枚目の系統マップ（統合13・原文37・補助2・資料作成5、原文の内訳 明示9・自動9・Productivity 7・開発途中8・Misc 4）、34枚目の資料作成Skill、12〜14枚目のコマンド（cp -R、$bootstrap-development-harness と /bootstrap-development-harness、setup-skills.sh、npm ci、npm run self-validate）、18枚目と24枚目のファイルの置き場所（docs/requirements/ ほか）。
+Status: confirmed
+Notes: 2026-10-06 にディレクトリと各READMEを直接確認。明示Skillの呼び出し方（Codexは$、Claude Codeは/）は SKILL_GUIDE.md の記載に基づく。
+
+[S24]
+Type: no-external-source
+Source: 資料作成者の構成（2026-10-06 再構成）
+Supports: 章の地図、章扉の目次、依頼例の手順とファイル名の対応、AIが進めることと人が決めることの4区分、用語カード（Skill・AGENTS.mdを追加）、「会話ではなくファイルが残る」の比較。
+Status: confirmed
+Notes: 旧版のスライド内容（S18 ほか）を組み替えたもので、新しい機能や数値の主張は追加していない。依頼例のファイル名はS23の工程表に基づく例示。
+
+[S25]
+Type: local-file
+Source: development/skills/README.md（統合Skill、Matt Pocock Engineering・Productivity・In progress・Misc、Development補助Skillの各表）
+Supports: 34〜40枚目の開発Skill一覧（52件、使う場面）。
+Status: confirmed
+Notes: 2026-10-07 に利用者の依頼で追加。使う場面は各表の「用途」を短くしたもの。明示・自動の区分はREADMEの「呼び出し」列に基づく。

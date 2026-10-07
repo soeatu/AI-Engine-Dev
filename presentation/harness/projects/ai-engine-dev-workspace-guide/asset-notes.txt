@@ -8,5 +8,5 @@ License URL: https://lucide.dev/license
 Commercial use: yes
 Attribution: not required
 Modified: yes: 線の色を資料の配色に変更
-Checked: 2026-10-01
-Used on: 図解スライドのアイコン全般
+Checked: 2026-10-06
+Used on: 図解スライドのアイコン全般（2026-10-07 付録追加後の43枚）

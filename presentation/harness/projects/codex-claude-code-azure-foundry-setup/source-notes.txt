@@ -143,3 +143,17 @@ Source: 資料作成者の構成（2026-10-02 フォルダ構成図）
 Supports: 7枚目「設定とスクリプトの置き場所」。各ファイルのパスは本資料の既存スライド（config.toml: Part 1、gen-image.ps1・AGENTS.md・CLAUDE.md: Part 3、computer_use_loop.py・.venv: Part 4）から集約した。
 Status: confirmed
 Notes: AGENTS.md・CLAUDE.md・computer_use_loop.py・.venv を作業Projectの直下に置く配置は一例（スライドにも明記）。
+
+[S16]
+Type: user-provided
+Source: Current conversation, revision feedback on 2026-10-06
+Supports: 改訂の方向（文字が小さく情報が多い、枚数が多く探しにくい、図が抽象的。構成から見直し、色と書体は維持する）。
+Status: confirmed
+Notes: AskUserQuestionで利用者が選択。brief.txt の Revision 2026-10-06 に記録。
+
+[A6]
+Type: no-external-source
+Source: 資料作成者の構成（2026-10-06 読みやすさと探しやすさの改訂）
+Supports: 2枚目「必要なPartだけ読めばよい」のPart分けとページ範囲、3枚目「どのPartも4ステップで進む」の対応表、4枚目「接続先のURLは2種類」、各Partの扉の「このPartで設定するもの」、25枚目の「401 / 404」行。
+Status: confirmed
+Notes: いずれも既存スライド（旧2, 3, 19, 21, 26, 27, 33 など）の内容を組み替えたもので、新しい技術的主張は追加していない。ページ範囲は build.ts で実際のページと照合している。「<resource> は、そのPartで使うFoundryリソース名に置き換える」は、Partごとに別の環境変数でリソース名を設定する既存手順（S1〜S15）に基づく。

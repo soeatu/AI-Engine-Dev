@@ -61,11 +61,11 @@ PPTX・Build report・QA report・出典台帳を引き渡し
 - `harness/`: TypeScriptエンジン、CLI、Design System、テンプレートライブラリ、Deck project。
 - `skills/`: 資料作成を用途別に実行するAI向け手順。
 - `assets/`: ハーネス外の入力素材。複数Deckで再利用する素材は、出典とライセンスを `assets/asset-notes.txt` に記録する。
-- `presentations/`: 完成版またはレビュー対象の成果物。
+- [`presentations/`](presentations/README.md): 完成版またはレビュー対象の成果物。資料ごとに `<deck-id>/` フォルダを作り、PPTXは資料タイトルのファイル名で置く。
 - [`scripts/`](scripts/README.md): コピー先へのSkill登録など、領域横断の補助処理。
 - `tests/`: 領域横断の検証。移植用セットアップは `sh presentation/tests/setup-skills.test.sh` で確認する。
 
-ハーネス固有のテンプレートと生成途中のDeck projectは `harness/` 内に置きます。完成版を共有領域へ移す場合だけ `presentations/` を使用します。
+ハーネス固有のテンプレートと生成途中のDeck projectは `harness/` 内に置きます。完成版を共有領域へ移す場合だけ `presentations/<deck-id>/` へコピーし、[完成資料一覧](presentations/README.md)を更新します。
 
 ## 設計の参照元
 

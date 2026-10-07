@@ -1,8 +1,8 @@
 # QA report
 
 - PPTX package: valid
-- Slides: 37
-- Rendered slide images: 37
+- Slides: 36
+- Rendered slide images: 36
 - Source ledger: present
 - Embedded media files: 0
 - Asset ledger entries: 1
@@ -15,16 +15,21 @@
 ## Warnings
 
 - Slide 1 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
-- Slide 8 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
-- Slide 12 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
-- Slide 17 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
-- Slide 23 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
+- Slide 35 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
 - Slide 36 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
-- Slide 37 has no diagram, chart, table, image, connector, or non-rectangular shape. Confirm that text alone is the clearest form.
 
 ## Manual visual review
 
 Automated checks do not prove visual quality. Inspect every rendered slide at full size and record clipping, overlap, contrast, alignment, chart accuracy, and source-placement findings before delivery.
+
+### Manual visual review result (2026-10-06, revision 6: readability and navigation)
+
+- Render method: LibreOfficeを導入したが、Claudeの実行環境からはMacにインストール済みのフォントを読めず日本語が欠けたため、Keynote Creator StudioでPDFへ書き出し、pdftoppm(110dpi)で全36枚をPNG化（output/screenshots）。PowerPoint for Windowsとはフォント代替や行高が異なる可能性がある。
+- Change: 37枚を36枚にした。2枚目に「必要なPartだけ読めばよい」案内（ページ範囲付き）を追加し、抽象的な4ステップ図をPart別のデプロイ・導入・設定・確認の対応表に置き換えた。接続先URLの図に画像生成とComputer Useを統合し、画像APIの構成図（旧19）を削除した。トラブル対処（旧31〜34）を各Partの末尾へ移し、Partの扉にページ範囲と設定する値を追加した。Computer Useの最初の依頼のコード（旧27）を削除し、ループのコードに集約した。
+- Review: 全36枚を原寸で確認した。見つけて直したのは、接続先URL図の下段の箱の高さ、Codexのエラー対処で「キー」が行をまたいで切れる問題、画像生成のエラー対処5行の詰まり（401と404を1行に統合して4行に整理）、コードの右レールと長い行の接触、運用カードで「漏えい」「Claude Code」が行をまたぐ問題。修正後に該当ページを原寸で再確認した。
+- Data check: 案内と扉のページ範囲は build.ts の PAGES と実際のページを照合し、一致しなければ生成を失敗させる。対応表と接続先URLの図は既存スライドの内容を組み替えたもので、新しい技術的主張は追加していない。
+- Warnings above: 表紙と出典一覧（35, 36）は計画どおりtext-only。
+- Not verified: PowerPoint for Windows・Google Slidesでの最終表示。
 
 ### Manual visual review result (2026-10-01〜02, revisions 4–5: visual brush-up and folder diagram)
 

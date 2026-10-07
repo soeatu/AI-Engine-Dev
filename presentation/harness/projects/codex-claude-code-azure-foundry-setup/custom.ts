@@ -133,29 +133,69 @@ export function coverSlide(input: { overline: string; title: string; subtitle: s
   });
 }
 
-export function sectionSlide(input: { part: string; title: string; lead: string }): CustomSlide {
+// Partの扉。pages と values を渡すと、ページ範囲とそのPartで設定するものを示して、Partだけ読む人の入口にする。
+export function sectionSlide(input: { part: string; title: string; lead: string; pages?: string; values?: string[] }): CustomSlide {
   return new CustomSlide({
     name: "section",
-    requiredFonts: [FONTS.sans],
+    requiredFonts: [FONTS.sans, FONTS.mono],
     draw(ctx) {
       const { slide, pptx } = ctx;
       slide.background = { color: C.ink };
+      const compact = Boolean(input.values?.length);
+      const top = compact ? 0.75 : 1.45;
       slide.addText(input.part, {
-        x: LM, y: 1.45, w: CW, h: 0.45,
+        x: LM, y: top, w: CW, h: 0.45,
         fontSize: SIZE.sub, fontFace: FONTS.sans, color: "93C5FD", margin: 0
       });
+      if (input.pages) {
+        slide.addText(input.pages, {
+          x: LM, y: top, w: CW, h: 0.45,
+          fontSize: SIZE.body, fontFace: FONTS.sans, color: C.grey30, align: "right", margin: 0
+        });
+      }
       slide.addText(input.title, {
-        x: LM, y: 1.95, w: CW, h: 1.0,
+        x: LM, y: top + 0.5, w: CW, h: 1.0,
         fontSize: SIZE.deckTitle, fontFace: FONTS.sans, color: C.white, margin: 0
       });
       slide.addShape(pptx.ShapeType.rect, {
-        x: LM, y: 3.1, w: 0.8, h: 0.07,
+        x: LM, y: top + 1.65, w: 0.8, h: 0.07,
         fill: { color: C.accent }, line: { color: C.accent, width: 0 }
       });
       slide.addText(input.lead, {
-        x: LM, y: 3.35, w: CW, h: 0.6,
+        x: LM, y: top + 1.9, w: CW, h: 0.45,
         fontSize: SIZE.body, fontFace: FONTS.sans, color: C.grey30, margin: 0
       });
+      if (!input.values?.length) return;
+      const panelY = top + 2.6;
+      // 2列に並べ、列幅に収まらない値だけは1行を使う。
+      const colW = (CW - 0.5) / 2;
+      const cells: Array<{ value: string; row: number; col: number; w: number }> = [];
+      let row = 0;
+      let col = 0;
+      for (const value of input.values) {
+        const wide = textWidth(value, true) > colW;
+        if (wide && col !== 0) { row += 1; col = 0; }
+        if (textWidth(value, true) > CW - 0.5) throw new Error(`section value is too wide: ${value}`);
+        cells.push({ value, row, col, w: wide ? CW - 0.5 : colW });
+        if (wide || col === 1) { row += 1; col = 0; } else { col = 1; }
+      }
+      const rows = col === 0 ? row : row + 1;
+      const panelH = 0.6 + rows * 0.4;
+      slide.addShape(pptx.ShapeType.roundRect, {
+        x: LM, y: panelY, w: CW, h: panelH,
+        fill: { color: C.ink }, line: { color: C.grey80, width: 1.25 }, rectRadius: 0.06
+      });
+      slide.addText("このPartで設定するもの", {
+        x: LM + 0.25, y: panelY + 0.12, w: CW - 0.5, h: 0.36,
+        fontSize: SIZE.body, fontFace: FONTS.sans, color: C.grey30, margin: 0
+      });
+      for (const cell of cells) {
+        slide.addText(cell.value, {
+          x: LM + 0.25 + cell.col * colW, y: panelY + 0.5 + cell.row * 0.4, w: cell.w, h: 0.36,
+          fontSize: SIZE.body, fontFace: FONTS.mono, color: C.white, margin: 0
+        });
+      }
+      assertFits(`section ${input.part}`, panelY + panelH);
     }
   });
 }
@@ -231,82 +271,6 @@ export function flowSlide(input: {
           align: "center", valign: "middle", margin: 0
         });
       }
-      footer(ctx, input.pageNum, input.label);
-    }
-  });
-}
-
-export function connectionSlide(input: {
-  pageNum: number;
-  label: string;
-  title: string;
-  rows: Array<{ cli: string; via: string; target: string; host: string; path: string; tone: "accent" | "accent2" }>;
-  note: string;
-}): CustomSlide {
-  return new CustomSlide({
-    name: "connection",
-    requiredFonts: [FONTS.sans, FONTS.mono],
-    async draw(ctx) {
-      const { slide, pptx } = ctx;
-      frame(ctx, input.title);
-      const cliW = 2.1;
-      const gap = 1.65;
-      const endX = LM + cliW + gap;
-      const endW = LM + CW - endX;
-      const rowH = 1.2;
-      const startY = input.rows.length === 1 ? 2.2 : 1.72;
-      await ctx.helpers.addIcon(slide, "laptop", { x: LM, y: startY - 0.42, w: 0.32, h: 0.32 }, { color: C.muted });
-      slide.addText("Windows PC", {
-        x: LM + 0.42, y: startY - 0.42, w: cliW, h: 0.35,
-        fontSize: SIZE.body, fontFace: FONTS.sans, color: C.muted, margin: 0
-      });
-      await ctx.helpers.addIcon(slide, "cloud", { x: endX, y: startY - 0.42, w: 0.32, h: 0.32 }, { color: C.muted });
-      slide.addText("Microsoft Foundry リソース", {
-        x: endX + 0.42, y: startY - 0.42, w: endW, h: 0.35,
-        fontSize: SIZE.body, fontFace: FONTS.sans, color: C.muted, margin: 0
-      });
-      input.rows.forEach((row, index) => {
-        const y = startY + index * (rowH + 0.25);
-        const color = row.tone === "accent2" ? C.accent2 : C.accent;
-        slide.addShape(pptx.ShapeType.rect, {
-          x: LM, y, w: cliW, h: rowH,
-          fill: { color: C.white }, line: { color, width: 2 }
-        });
-        slide.addText(row.cli, {
-          x: LM, y, w: cliW, h: rowH,
-          fontSize: SIZE.sub, fontFace: FONTS.sans, color: C.ink,
-          align: "center", valign: "middle", margin: 0
-        });
-        ctx.helpers.addArrow(slide, {
-          from: { x: LM + cliW + 0.05, y: y + rowH / 2 },
-          to: { x: endX - 0.05, y: y + rowH / 2 },
-          color, width: 2
-        });
-        slide.addText(row.via, {
-          x: LM + cliW, y: y + rowH / 2 - 0.42, w: gap, h: 0.36,
-          fontSize: SIZE.body, fontFace: FONTS.sans, color: C.ink, align: "center", margin: 0
-        });
-        slide.addShape(pptx.ShapeType.rect, {
-          x: endX, y, w: endW, h: rowH,
-          fill: { color: C.surface }, line: { color: C.grey30, width: 0.75 }
-        });
-        slide.addShape(pptx.ShapeType.rect, {
-          x: endX, y, w: 0.08, h: rowH,
-          fill: { color }, line: { color, width: 0 }
-        });
-        slide.addText([
-          { text: row.target, options: { fontFace: FONTS.sans, color: C.muted, breakLine: true } },
-          { text: row.host, options: { fontFace: FONTS.mono, color: C.ink, breakLine: true } },
-          { text: row.path, options: { fontFace: FONTS.mono, color: C.ink } }
-        ], {
-          x: endX + 0.25, y: y + 0.1, w: endW - 0.35, h: rowH - 0.2,
-          fontSize: SIZE.body, valign: "middle", lineSpacingMultiple: 1.15, margin: 0
-        });
-      });
-      slide.addText(input.note, {
-        x: LM, y: 4.55, w: CW, h: 0.4,
-        fontSize: SIZE.body, fontFace: FONTS.sans, color: C.muted, margin: 0
-      });
       footer(ctx, input.pageNum, input.label);
     }
   });
@@ -729,9 +693,9 @@ export function railCodeSlide(input: {
       const panelH = codePanel(ctx, input.code, { x: LM, y: CONTENT_Y, w: CW }, input.lineSpacing);
       assertFits(input.title, CONTENT_Y + panelH);
       const lineH = input.lineSpacing / 72;
-      const chipW = 0.85;
+      const chipW = 0.7;
       const chipH = 0.3;
-      const chipX = LM + CW - chipW - 0.1;
+      const chipX = LM + CW - chipW - 0.06;
       const centers = input.rail.map((item) => CONTENT_Y + 0.15 + (item.line - 0.5) * lineH);
       slide.addShape(pptx.ShapeType.line, {
         x: chipX + chipW / 2, y: centers[0], w: 0, h: centers[centers.length - 1] - centers[0],
@@ -1435,6 +1399,159 @@ export function fileMapSlide(input: {
       }
       noteText(ctx, input.note, Math.max(bottom + 0.08, 4.6));
       assertFits(input.title, Math.max(bottom + 0.08, 4.6) + 0.38);
+      footer(ctx, input.pageNum, input.label);
+    }
+  });
+}
+
+// ── 読み進め方の案内（2026-10-06 改訂） ───────────────────────────
+
+type RouteBox = { tag: string; name: string; detail?: string; pages: string; tone?: Tone };
+
+// 誰がどのPartを読むかを段で示し、各Partのページ範囲を添える。
+export function routeMapSlide(input: {
+  pageNum: number;
+  label: string;
+  title: string;
+  tiers: Array<{ who: string; boxes: RouteBox[] }>;
+}): CustomSlide {
+  return new CustomSlide({
+    name: "route-map",
+    requiredFonts: [FONTS.sans],
+    draw(ctx) {
+      const { slide, pptx } = ctx;
+      frame(ctx, input.title);
+      const whoW = 1.45;
+      const areaX = LM + whoW + 0.15;
+      const areaW = LM + CW - areaX;
+      const tierH = 0.72;
+      const gap = 0.2;
+      const boxGap = 0.3;
+      input.tiers.forEach((tier, tierIndex) => {
+        const y = CONTENT_Y + 0.05 + tierIndex * (tierH + gap);
+        slide.addShape(pptx.ShapeType.roundRect, {
+          x: LM, y: y + 0.14, w: whoW, h: tierH - 0.28,
+          fill: { color: C.accentSoft }, line: { color: C.accentSoft, width: 0 }, rectRadius: 0.08
+        });
+        slide.addText(tier.who, {
+          x: LM, y: y + 0.14, w: whoW, h: tierH - 0.28,
+          fontSize: SIZE.body, fontFace: FONTS.sans, color: C.ink, align: "center", valign: "middle", margin: 0
+        });
+        if (tierIndex < input.tiers.length - 1) {
+          arrowDown(ctx, LM + whoW / 2, y + tierH - 0.12, y + tierH + gap + 0.12, C.accent);
+        }
+        const boxW = (areaW - boxGap * (tier.boxes.length - 1)) / tier.boxes.length;
+        tier.boxes.forEach((box, boxIndex) => {
+          const x = areaX + boxIndex * (boxW + boxGap);
+          const color = toneColor(box.tone);
+          slide.addShape(pptx.ShapeType.rect, {
+            x, y, w: boxW, h: tierH, fill: { color: C.white }, line: { color: C.grey30, width: 0.75 }
+          });
+          slide.addShape(pptx.ShapeType.rect, {
+            x, y, w: 0.08, h: tierH, fill: { color }, line: { color, width: 0 }
+          });
+          // 1行目にタグとページ範囲、2行目に名前（と補足）を置く。
+          slide.addText([
+            { text: box.tag, options: { color, bold: true } }
+          ], {
+            x: x + 0.25, y: y + 0.07, w: boxW - 0.4, h: 0.28,
+            fontSize: SIZE.body, fontFace: FONTS.sans, valign: "middle", margin: 0
+          });
+          slide.addText(box.pages, {
+            x: x + 0.25, y: y + 0.07, w: boxW - 0.4, h: 0.28,
+            fontSize: SIZE.body, fontFace: FONTS.sans, color: C.muted, align: "right", valign: "middle", margin: 0
+          });
+          const need = textWidth(box.name) * 1.25 + (box.detail ? textWidth(box.detail) + 0.15 : 0);
+          if (need > boxW - 0.4) throw new Error(`route box is too wide: ${box.name}`);
+          slide.addText([
+            { text: box.name, options: { fontSize: 20, color: C.ink } },
+            ...(box.detail ? [{ text: "  " + box.detail, options: { fontSize: SIZE.body, color: C.muted } }] : [])
+          ], {
+            x: x + 0.25, y: y + 0.34, w: boxW - 0.4, h: 0.34,
+            fontFace: FONTS.sans, valign: "middle", margin: 0
+          });
+        });
+      });
+      assertFits(input.title, CONTENT_Y + 0.05 + input.tiers.length * (tierH + gap) - gap);
+      footer(ctx, input.pageNum, input.label);
+    }
+  });
+}
+
+// 利用元（Part）と接続先エンドポイントの対応。複数の利用元が同じエンドポイントへつながる。
+export function endpointMapSlide(input: {
+  pageNum: number;
+  label: string;
+  title: string;
+  endpoints: Array<{
+    heading: string;
+    host: string;
+    path: string;
+    tone: Tone;
+    clients: Array<{ tag: string; name: string }>;
+  }>;
+  note: string;
+}): CustomSlide {
+  return new CustomSlide({
+    name: "endpoint-map",
+    requiredFonts: [FONTS.sans, FONTS.mono],
+    async draw(ctx) {
+      const { slide, pptx } = ctx;
+      frame(ctx, input.title);
+      const clientW = 2.7;
+      const endX = LM + clientW + 0.65;
+      const endW = LM + CW - endX;
+      const clientH = 0.44;
+      const clientGap = 0.1;
+      const groupGap = 0.2;
+      await ctx.helpers.addIcon(slide, "laptop", { x: LM, y: CONTENT_Y - 0.04, w: 0.3, h: 0.3 }, { color: C.muted });
+      slide.addText("Windows PC", {
+        x: LM + 0.4, y: CONTENT_Y - 0.06, w: clientW, h: 0.34, fontSize: SIZE.body, fontFace: FONTS.sans, color: C.muted, margin: 0
+      });
+      await ctx.helpers.addIcon(slide, "cloud", { x: endX, y: CONTENT_Y - 0.04, w: 0.3, h: 0.3 }, { color: C.muted });
+      slide.addText("Microsoft Foundry リソース", {
+        x: endX + 0.4, y: CONTENT_Y - 0.06, w: endW, h: 0.34, fontSize: SIZE.body, fontFace: FONTS.sans, color: C.muted, margin: 0
+      });
+      let y = CONTENT_Y + 0.38;
+      for (const endpoint of input.endpoints) {
+        const color = toneColor(endpoint.tone);
+        const groupH = Math.max(1.12, endpoint.clients.length * clientH + (endpoint.clients.length - 1) * clientGap);
+        const clientTop = y + (groupH - (endpoint.clients.length * clientH + (endpoint.clients.length - 1) * clientGap)) / 2;
+        endpoint.clients.forEach((client, index) => {
+          const cy = clientTop + index * (clientH + clientGap);
+          slide.addShape(pptx.ShapeType.rect, {
+            x: LM, y: cy, w: clientW, h: clientH, fill: { color: C.white }, line: { color, width: 1.5 }
+          });
+          if (textWidth(client.tag) + textWidth(client.name) + 0.45 > clientW) throw new Error(`client is too wide: ${client.name}`);
+          slide.addText([
+            { text: client.tag + "  ", options: { color, bold: true } },
+            { text: client.name, options: { color: C.ink } }
+          ], {
+            x: LM + 0.15, y: cy, w: clientW - 0.25, h: clientH,
+            fontSize: SIZE.body, fontFace: FONTS.sans, valign: "middle", margin: 0
+          });
+          arrowRight(ctx, LM + clientW + 0.05, endX - 0.05, cy + clientH / 2, color);
+        });
+        slide.addShape(pptx.ShapeType.rect, {
+          x: endX, y, w: endW, h: groupH, fill: { color: C.surface }, line: { color: C.grey30, width: 0.75 }
+        });
+        slide.addShape(pptx.ShapeType.rect, {
+          x: endX, y, w: 0.08, h: groupH, fill: { color }, line: { color, width: 0 }
+        });
+        if (textWidth(endpoint.host, true) > endW - 0.4) throw new Error(`host is too wide: ${endpoint.host}`);
+        slide.addText([
+          { text: endpoint.heading, options: { fontFace: FONTS.sans, color: C.muted, breakLine: true } },
+          { text: endpoint.host, options: { fontFace: FONTS.mono, color: C.ink, breakLine: true } },
+          { text: endpoint.path, options: { fontFace: FONTS.mono, color: C.ink } }
+        ], {
+          x: endX + 0.25, y: y + 0.08, w: endW - 0.35, h: groupH - 0.16,
+          fontSize: SIZE.body, valign: "middle", lineSpacingMultiple: 1.15, margin: 0
+        });
+        y += groupH + groupGap;
+      }
+      const noteY = Math.max(4.6, y - groupGap + 0.12);
+      noteText(ctx, input.note, noteY);
+      assertFits(input.title, noteY + 0.38);
       footer(ctx, input.pageNum, input.label);
     }
   });

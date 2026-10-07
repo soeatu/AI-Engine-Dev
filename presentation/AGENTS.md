@@ -5,7 +5,7 @@
 ## フォルダの役割
 
 - `assets/`: ロゴ、画像、図表、参考データなど、資料から参照する素材を置く。
-- `presentations/`: 完成版およびレビュー対象のプレゼンテーションを置く。
+- `presentations/`: 完成版およびレビュー対象のプレゼンテーションを、`presentations/<deck-id>/<資料タイトル>.pptx` の形で資料ごとのフォルダに置き、[`presentations/README.md`](presentations/README.md)の一覧へ追記する。
 - `skills/`: 資料作成で繰り返し使うAI向け手順を置く。
 - `scripts/`: 生成、変換、検査などを自動化する処理を置く。
 - `tests/`: 内容、表記、リンク、レイアウトなどの検証を置く。

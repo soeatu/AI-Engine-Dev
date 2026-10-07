@@ -63,3 +63,36 @@ Decision (confirmed 2026-10-02, AskUserQuestion): Repository全体の構成図�
 --- Revision 2026-10-03: model-separated Agents ---
 Request: 利用ガイドにも、モデルごとにエージェントを分離していることを記載する。
 Decision (confirmed 2026-10-03, user request): Section 03の末尾（Skillの系統の直後）に、モデル別Agent分離の比較（ブレイン/プランナー＝Codex Sol・Claude Code Opus、ワーカー＝Codex Luna・Claude Code Sonnet）と、Planner/Workerのレビューループを2枚追加する。以降のページ番号は2つずつ繰り下げる（全64枚）。
+
+--- Revision 2026-10-06: readability restructure ---
+Mode: revision
+Request: 資料がわかりづらいので、ブラッシュアップする。
+Clarification log:
+- R1 2026-10-06: asked 対象資料・わかりにくい点・変更範囲・表示確認の方法; answered 両方の資料、「文字が小さく情報が多い」「枚数が多く探しにくい」「図が抽象的」、構成から見直す（色・書体は維持）、LibreOfficeを導入。
+- R2 2026-10-06: asked 改訂案の承認・Skill索引の扱い・表示確認の方法; answered この案で進める、Skill索引は系統マップと案内だけ（52件の一覧表は削除し、READMEへ案内）、Keynoteで書き出す。
+Core items: audience=clear purpose=clear use-context=clear action=clear takeaway=clear scope=clear（読者・目的・中心メッセージは変更なし。付録の全Skill一覧は利用者の判断でREADMEへの案内に置き換える）
+Confirmation: confirmed 2026-10-06 利用者がAskUserQuestionで改訂案とSkill索引の扱いを承認
+Decisions:
+- 64枚を36枚に再構成する。章は「1 全体像 → 2 準備する → 3 依頼する → 4 結果を見る → 5 しくみを知る → 付録（Skillと用語）」。
+- 2枚目に章ごとのページ範囲を示す地図を置き、各章の扉にその章のページ一覧を載せる。
+- 本文16pt以上、カード見出し24pt、タイトル35pt。入らない内容は削るか分ける。書体（Noto Sans JP）と配色（harness共通トークン）は維持し、全スライドをネイティブ図形のカスタムスライドで描き直す。
+- 2〜3語だけの5段フロー（旧7, 8, 24, 28, 34, 37, 42）は、実際の依頼文、AIが進める順番、残るファイル名を示す図へ置き換えるか統合する。
+- 重複していた利用前後の比較（旧9）と作業完了の意味（旧44）、Skillの系統（旧35）と選び方（旧33, 34）、Presentationの5 Skill（旧40）とDeck project（旧41）などを統合する。
+- 任意のMatt原文Skill導入（旧17）は付録の系統マップに統合する。
+- Development Skill索引13枚とPresentation索引2枚、Skill分類マップ（旧47〜62）は、系統マップ1枚と資料作成Skill 1枚に置き換え、詳細は各README.mdとSKILL.mdへ案内する。
+- モデル別Agent（旧36, 37）は2枚のまま維持する（2026-10-03の利用者依頼）。
+Section map (36 slides; 作成中に「例1で残るもの」を例1の手順へ統合):
+[cover] 1 表紙 / 2 この資料の使い方（章とページの地図） Visual: 章タイル6枚
+[overview] 3 扉 / 4 AIに渡す作業手順のセット Visual: 依頼→Codex/Claude Code＋手順セット→残るファイル / 5 会話ではなくファイルが残る Visual: チャットとの3項目比較 / 6 開発と資料作成の2つの環境 Visual: 分岐図 / 7 開発でできること / 8 資料作成でできること Visual: 依頼例と残るものの2×2カード
+[setup] 9 扉 / 10 使う場所で準備が変わる Visual: 3分岐とページ参照 / 11 このリポジトリで使う Visual: 3ステップ / 12 新しいProjectで使う Visual: コマンド＋注意カード / 13 既存のProjectで使う Visual: 依頼コマンド＋調べる・提案する・確認するのカード / 14 資料作成の準備 Visual: 3段の手順とコマンド / 15 準備ができたかを確認 Visual: チェックリスト
+[request] 16 扉 / 17 依頼文には4つを書く Visual: 要素と例文の対応 / 18 例1 新機能を追加する Visual: 依頼文→AIが進める順番と残るフォルダ / 19 例2 不具合の原因を調べる Visual: 依頼文→手順と停止線 / 20 例3 説明資料を作る Visual: 依頼文→手順と残るファイル / 21 AIが進めること・人が決めること Visual: 4段階の権限区分
+[result] 22 扉 / 23 完了報告で6つを確認する Visual: 番号付きチェック / 24 成果物の置き場所 Visual: 開発と資料作成のツリー
+[mechanism] 25 扉 / 26 フォルダの全体像 Visual: ツリー＋最初に読む順番 / 27 Skillは状況で選ぶ Visual: 状況→Skillのカード / 28 判断と実装でAgentを分ける Visual: 2役割の比較 / 29 実装とレビューを交互に回す Visual: ループ図 / 30 資料作成のしくみ Visual: ファイルの流れ / 31 資料は4段階で確かめる Visual: 工程図
+[appendix] 32 扉 / 33 Skillは系統ごとに探す Visual: 系統マップ / 34 資料作成の5つのSkill Visual: 対応表 / 35 この資料の用語 Visual: 用語カード
+[close] 36 最初の一歩 Visual: 番号付き手順（締めのため）
+
+--- Revision 2026-10-07: appendix Skill list ---
+Request: 利用ガイドに付録としてSkill一覧が欲しい。
+Decision: 2026-10-06の判断（一覧表を削除）を利用者の依頼で見直し、付録に開発Skill 52件の一覧7枚を追加する（Skill名と使う場面の2列、16pt）。系統マップの後、資料作成Skillの前に置く。全43枚。
+Section map change: [appendix] 32 扉 / 33 Skillは系統ごとに探す（一覧のページ範囲を追加） / 34–35 開発の統合Skill / 36 原文Skill：明示して使う / 37 原文Skill：自動で選ばれる / 38 原文Skill：Productivity / 39 原文Skill：開発途中 / 40 原文Skill：Miscと補助Skill / 41 資料作成の5つのSkill / 42 この資料の用語 [close] 43 最初の一歩
+Visual: 一覧は表（Skill名・使う場面）。text-onlyではなく表として扱う。
